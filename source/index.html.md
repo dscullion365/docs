@@ -58,8 +58,8 @@ includes:
   - error_code
 
 header_navigators:
-  - <a href="https://ascendex.github.io/ascendex-pro-api/#ascendex-pro-api-documentation" class="current">Cash/Margin APIs</a>
-  - <a href="https://ascendex.github.io/ascendex-futures-api-doc-v2/#ascendex-futures-trading-api-documentation">Futures APIs</a>
+  - <a href="https://ascendex.github.io/ascendex-pro-api/" class="current">Cash/Margin APIs</a>
+  - <a href="https://ascendex.github.io/ascendex-futures-pro-api-v2/">Futures APIs</a>
 
 search: true
 ---
