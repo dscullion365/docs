@@ -3,7 +3,7 @@
 > List all Products 
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/products
+curl -X GET "https://ascendex.com/api/pro/v1/products"
 ```
 
 > Sample Response 

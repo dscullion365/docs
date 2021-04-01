@@ -3,7 +3,7 @@
 > Request for Order Book (Depth) Data
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT
+curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT"
 ```
 
 > Order Book (Depth) Data - Sample response 

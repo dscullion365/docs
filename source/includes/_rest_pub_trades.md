@@ -3,7 +3,7 @@
 > Request 
 
 ```
-curl -X GET /api/pro/v1/trades?symbol=BTMX/USDT
+curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=BTMX/USDT"
 ```
 
 > Sample response 
