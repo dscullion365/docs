@@ -1,6 +1,33 @@
 ###
 ### Place Batch Orders
 
+> Place Batch Orders - Request Body
+
+```json
+{
+    "orders": [
+                {
+                    "id"        : "sampleRequestId1",
+                    "time"      : 1573596819085,
+                    "symbol"    : "BTC/USDT",
+                    "orderPrice": "34000",
+                    "orderQty"  : "0.1",
+                    "orderType" : "limit",
+                    "side"      : "buy"
+                },
+                {
+                    "id"        : "sampleRequestId2",
+                    "time"      : 1573596819085,
+                    "symbol"    : "BTC/USDT",
+                    "orderPrice": "35000",
+                    "orderQty"  : "0.2",
+                    "orderType" : "limit",
+                    "side"      : "buy"
+                }
+              ]
+}
+```
+
 > Place Batch Orders - Successful ACK Response (Status 200, code 0)
 
 ```json
@@ -12,14 +39,14 @@
         "action": "batch-place-order",
         "info": [
             {
-                "id":        "0r9LFylwSF3Pj6vOQC4j33Nv2pQnuFD9",
+                "id":        "sampleRequestId1",
                 "orderId":   "16e80b75cbda8bXHbAwwoqDoa5be7384",
                 "orderType": "Limit",
                 "symbol":    "BTC/USDT",
                 "timestamp":  1573596819185
             },
             {
-                "id":        "mYnbq6xcTLdAs9qzq1tY57lUZ1iWWIac",
+                "id":        "sampleRequestId2",
                 "orderId":   "16e61adeee5a8bXHbAwwoqDo100e364e",
                 "orderType": "Limit",
                 "symbol":    "BTC/USDT",
@@ -74,6 +101,13 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 #### Prehash String
 
 `<timestamp>+order/batch`
+
+###Request Parameters
+
+ Name          | Data Type           | Description                
+-------------- | ------------------- | -------------------------- 
+ orders        | List                | List of order items                    
+please refer to [placing new order](#place-order) for order item definition.
 
 #### Response
 
