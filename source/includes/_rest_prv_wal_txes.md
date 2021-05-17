@@ -46,12 +46,12 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 #### Request Parameters
 
-Name          |  Type    | Required | Value Range         | Description
-------------- | -------- | -------- | ------------------- | -----------
-**asset**     | `String` |   No     | valid asset code    | this allow you query single asset balance, e.g. `BTC`
-**txType**    | `String` |   No     | deposit / withdrwal | add the (optional) transaction type filter
-**page**      | `Int`    |   No     | a positive interger | the page number, starting at 1
-**pageSize**  | `Int`    |   No     | a positive interger | the page size, must be positive
+Name          |  Type    | Required | Value Range          | Description
+------------- | -------- | -------- | -------------------- | -----------
+**asset**     | `String` |   No     | valid asset code     | this allow you query single asset balance, e.g. `BTC`
+**txType**    | `String` |   No     | deposit / withdrawal | add the (optional) transaction type filter
+**page**      | `Int`    |   No     | a positive interger  | the page number, starting at 1
+**pageSize**  | `Int`    |   No     | a positive interger  | the page size, must be positive
 
 
 #### Response Content
