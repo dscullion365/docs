@@ -46,12 +46,12 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 #### Request Parameters
 
-Name          |  Type    | Required | Value Range          | Description
-------------- | -------- | -------- | -------------------- | -----------
-**asset**     | `String` |   No     | valid asset code     | this allow you query single asset balance, e.g. `BTC`
-**txType**    | `String` |   No     | deposit / withdrawal | add the (optional) transaction type filter
-**page**      | `Int`    |   No     | a positive interger  | the page number, starting at 1
-**pageSize**  | `Int`    |   No     | a positive interger  | the page size, must be positive
+Name          |  Type    | Required | Value Range              | Description
+------------- | -------- | -------- | ------------------------ | -----------
+**asset**     | `String` |   No     | valid asset code         | this allow you query single asset balance, e.g. `BTC`
+**txType**    | `String` |   No     | `deposit` / `withdrawal` | add the (optional) transaction type filter
+**page**      | `Int`    |   No     | a positive interger      | the page number, starting at 1
+**pageSize**  | `Int`    |   No     | a positive interger      | the page size, must be positive
 
 
 #### Response Content
@@ -65,7 +65,7 @@ Name          |  Type    | Required | Value Range          | Description
 **networkTransactionId** | `String` | the transaction hash ID                                                            |
 **numConfirmations**     | `Int`    | the minimun number of confirmations for the transaction to be viewed as confirmed. |
 **numConfirmed**         | `Int`    | current number of confirmations                                                    |
-**requestId**            | `String` | the requestId of the request                                                       | 
+**requestId**            | `String` | the requestId of the request                                                       |
 **status**               | `String` | `pending` / `reviewing` / `confirmed` / `rejected` / `canceled` / `failed`         |
 **time**                 | `Long`   | UTC timestamp in milliseconds, timestamp of the transaction.                       |
 **transactionType**      | `String` | `deposit` / `withdrawal`                                                           |
