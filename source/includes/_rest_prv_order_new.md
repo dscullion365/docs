@@ -232,7 +232,7 @@ Response with 0 `code` and status `ACCEPT` to indicate new order request is acce
 
 *DONE*
 
-Response with 0 `code` and status `Done` to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal 'Ack' response if no order status update within 5 seconds. Order `status` in `data` could be `Filled`, `PartiallyFilled`, `Cancelled`, or `Reject`, and so on.
+Response with 0 `code` and status `Done` to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal 'Ack' response if no order status update within 5 seconds. Order `status` in `data` could be `Filled`, `PartiallyFilled`, `Cancelled`, or `Rejected`, and so on.
 
 
 *ERR*
