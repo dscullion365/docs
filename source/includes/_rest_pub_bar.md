@@ -3,7 +3,7 @@
 > Request 
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/barhist/info
+curl -X GET "https://ascendex.com/api/pro/v1/barhist/info"
 ```
 
 > Sample response
@@ -97,7 +97,7 @@ The value in the `name` field should be your input to the [Historical Bar Data](
 > Request 
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&interval=1
+curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&interval=1"
 ```
 
 > Sample response
