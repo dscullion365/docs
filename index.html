@@ -719,8 +719,8 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w">                </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"baseAsset"</span><span class="p">:</span><span class="w">             </span><span class="s2">"BTMX"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w">                </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"baseAsset"</span><span class="p">:</span><span class="w">             </span><span class="s2">"ASD"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"quoteAsset"</span><span class="p">:</span><span class="w">            </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w">                </span><span class="s2">"Normal"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"minNotional"</span><span class="p">:</span><span class="w">           </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
@@ -750,12 +750,12 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>e.g. <code>&quot;BTMX/USDT&quot;</code></td>
+<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>baseAsset</code></td>
 <td><code>String</code></td>
-<td>e.g. <code>&quot;BTMX&quot;</code></td>
+<td>e.g. <code>&quot;ASD&quot;</code></td>
 </tr>
 <tr>
 <td><code>quoteAsset</code></td>
@@ -820,11 +820,11 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>Ticker for one product</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https</span><span class="p">:</span><span class="err">//ascendex.com/api/pro/v</span><span class="mi">1</span><span class="err">/ticker?symbol=BTMX/USDT'</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https</span><span class="p">:</span><span class="err">//ascendex.com/api/pro/v</span><span class="mi">1</span><span class="err">/ticker?symbol=ASD/USDT'</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"open"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06777"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"close"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"high"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06899"</span><span class="p">,</span><span class="w">
@@ -844,12 +844,12 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>List of Tickers for one or multiple products</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://ascendex.com/api/pro/v1/ticker?symbol=BTMX/USDT,"</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://ascendex.com/api/pro/v1/ticker?symbol=ASD/USDT,"</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"open"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06777"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"close"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"high"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
@@ -893,9 +893,9 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 
 <ul>
 <li>If you do not specify <code>symbol</code>, the API will responde with tickers of all symbols in a list. </li>
-<li>If you set <code>symbol</code> to be a single symbol, such as <code>BTMX/USDT</code>, the API will respond with the ticker of the target symbol as an object. 
-If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>BTMX/USDT,</code>.</li>
-<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>BTMX/USDT,BTC/USDT</code>. The API will respond with a list of tickers. </li>
+<li>If you set <code>symbol</code> to be a single symbol, such as <code>ASD/USDT</code>, the API will respond with the ticker of the target symbol as an object. 
+If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>ASD/USDT,</code>.</li>
+<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>ASD/USDT,BTC/USDT</code>. The API will respond with a list of tickers. </li>
 </ul>
 <h4 id='respond-content'>Respond Content</h4>
 <p>The API will respond with a ticker object or a list of ticker objects, depending on how you set the <code>symbol</code> parameter. </p>
@@ -1049,7 +1049,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <blockquote>
 <p>Request </p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&amp;interval=1"
+<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=ASD/USDT&amp;interval=1"
 </code></pre>
 <blockquote>
 <p>Sample response</p>
@@ -1067,7 +1067,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
                 </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575409260000</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1612"</span><span class="p">},</span><span class="w">
            </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">},</span><span class="w">
+           </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"c"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
@@ -1079,7 +1079,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
                 </span><span class="s2">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57242"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
            </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">},</span><span class="w">
+           </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">},</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='http-request'>HTTP Request</h4>
@@ -1099,7 +1099,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>Yes</td>
-<td>e.g. <code>&quot;BTMX/USDT&quot;</code></td>
+<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>interval</code></td>
@@ -1212,7 +1212,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Request for Order Book (Depth) Data</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT"
+<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=ASD/USDT"
 </code></pre>
 <blockquote>
 <p>Order Book (Depth) Data - Sample response </p>
@@ -1221,7 +1221,7 @@ only 500 bars will be returned. </li>
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"m"</span><span class="p">:</span><span class="w">      </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"seqnum"</span><span class="p">:</span><span class="w">  </span><span class="mi">5068757</span><span class="p">,</span><span class="w">
             </span><span class="s2">"ts"</span><span class="p">:</span><span class="w">      </span><span class="mi">1573165838976</span><span class="p">,</span><span class="w">
@@ -1286,7 +1286,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>e.g. <code>&quot;BTMX/USDT&quot;</code></td>
+<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>data</code></td>
@@ -1331,7 +1331,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Request </p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=BTMX/USDT"
+<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=ASD/USDT"
 </code></pre>
 <blockquote>
 <p>Sample response </p>
@@ -1340,7 +1340,7 @@ only 500 bars will be returned. </li>
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">144115191800016553</span><span class="p">,</span><span class="w">
@@ -3476,9 +3476,9 @@ Order detail for each order is in <code>info</code> field list.</p>
 <p><code>orderId</code> could be a single order Id, or multiple order Ids separated by a comma (<code>,</code>):</p>
 
 <ul>
-<li>If you set <code>symbol</code> to be a single symbol, such as <code>BTMX/USDT</code>, the API will respond with the target order as an object. 
-If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>BTMX/USDT,</code>.</li>
-<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>BTMX/USDT,BTC/USDT</code>. The API will respond with a list of order objects. </li>
+<li>If you set <code>symbol</code> to be a single symbol, such as <code>ASD/USDT</code>, the API will respond with the target order as an object. 
+If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>ASD/USDT,</code>.</li>
+<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>ASD/USDT,BTC/USDT</code>. The API will respond with a list of order objects. </li>
 </ul>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
@@ -3749,7 +3749,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <p>Change from the previous version:</p>
 
 <ul>
-<li><code>execId</code>, <code>btmxCommission</code>, <code>notional</code> are no longer included in the response. </li>
+<li><code>execId</code>, <code>asdCommission</code>, <code>notional</code> are no longer included in the response. </li>
 <li><code>errorCode</code> is no longer included in the open order response. It is still included in the historical order query response.</li>
 </ul>
 <h3 id='list-current-history-orders'>List Current History Orders</h3>
@@ -3811,7 +3811,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>No</td>
-<td>symbol filter, e.g. <code>&quot;BTMX/USDT&quot;</code></td>
+<td>symbol filter, e.g. <code>&quot;ASD/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>executedOnly</code></td>
@@ -3882,7 +3882,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>No</td>
-<td>symbol filter, e.g. <code>BTMX/USDT</code></td>
+<td>symbol filter, e.g. <code>ASD/USDT</code></td>
 </tr>
 <tr>
 <td><code>startTime</code></td>
@@ -4149,7 +4149,7 @@ for 30 seconds if a client initiated <code>ping</code> message is received. </p>
 wscat -H <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
   -H <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
   -H <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
-  -c wss://ascendex.com/1/api/pro/v1/stream -w 1 -x <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTMX/USDT"}'</span>
+  -c wss://ascendex.com/1/api/pro/v1/stream -w 1 -x <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:ASD/USDT"}'</span>
 </code></pre>
 <p>This is similar to the way you authenticate any RESTful request. You need to add the following header fields to the 
 connection request:</p>
@@ -4285,7 +4285,7 @@ wscat -c wss://ascendex.com/1/api/v1/pro/stream -w 1 -x <span class="s2">"{</spa
 npm install -g wscat
 
 <span class="c"># Connect to websocket</span>
-wscat -c wss://ascendex.com/0/api/pro/v1/stream -x <span class="s1">'{"op":"sub", "ch": "depth:BTMX/USDT"}'</span>
+wscat -c wss://ascendex.com/0/api/pro/v1/stream -x <span class="s1">'{"op":"sub", "ch": "depth:ASD/USDT"}'</span>
 </code></pre>
 <blockquote>
 <p>You can also setup authorized session</p>
@@ -4338,7 +4338,7 @@ wscat -c wss://ascendex.com/0/api/pro/v1/stream -x <span class="s1">'{"op":"sub"
 <blockquote>
 <p>Subscribe to <em>trade</em> stream for a list of symbols</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades:BTC/USDT,ETH/USDT,BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades:BTC/USDT,ETH/USDT,ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Unsubscribes from the <em>depth</em> stream for all symbols (method 1)</p>
@@ -4361,19 +4361,19 @@ wscat -c wss://ascendex.com/0/api/pro/v1/stream -x <span class="s1">'{"op":"sub"
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:1"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Unsubscribes from <em>bar</em> streams of all frequencies for <code>BTMX/USDT</code></p>
+<p>Unsubscribes from <em>bar</em> streams of all frequencies for <code>ASD/USDT</code></p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Response for sub multiple symbols in one single message</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"m"</span><span class="p">:</span><span class="s2">"sub"</span><span class="p">,</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"abc23g"</span><span class="p">,</span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"summary:BTC/USDT,BTMX/USDT"</span><span class="p">,</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"m"</span><span class="p">:</span><span class="s2">"sub"</span><span class="p">,</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"abc23g"</span><span class="p">,</span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"summary:BTC/USDT,ASD/USDT"</span><span class="p">,</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Response for unsub multiple symbols in one single message</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='customize-channel-content-with-ch'>Customize Channel content with <code>ch</code></h4>
 <p>You can customize the channel content by setting <code>ch</code> according to the table below:</p>
 
@@ -4433,14 +4433,14 @@ the following rules:</p>
 <p>@ToDo rule: maximum number of channels </p>
 <h3 id='channel-level-1-order-book-data-bbo'>Channel: Level 1 Order Book Data (BBO)</h3>
 <blockquote>
-<p>Subscribe to <code>BTMX/USDT</code> quote stream</p>
+<p>Subscribe to <code>ASD/USDT</code> quote stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bbo:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bbo:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Unsubscribe to <code>BTMX/USDT</code> quote stream</p>
+<p>Unsubscribe to <code>ASD/USDT</code> quote stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bbo:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bbo:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>BBO Message </p>
@@ -4467,21 +4467,21 @@ the price and/or size changes at the top of the order book. </p>
 <p>Each BBO message contains price and size data for exactly one bid level and one ask level. </p>
 <h3 id='channel-level-2-order-book-updates'>Channel: Level 2 Order Book Updates</h3>
 <blockquote>
-<p>Subscribe to <code>BTMX/USDT</code> depth updates stream</p>
+<p>Subscribe to <code>ASD/USDT</code> depth updates stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"depth:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"depth:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Unsubscribe to <code>BTMX/USDT</code> depth updates stream</p>
+<p>Unsubscribe to <code>ASD/USDT</code> depth updates stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"depth:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"depth:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>The Depth Message </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573069021376</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">2097965</span><span class="p">,</span><span class="w">
@@ -4518,21 +4518,21 @@ you can use to update the order book snapshot. In the message, <code>price</code
 <p>See <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/websocket_orderbook_snapshot.py">Orderbook Snapshot</a> for code examples.</p>
 <h3 id='channel-market-trades'>Channel: Market Trades</h3>
 <blockquote>
-<p>Subscribe to <code>BTMX/USDT</code> market trades stream</p>
+<p>Subscribe to <code>ASD/USDT</code> market trades stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"trades:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"trades:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Unsubscribe to <code>BTMX/USDT</code> market trades stream</p>
+<p>Unsubscribe to <code>ASD/USDT</code> market trades stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"trades:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"trades:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Trade Message </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"p"</span><span class="p">:</span><span class="w">      </span><span class="s2">"0.068600"</span><span class="p">,</span><span class="w">
@@ -4582,17 +4582,17 @@ value into one aggregated item. Each trade object contains the following fields:
 </tbody></table>
 <h3 id='channel-bar-data'>Channel: Bar Data</h3>
 <blockquote>
-<p>Subscribe to <code>BTMX/USDT</code> 1 minute bar stream</p>
+<p>Subscribe to <code>ASD/USDT</code> 1 minute bar stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:1:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>Unsubscribe to <code>BTMX/USDT</code> 1 minute bar stream</p>
+<p>Unsubscribe to <code>ASD/USDT</code> 1 minute bar stream</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:1:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 
-</span><span class="err">//</span><span class="w">  </span><span class="err">Alternatively</span><span class="p">,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">streams</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">BTMX/USDT</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:*:BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">//</span><span class="w">  </span><span class="err">Alternatively</span><span class="p">,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">streams</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">ASD/USDT</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 
 </span><span class="err">//</span><span class="w"> </span><span class="err">Or</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">minute</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">stream</span><span class="w">
 </span><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ch"</span><span class="p">:</span><span class="s2">"bar:1"</span><span class="w"> </span><span class="p">}</span><span class="w">
@@ -4605,7 +4605,7 @@ value into one aggregated item. Each trade object contains the following fields:
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">    
+    </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">    
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"i"</span><span class="p">:</span><span class="w">  </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575398940000</span><span class="p">,</span><span class="w">
@@ -5107,14 +5107,14 @@ request message. Here are some use cases: </p>
 <blockquote>
 <p>Requesting the current order book snapshot</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w"> </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w"> </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Depth snapshot message</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">3167819629</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573142900389</span><span class="p">,</span><span class="w">
@@ -5170,7 +5170,7 @@ request message. Here are some use cases: </p>
 <tr>
 <td><code>args:symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>BTMX/USDT</code></td>
+<td>Symbol, e.g. <code>ASD/USDT</code></td>
 </tr>
 </tbody></table>
 
@@ -5191,7 +5191,7 @@ request message. Here are some use cases: </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>BTMX/USDT</code></td>
+<td>Symbol, e.g. <code>ASD/USDT</code></td>
 </tr>
 <tr>
 <td><code>data:seqnum</code></td>
@@ -5573,9 +5573,9 @@ the timely order book data. </p>
 </tbody></table>
 <h3 id='ws-recent-market-trades'>WS: Recent Market Trades</h3>
 <blockquote>
-<p>Requesting the most recent 12 trades for symbol BTMX/USDT</p>
+<p>Requesting the most recent 12 trades for symbol ASD/USDT</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w"> </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w"> </span><span class="s2">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Trades snapshot message</p>
@@ -5583,7 +5583,7 @@ the timely order book data. </p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1334"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"p"</span><span class="p">:</span><span class="w">      </span><span class="s2">"0.068600"</span><span class="p">,</span><span class="w">
@@ -5625,7 +5625,7 @@ the timely order book data. </p>
 
 <p>The <code>args</code> schema:</p>
 
-<p><code>symbol</code> | <code>String</code>            | Symbol, e.g. <code>BTMX/USDT</code><br>
+<p><code>symbol</code> | <code>String</code>            | Symbol, e.g. <code>ASD/USDT</code><br>
  <code>level</code>  | Int                 | Number of trades to request</p>
 
 <p>The response schema:</p>
@@ -5645,7 +5645,7 @@ the timely order book data. </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>BTMX/USDT</code></td>
+<td>Symbol, e.g. <code>ASD/USDT</code></td>
 </tr>
 <tr>
 <td><code>data</code></td>
@@ -5754,7 +5754,7 @@ the timely order book data. </p>
 <tr>
 <td><code>args:symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>BTMX/USDT</code></td>
+<td>Symbol, e.g. <code>ASD/USDT</code></td>
 </tr>
 </tbody></table>
 
@@ -5785,7 +5785,7 @@ the timely order book data. </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>BTMX/USDT</code></td>
+<td>Symbol, e.g. <code>ASD/USDT</code></td>
 </tr>
 <tr>
 <td><code>id</code></td>
