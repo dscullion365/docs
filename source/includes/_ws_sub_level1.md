@@ -1,15 +1,15 @@
 ### Channel: Level 1 Order Book Data (BBO)
 
-> Subscribe to `BTMX/USDT` quote stream
+> Subscribe to `ASD/USDT` quote stream
 
 ```json
-{ "op": "sub", "id": "abc123", "ch":"bbo:BTMX/USDT" }
+{ "op": "sub", "id": "abc123", "ch":"bbo:ASD/USDT" }
 ```
 
-> Unsubscribe to `BTMX/USDT` quote stream
+> Unsubscribe to `ASD/USDT` quote stream
 
 ```json
-{ "op": "unsub", "id": "abc123", "ch":"bbo:BTMX/USDT" }
+{ "op": "unsub", "id": "abc123", "ch":"bbo:ASD/USDT" }
 ```
 
 > BBO Message 

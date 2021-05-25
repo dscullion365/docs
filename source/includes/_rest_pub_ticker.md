@@ -3,11 +3,11 @@
 > Ticker for one product
 
 ```json
-// curl -X GET 'https://ascendex.com/api/pro/v1/ticker?symbol=BTMX/USDT'
+// curl -X GET 'https://ascendex.com/api/pro/v1/ticker?symbol=ASD/USDT'
 {
     "code": 0,
     "data": {
-        "symbol": "BTMX/USDT",
+        "symbol": "ASD/USDT",
         "open":   "0.06777",
         "close":  "0.06809",
         "high":   "0.06899",
@@ -28,12 +28,12 @@
 > List of Tickers for one or multiple products
 
 ```json
-// curl -X GET "https://ascendex.com/api/pro/v1/ticker?symbol=BTMX/USDT,"
+// curl -X GET "https://ascendex.com/api/pro/v1/ticker?symbol=ASD/USDT,"
 {
     "code": 0,
     "data": [
         {
-            "symbol": "BTMX/USDT",
+            "symbol": "ASD/USDT",
             "open":   "0.06777",
             "close":  "0.06809",
             "high":   "0.06809",
@@ -68,9 +68,9 @@ Name       | Type      | Required | Value Range | Description
 This API endpoint accepts one optional string field `symbol`: 
 
 * If you do not specify `symbol`, the API will responde with tickers of all symbols in a list. 
-* If you set `symbol` to be a single symbol, such as `BTMX/USDT`, the API will respond with the ticker of the target symbol as an object. 
-  If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. `BTMX/USDT,`.
-* You shall specify `symbol` as a comma separated symbol list, e.g. `BTMX/USDT,BTC/USDT`. The API will respond with a list of tickers. 
+* If you set `symbol` to be a single symbol, such as `ASD/USDT`, the API will respond with the ticker of the target symbol as an object. 
+  If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. `ASD/USDT,`.
+* You shall specify `symbol` as a comma separated symbol list, e.g. `ASD/USDT,BTC/USDT`. The API will respond with a list of tickers. 
 
 #### Respond Content
 

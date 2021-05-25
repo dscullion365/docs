@@ -3,7 +3,7 @@
 > Request 
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=BTMX/USDT"
+curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=ASD/USDT"
 ```
 
 > Sample response 
@@ -13,7 +13,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=BTMX/USDT"
     "code": 0,
     "data": {
         "m": "trades",
-        "symbol": "BTMX/USDT",
+        "symbol": "ASD/USDT",
         "data": [
             {
                 "seqnum": 144115191800016553,

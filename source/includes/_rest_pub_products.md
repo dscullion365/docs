@@ -13,8 +13,8 @@ curl -X GET "https://ascendex.com/api/pro/v1/products"
     "code": 0,
     "data": [
         {
-            "symbol":                "BTMX/USDT",
-            "baseAsset":             "BTMX",
+            "symbol":                "ASD/USDT",
+            "baseAsset":             "ASD",
             "quoteAsset":            "USDT",
             "status":                "Normal",
             "minNotional":           "5",
@@ -41,8 +41,8 @@ The response contains the following general fields:
 
  Name         | Type     | Description                                                                                 
 -------------- | -------- | --------------------- 
- `symbol`      | `String` | e.g. `"BTMX/USDT"`
- `baseAsset`   | `String` | e.g. `"BTMX"`
+ `symbol`      | `String` | e.g. `"ASD/USDT"`
+ `baseAsset`   | `String` | e.g. `"ASD"`
  `quoteAsset`  | `String` | e.g. `"USDT"`
  `status`      | `String` | `"Normal"`
 

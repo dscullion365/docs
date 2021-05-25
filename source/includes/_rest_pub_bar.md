@@ -97,7 +97,7 @@ The value in the `name` field should be your input to the [Historical Bar Data](
 > Request 
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&interval=1"
+curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=ASD/USDT&interval=1"
 ```
 
 > Sample response
@@ -116,7 +116,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&interval=1
                 "ts": 1575409260000,
                 "v": "1612"},
            "m": "bar",
-           "s": "BTMX/USDT"},
+           "s": "ASD/USDT"},
         {
             "data": {
                 "c": "0.05019",
@@ -128,7 +128,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=BTMX/USDT&interval=1
                 "v": "57242"
                 },
            "m": "bar",
-           "s": "BTMX/USDT"},
+           "s": "ASD/USDT"},
     ]
 }
 ```
@@ -143,7 +143,7 @@ This API returns a list of **bar**s, with each contains the open/close/high/low 
 
  Name       | Type     | Required | Description                                                                                 
 ----------- | -------- | -------- | ------------------------------------------------------------------------------------------- 
- `symbol`   | `String` | Yes      | e.g. `"BTMX/USDT"`                                                                          
+ `symbol`   | `String` | Yes      | e.g. `"ASD/USDT"`                                                                          
  `interval` | `String` | Yes      | a string representing the interval type.                                                    
  `to`       | `Long`   | No       | UTC timestamp in milliseconds. If not provided, this field will be set to the current time. 
  `from`     | `Long`   | No       | UTC timestamp in milliseconds.                                                              

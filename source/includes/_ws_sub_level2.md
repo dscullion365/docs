@@ -1,15 +1,15 @@
 ### Channel: Level 2 Order Book Updates
 
-> Subscribe to `BTMX/USDT` depth updates stream
+> Subscribe to `ASD/USDT` depth updates stream
 
 ```json
-{ "op": "sub", "id": "abc123", "ch":"depth:BTMX/USDT" }
+{ "op": "sub", "id": "abc123", "ch":"depth:ASD/USDT" }
 ```
 
-> Unsubscribe to `BTMX/USDT` depth updates stream
+> Unsubscribe to `ASD/USDT` depth updates stream
 
 ```json
-{ "op": "unsub", "id": "abc123", "ch":"depth:BTMX/USDT" }
+{ "op": "unsub", "id": "abc123", "ch":"depth:ASD/USDT" }
 ```
 
 > The Depth Message 
@@ -17,7 +17,7 @@
 ```json
 {
     "m": "depth",
-    "symbol": "BTMX/USDT",
+    "symbol": "ASD/USDT",
     "data": {
         "ts": 1573069021376,
         "seqnum": 2097965,

@@ -135,7 +135,7 @@ Here is a sample Ready message:
     "data": {
         "sn": 5744236244,
         "orderId": "s1723274f109U9698887124UYZcCovZR",
-        "s": "BTMX/USDT",
+        "s": "ASD/USDT",
         "ot": "Limit",
         "t": 1589984424581,
         "p": "0.06",
@@ -167,7 +167,7 @@ Here is a sample Ready message:
     "data": {
         "sn": 5744212681,
         "orderId": "s1723271a990U9698887124oF1ZWI2E0",
-        "s": "BTMX/USDT",
+        "s": "ASD/USDT",
         "ot": "Limit",
         "t": 1589984209677,
         "p": "0.04054",
@@ -199,7 +199,7 @@ Here is a sample Ready message:
     "data": {
         "sn": 5744228002,
         "orderId": "s1723273cc4dU9698887124KmD7JCk9K",
-        "s": "BTMX/USDT",
+        "s": "ASD/USDT",
         "ot": "Limit",
         "t": 1589984349641,
         "p": "0.04",
@@ -231,7 +231,7 @@ Here is a sample Ready message:
     "data": {
         "sn": 5744236665,
         "orderId": "s1723274f109U9698887124UYZcCovZR",
-        "s": "BTMX/USDT",
+        "s": "ASD/USDT",
         "ot": "Limit",
         "t": 1589984426698,
         "p": "0.06",
@@ -263,7 +263,7 @@ Here is a sample Ready message:
     "data": {
         "sn": 5744182462,
         "orderId": "s172326e1f85U9698887124qTSAvg1uJ",
-        "s": "BTMX/USDT",
+        "s": "ASD/USDT",
         "ot": "Limit",
         "t": 1589983977725,
         "p": "0.05",

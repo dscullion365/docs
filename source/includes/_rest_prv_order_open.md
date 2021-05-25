@@ -91,6 +91,6 @@ Please refer to python code to [get open orders](https://github.com/ascendex/asc
 
 Change from the previous version:
 
-* `execId`, `btmxCommission`, `notional` are no longer included in the response. 
+* `execId`, `asdCommission`, `notional` are no longer included in the response. 
 * `errorCode` is no longer included in the open order response. It is still included in the historical order query response.
 

@@ -52,7 +52,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
  Name            | Type      | Required | Description                                                                                 
 ---------------- | --------- | -------- | ------------------------------------------------------------------------------------------- 
  `n`             | `Int`     | No       | maximum number of orders to be included in the response
- `symbol`        | `String`  | No       | symbol filter, e.g. `"BTMX/USDT"`
+ `symbol`        | `String`  | No       | symbol filter, e.g. `"ASD/USDT"`
  `executedOnly`  | `Boolean` | No       | if `True`, include orders with non-zero filled quantities only.
 
 #### Response

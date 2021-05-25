@@ -55,7 +55,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
  Name            | Type      | Required | Description
 ---------------- | --------- | -------- | -------------------------------------------------------------------------------------------
- `symbol`        | `String`  | No       | symbol filter, e.g. `BTMX/USDT`
+ `symbol`        | `String`  | No       | symbol filter, e.g. `ASD/USDT`
  `category`      | `String`  | No       | account filter: `cash`/`margin`/`futures`
  `orderType`     | `String`  | No       | `market`, `limit`, and so on.
  `side`          | `String`  | No       | `buy`/`sell`

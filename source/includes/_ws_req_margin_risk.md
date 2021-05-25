@@ -46,7 +46,7 @@ The `args` schema:
  `op`          | `String`            | `req`                      
  `action`      | `String`            | `margin-risk`      
  `id`          | `String`            | for result match purpose     
- `args:symbol` | `String`            | Symbol, e.g. `BTMX/USDT`   
+ `args:symbol` | `String`            | Symbol, e.g. `ASD/USDT`   
 
 The response schema:
 
@@ -55,7 +55,7 @@ The response schema:
  `m`              | `String`  | `margin-risk`
  `accountId`      | `String`  | margin accountId
  `ac`             | `String`  | `MARGIN`
- `symbol`         | `String`  | Symbol, e.g. `BTMX/USDT`  
+ `symbol`         | `String`  | Symbol, e.g. `ASD/USDT`  
  `id`             | `String`  | echo back `id` in request
  `data`           | `Json`    | See `data` detail below
 

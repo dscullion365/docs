@@ -10,7 +10,7 @@
 npm install -g wscat
 
 # Connect to websocket
-wscat -c wss://ascendex.com/0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:BTMX/USDT"}'
+wscat -c wss://ascendex.com/0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:ASD/USDT"}'
 ```
 
 > You can also setup authorized session
@@ -50,7 +50,7 @@ The standard messages to subscribe to / unsubscribe from data channels is an JSO
 > Subscribe to *trade* stream for a list of symbols
 
 ```json
-{ "op": "sub", "id": "abcd1234", "ch": "trades:BTC/USDT,ETH/USDT,BTMX/USDT" }
+{ "op": "sub", "id": "abcd1234", "ch": "trades:BTC/USDT,ETH/USDT,ASD/USDT" }
 ```
 
 > Unsubscribes from the *depth* stream for all symbols (method 1)
@@ -77,22 +77,22 @@ The standard messages to subscribe to / unsubscribe from data channels is an JSO
 { "op": "unsub", "id": "abcd1234", "ch": "bar:1" }
 ```
 
-> Unsubscribes from *bar* streams of all frequencies for `BTMX/USDT`
+> Unsubscribes from *bar* streams of all frequencies for `ASD/USDT`
 
 ```json
-{ "op": "unsub", "id": "abcd1234", "ch": "bar:*:BTMX/USDT" }
+{ "op": "unsub", "id": "abcd1234", "ch": "bar:*:ASD/USDT" }
 ```
 
 > Response for sub multiple symbols in one single message
 
 ```json
-{"m":"sub","id":"abc23g","ch":"summary:BTC/USDT,BTMX/USDT","code":0}
+{"m":"sub","id":"abc23g","ch":"summary:BTC/USDT,ASD/USDT","code":0}
 ```
 
 > Response for unsub multiple symbols in one single message
 
 ```json
-{ "m": "unsub", "id": "abcd1234", "ch": "bar:*:BTMX/USDT" }
+{ "m": "unsub", "id": "abcd1234", "ch": "bar:*:ASD/USDT" }
 ```
 
 #### Customize Channel content with `ch`

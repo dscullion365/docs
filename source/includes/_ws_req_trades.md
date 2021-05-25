@@ -1,9 +1,9 @@
 ### WS: Recent Market Trades 
 
-> Requesting the most recent 12 trades for symbol BTMX/USDT
+> Requesting the most recent 12 trades for symbol ASD/USDT
 
 ```json
-{ "op": "req", "action": "market-trades", "args": { "symbol": "BTMX/USDT", "level": 12} }
+{ "op": "req", "action": "market-trades", "args": { "symbol": "ASD/USDT", "level": 12} }
 ```
 
 > Trades snapshot message
@@ -12,7 +12,7 @@
 {
     "m": "market-trades",
     "id": "abcd1334",
-    "symbol": "BTMX/USDT",
+    "symbol": "ASD/USDT",
     "data": [
         {
             "p":      "0.068600",
@@ -37,7 +37,7 @@ The request schema:
 
 The `args` schema:
 
- `symbol` | `String`            | Symbol, e.g. `BTMX/USDT`  
+ `symbol` | `String`            | Symbol, e.g. `ASD/USDT`  
  `level`  | Int                 | Number of trades to request
 
 The response schema:
@@ -45,7 +45,7 @@ The response schema:
  Name          | Data Type             | Description                   
 -------------- | --------------------- | ----------------------------- 
  `m`           | `String`              | `market-trades`
- `symbol`      | `String`              | Symbol, e.g. `BTMX/USDT`      
+ `symbol`      | `String`              | Symbol, e.g. `ASD/USDT`      
  `data`        | `Json Array`          | A list of trade json objects                              
 
 The `data` field is a list containing one or more trade objects. The server may combine consecutive trades with the same price and `bm` value into one aggregated item. Each trade object contains the following fields:

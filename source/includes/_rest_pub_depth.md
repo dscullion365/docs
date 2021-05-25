@@ -3,7 +3,7 @@
 > Request for Order Book (Depth) Data
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT"
+curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=ASD/USDT"
 ```
 
 > Order Book (Depth) Data - Sample response 
@@ -13,7 +13,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT"
     "code": 0,
     "data": {
         "m":      "depth-snapshot",
-        "symbol": "BTMX/USDT",
+        "symbol": "ASD/USDT",
         "data": {
             "seqnum":  5068757,
             "ts":      1573165838976,
@@ -59,7 +59,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=BTMX/USDT"
    Name    | Type               | Description 
 ---------- | ------------------ | -----------------------------
  `m`       | `String`           | `"depth-snapshot"`
- `symbol`  | `String`           | e.g. `"BTMX/USDT"`
+ `symbol`  | `String`           | e.g. `"ASD/USDT"`
  `data`    | `Json`             | actual bid and ask info. See below for detail.
 
 Actual depth data in `data` section:

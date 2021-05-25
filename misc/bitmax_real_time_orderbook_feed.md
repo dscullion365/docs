@@ -7,7 +7,7 @@ If the request is successful, you will receive the full orderbook in the WebSock
 
     {
       "m": "depth-snapshot-realtime",
-      "symbol": "BTMX/USDT",
+      "symbol": "ASD/USDT",
       "data": {
         "ts": 0,
         "seqnum": 33346,
@@ -29,7 +29,7 @@ If the request failed, you will receive an ack message with non-zero value `code
       "id": "ec1L5cDt",
       "code": 100008,
       "reason": "SYMBOL_ERROR",
-      "info": "Unable to handle symbol USDT/BTMX, expecting BTC-PERP"
+      "info": "Unable to handle symbol USDT/ASD, expecting BTC-PERP"
     }
 
 
@@ -42,12 +42,12 @@ intervals while `depth-realtime` streams the unthrottled data feed. As a result,
 
 Subscribing to the real-time depht channle is similar to subscribing the regular `depth` channel. 
 
-To subscribe to `BTMX/USDT` real-time depth update stream, send a json messge to the server:
+To subscribe to `ASD/USDT` real-time depth update stream, send a json messge to the server:
 
     {
       "op": "sub",
       "id": "abc123", // optional
-      "ch": "depth-realtime:BTMX/USDT"
+      "ch": "depth-realtime:ASD/USDT"
     }
 
 In the above message, the `id` field is an optional string field. If an string value is provided, the server will echo back the `id` field 
@@ -57,7 +57,7 @@ If the subscription is successful, you will receive an ack message with `code=0`
 
     {
       "m": "sub",
-      "ch": "depth-realtime:BTMX/USDT",
+      "ch": "depth-realtime:ASD/USDT",
       "id": "abc123",
       "code": 0
     }
@@ -66,10 +66,10 @@ If the subscription failed, you will receive an ack message with non-zero `code`
 
     {
       "m": "sub",
-      "ch": "depth-realtime:BTMX/USDT",
+      "ch": "depth-realtime:ASD/USDT",
       "id": "abc123",
       "code": 100008,
-      "reason": "Unable to handle symbol USDT/BTMX"
+      "reason": "Unable to handle symbol USDT/ASD"
     }
 
 
@@ -79,7 +79,7 @@ Once subscribed to the `depth-realtime` channel, you will start receiving update
 
     {
       "m": "depth-realtime",
-      "symbol": "BTMX/USDT",
+      "symbol": "ASD/USDT",
       "data": {
         "ts": 1573069021376,
         "seqnum": 2097965,
@@ -109,14 +109,14 @@ you can use to update the order book snapshot. You should use the following rule
 
 ## Requesting the Full Orderbook 
 
-To request a full orderbook of `BTMX/USDT`, send a `depth-snapshot-realtime` request in json format to the server via WebSocket.
+To request a full orderbook of `ASD/USDT`, send a `depth-snapshot-realtime` request in json format to the server via WebSocket.
 
     {
       "op": "req",
       "id": "Q9rK5r74",  // optional
       "action": "depth-snapshot-realtime",
       "args": {
-        "symbol": "BTMX/USDT"
+        "symbol": "ASD/USDT"
       }
     }
 
@@ -124,7 +124,7 @@ If the request is successful, you will receive the full orderbook in the WebSock
 
     {
       "m": "depth-snapshot-realtime",
-      "symbol": "BTMX/USDT",
+      "symbol": "ASD/USDT",
       "data": {
         "ts": 0,
         "seqnum": 33346,
@@ -146,7 +146,7 @@ If the request failed, you will receive an ack message with non-zero `code` valu
       "id": "ec1L5cDt",
       "code": 100008,
       "reason": "SYMBOL_ERROR",
-      "info": "Unable to handle symbol USDT/BTMX, expecting BTC-PERP"
+      "info": "Unable to handle symbol USDT/ASD, expecting BTC-PERP"
     }
 
 

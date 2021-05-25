@@ -1,18 +1,18 @@
 ### Channel: Bar Data 
 
-> Subscribe to `BTMX/USDT` 1 minute bar stream
+> Subscribe to `ASD/USDT` 1 minute bar stream
 
 ```json
-{ "op": "sub", "id": "abc123", "ch":"bar:1:BTMX/USDT" }
+{ "op": "sub", "id": "abc123", "ch":"bar:1:ASD/USDT" }
 ```
 
-> Unsubscribe to `BTMX/USDT` 1 minute bar stream
+> Unsubscribe to `ASD/USDT` 1 minute bar stream
 
 ```json
-{ "op": "unsub", "id": "abc123", "ch":"bar:1:BTMX/USDT" }
+{ "op": "unsub", "id": "abc123", "ch":"bar:1:ASD/USDT" }
 
-//  Alternatively, you can unsubscribe all bar streams for BTMX/USDT
-{ "op": "unsub", "id": "abc123", "ch":"bar:*:BTMX/USDT" }
+//  Alternatively, you can unsubscribe all bar streams for ASD/USDT
+{ "op": "unsub", "id": "abc123", "ch":"bar:*:ASD/USDT" }
 
 // Or unsubscribe all 1 minute bar stream
 { "op": "unsub", "id": "abc123", "ch":"bar:1" }
@@ -26,7 +26,7 @@
 ```json
 {
     "m": "bar",
-    "s": "BTMX/USDT",    
+    "s": "ASD/USDT",    
     "data": {
         "i":  "1",
         "ts": 1575398940000,
