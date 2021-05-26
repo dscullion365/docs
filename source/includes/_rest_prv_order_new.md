@@ -161,7 +161,7 @@ id         | String |  No    |>=9 chars(letter and digit number only)         |O
 orderPrice | String |  No    |                                                |The limit price for limit order. Please set price scale properly.
 stopPrice  | String |  No    |                                                |Trigger price of stop limit order
 postOnly   | Boolean|  No    |[true, false]                                   |
-timeInForce| String |  No    |["GTC", "IOC"]                                  |GTC: good-till-canceled; IOC: immediate-or-cancel. GTC by default.
+timeInForce| String |  No    |["GTC", "IOC", "FOK"]                           |GTC: good-till-canceled; IOC: immediate-or-cancel; FOK: fill-or-kill. GTC by default.
 respInst   | String |  No    |["ACK", "ACCEPT", "DONE"]                       |Response instruction. Refer to "Response" below. "ACK" by default.  
 
 The table below shows how to correctly configure order of different types: (o - required, x - optional)
