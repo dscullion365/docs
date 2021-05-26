@@ -25,6 +25,7 @@ includes:
   - rest_prv_bal
   - rest_prv_wal
   - rest_prv_wal_deposit
+  - rest_prv_wal_withdraw
   - rest_prv_wal_txes
   - rest_prv_order
   - rest_prv_order_new
