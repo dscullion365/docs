@@ -118,3 +118,12 @@ code   | reason                  | descripion
 code   | reason               | descripion
 -------|----------------------|----------
 900001 |HUMAN_CHALLENGE       | Human change do not pass
+
+## Order Specific Error
+
+code         | descripion
+-------------|-----------------------------
+NotEnoughPos | Not enough position or balance to withdraw or transfer considering both current balance and potential margin or futures account risk.
+
+
+
