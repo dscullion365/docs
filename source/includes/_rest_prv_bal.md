@@ -184,7 +184,7 @@ This api allows balance transfer between different accounts of the same user.
 
 #### HTTP Request
 
-`GET <account-group>/api/pro/v1/transfer`
+`POST <account-group>/api/pro/v1/transfer`
 
 #### Signature
 
@@ -203,7 +203,6 @@ Name           |  Type     | Required | Value Range               | Description
 **fromAccount**| `String`  |   Yes    | `cash`/`margin`/`futures` |
 **toAccount**  | `String`  |   Yes    | `cash`/`margin`/`futures` |
 
- Please note, we only support direct balance transfer between `cash` and `margin`, `cash` and `futures`.
 
 #### Response Content
 
@@ -212,4 +211,70 @@ Response `code` value 0 indicate successful transfer.
 
 #### Code Sample
 
-Please refer to python code to [transfer token amount different accounts](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py)
+Please refer to python code to [transfer token among different accounts](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py)
+
+### Balance Transfer for Subaccount
+
+> Request
+
+```json
+{
+    "userFrom": "parentUser",  // support userId or username, pls use "parentUser" for parent account
+    "userTo": "subAccount",  // support userId or username, pls use "parentUser" for parent account
+    "acFrom": "cash",
+    "acTo": "cash",
+    "asset": "USDT",
+    "amount": "40"
+}
+ ```
+
+> Response
+
+```json
+{
+   "code":0,
+   "info":{
+      "acFrom":"cash",
+      "acTo":"cash",
+      "amount":"40.0000",
+      "asset":"USDT",
+      "userFrom":"parentUser",
+      "userTo":"subAccount"
+   }
+}
+```
+
+This api allows balance transfer between different sub user account.
+
+#### HTTP Request
+
+`POST <account-group>/api/pro/v2/subuser/subuser-transfer	`
+
+#### Signature
+
+You should sign the message in header as specified in [**Authenticate a RESTful Request**](#sign-request) section.
+
+#### Prehash String
+
+`<timestamp>+subuser-transfer`
+
+#### Request Parameters 
+
+Name           |  Type     | Required | Value Range               | Description
+-------------- | --------- | -------- | ------------------------- | -----------
+**amount**     | `String`  |   Yes    | Positive numerical string | Asset amount to transfer.
+ **asset**     | `String`  |   Yes    | Valid asset code          | 
+**userFrom**   | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
+ **userTo**    | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
+ **acFrom**    | `String`  |   Yes    | `cash`/`margin`/`futures` |
+  **acTo**     | `String`  |   Yes    | `cash`/`margin`/`futures` |
+
+
+#### Response Content
+
+Response `code` value 0 indicates successful transfer and `info` echos the request parameters. 
+
+
+#### Code Sample
+
+Please refer to python code to [transfer token among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py)

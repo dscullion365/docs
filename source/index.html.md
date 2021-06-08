@@ -93,6 +93,11 @@ See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascen
 
 ## Release Note
 
+**2021-06-08**
+
+* Added [balance transfer between sub account](#balance-transfer-for-subaccount). 
+
+
 **2020-08-10**
 
 * We have deprecated [list history orders API](#list-history-orders-deprecated) and replace it with [list history orders v2 API](#list-history-orders-v2). 
