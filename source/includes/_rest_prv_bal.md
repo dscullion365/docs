@@ -219,8 +219,8 @@ Please refer to python code to [transfer token among different accounts](https:/
 
 ```json
 {
-    "userFrom": "parentUser",  // support userId or username, pls use "parentUser" for parent account
-    "userTo": "subAccount",  // support userId or username, pls use "parentUser" for parent account
+    "userFrom": "parent-account-userId",  // support userId or username, pls use "parentUser" for parent account username
+    "userTo": "sub-account-userId",  // support userId or username, pls use "parentUser" for parent account username
     "acFrom": "cash",
     "acTo": "cash",
     "asset": "USDT",
@@ -238,8 +238,8 @@ Please refer to python code to [transfer token among different accounts](https:/
       "acTo":"cash",
       "amount":"40.0000",
       "asset":"USDT",
-      "userFrom":"parentUser",
-      "userTo":"subAccount"
+      "userFrom":"parent-account-userId",
+      "userTo":"sub-account-userId"
    }
 }
 ```
