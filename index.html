@@ -310,6 +310,9 @@
                         <li>
                           <a href="#balance-transfer" class="toc-h3 toc-link" data-title="Balance Transfer">Balance Transfer</a>
                         </li>
+                        <li>
+                          <a href="#balance-transfer-for-subaccount" class="toc-h3 toc-link" data-title="Balance Transfer for Subaccount">Balance Transfer for Subaccount</a>
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -526,6 +529,12 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 
 <p>See <a href="https://github.com/ascendex/ascendex-pro-api-demo">https://github.com/ascendex/ascendex-pro-api-demo</a> for more details.</p>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2021-06-08</strong></p>
+
+<ul>
+<li>Added <a href="#balance-transfer-for-subaccount">balance transfer between sub account</a>. </li>
+</ul>
+
 <p><strong>2020-08-10</strong></p>
 
 <ul>
@@ -1763,7 +1772,7 @@ only 500 bars will be returned. </li>
 </span></code></pre>
 <p>This api allows balance transfer between different accounts of the same user.</p>
 <h4 id='http-request-4'>HTTP Request</h4>
-<p><code>GET &lt;account-group&gt;/api/pro/v1/transfer</code></p>
+<p><code>POST &lt;account-group&gt;/api/pro/v1/transfer</code></p>
 <h4 id='signature-4'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string-4'>Prehash String</h4>
@@ -1807,12 +1816,102 @@ only 500 bars will be returned. </li>
 <td></td>
 </tr>
 </tbody></table>
-
-<p>Please note, we only support direct balance transfer between <code>cash</code> and <code>margin</code>, <code>cash</code> and <code>futures</code>.</p>
 <h4 id='response-content-3'>Response Content</h4>
 <p>Response <code>code</code> value 0 indicate successful transfer. </p>
 <h4 id='code-sample-3'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py">transfer token amount different accounts</a></p>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py">transfer token among different accounts</a></p>
+<h3 id='balance-transfer-for-subaccount'>Balance Transfer for Subaccount</h3>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parentUser"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">support</span><span class="w"> </span><span class="err">userId</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">username</span><span class="p">,</span><span class="w"> </span><span class="err">pls</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="s2">"parentUser"</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">parent</span><span class="w"> </span><span class="err">account</span><span class="w">
+    </span><span class="s2">"userTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subAccount"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">support</span><span class="w"> </span><span class="err">userId</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">username</span><span class="p">,</span><span class="w"> </span><span class="err">pls</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="s2">"parentUser"</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">parent</span><span class="w"> </span><span class="err">account</span><span class="w">
+    </span><span class="s2">"acFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"acTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"info"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"acFrom"</span><span class="p">:</span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"acTo"</span><span class="p">:</span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"40.0000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"asset"</span><span class="p">:</span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"userFrom"</span><span class="p">:</span><span class="s2">"parentUser"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"userTo"</span><span class="p">:</span><span class="s2">"subAccount"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This api allows balance transfer between different sub user account.</p>
+<h4 id='http-request-5'>HTTP Request</h4>
+<p><code>POST &lt;account-group&gt;/api/pro/v2/subuser/subuser-transfer</code></p>
+<h4 id='signature-5'>Signature</h4>
+<p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
+<h4 id='prehash-string-5'>Prehash String</h4>
+<p><code>&lt;timestamp&gt;+subuser-transfer</code></p>
+<h4 id='request-parameters-4'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>amount</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td>Positive numerical string</td>
+<td>Asset amount to transfer.</td>
+</tr>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td>Valid asset code</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>userFrom</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td>userId or username</td>
+<td>use <code>parentUser</code> as parent account username</td>
+</tr>
+<tr>
+<td><strong>userTo</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td>userId or username</td>
+<td>use <code>parentUser</code> as parent account username</td>
+</tr>
+<tr>
+<td><strong>acFrom</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>acTo</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id='response-content-4'>Response Content</h4>
+<p>Response <code>code</code> value 0 indicates successful transfer and <code>info</code> echos the request parameters. </p>
+<h4 id='code-sample-4'>Code Sample</h4>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py">transfer token among different sub users</a></p>
 <h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
