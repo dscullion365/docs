@@ -244,11 +244,11 @@ Please refer to python code to [transfer token among different accounts](https:/
 }
 ```
 
-This api allows balance transfer between different sub user account.
+This api allows balance transfer between the parent and sub accounts and between two sub accounts. You can only call this API from the parent account.
 
 #### HTTP Request
 
-`POST <account-group>/api/pro/v2/subuser/subuser-transfer	`
+`POST <account-group>/api/pro/v2/subuser/subuser-transfer`
 
 #### Signature
 
