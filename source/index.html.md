@@ -93,6 +93,10 @@ See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascen
 
 ## Release Note
 
+**2021-06-15**
+
+* Introduced the [List all Assets (version v2)](#list-all-assets) api. The version v1 api will remain available. However, you are highly recommended to upgrade. 
+
 **2020-08-10**
 
 * We have deprecated [list history orders API](#list-history-orders-deprecated) and replace it with [list history orders v2 API](#list-history-orders-v2). 
