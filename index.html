@@ -529,6 +529,12 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 
 <p>See <a href="https://github.com/ascendex/ascendex-pro-api-demo">https://github.com/ascendex/ascendex-pro-api-demo</a> for more details.</p>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2021-06-15</strong></p>
+
+<ul>
+<li>Introduced the <a href="#list-all-assets">List all Assets (version v2)</a> api. The version v1 api will remain available. However, you are highly recommended to upgrade. </li>
+</ul>
+
 <p><strong>2021-06-08</strong></p>
 
 <ul>
@@ -651,7 +657,7 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>List all Assets</p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/assets"
+<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v2/assets"
 </code></pre>
 <blockquote>
 <p>Sample Response </p>
@@ -659,19 +665,36 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">   
-        </span><span class="s2">"assetCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"assetName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"precisionScale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"nativeScale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"withdrawalFee"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0E-4"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"minWithdrawalAmt"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Normal"</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"assetCode"</span><span class="p">:</span><span class="w">      </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assetName"</span><span class="p">:</span><span class="w">      </span><span class="s2">"Tether"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"precisionScale"</span><span class="p">:</span><span class="w">  </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nativeScale"</span><span class="p">:</span><span class="w">     </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blockChain"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"chainName"</span><span class="p">:</span><span class="w">        </span><span class="s2">"Omni"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"withdrawFee"</span><span class="p">:</span><span class="w">      </span><span class="s2">"30.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"allowDeposit"</span><span class="p">:</span><span class="w">      </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"allowWithdraw"</span><span class="p">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"minDepositAmt"</span><span class="p">:</span><span class="w">    </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"minWithdrawal"</span><span class="p">:</span><span class="w">    </span><span class="s2">"50.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"numConfirmations"</span><span class="p">:</span><span class="w">  </span><span class="mi">3</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"chainName"</span><span class="p">:</span><span class="w">        </span><span class="s2">"ERC20"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"withdrawFee"</span><span class="p">:</span><span class="w">      </span><span class="s2">"10.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"allowDeposit"</span><span class="p">:</span><span class="w">      </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"allowWithdraw"</span><span class="p">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"minDepositAmt"</span><span class="p">:</span><span class="w">    </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"minWithdrawal"</span><span class="p">:</span><span class="w">    </span><span class="s2">"20.0"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"numConfirmations"</span><span class="p">:</span><span class="w">  </span><span class="mi">12</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='http-request'>HTTP Request</h4>
-<p><code>GET /api/pro/v1/assets</code></p>
+<p><code>GET /api/pro/v2/assets</code></p>
 
 <p>You can obtain a list of all assets listed on the exchange through this API.</p>
 <h4 id='response-content'>Response Content</h4>
@@ -693,9 +716,9 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td>full name of the asset, e.g. <code>&quot;Bitcoin&quot;</code></td>
 </tr>
 <tr>
-<td><code>minWithdrawalAmt</code></td>
-<td><code>String</code></td>
-<td>minimum amount required for the withdrawal request e.g. &quot;5.0E-4&quot;</td>
+<td><code>precisionScale</code></td>
+<td><code>Int</code></td>
+<td>scale used in internal position keeping.</td>
 </tr>
 <tr>
 <td><code>nativeScale</code></td>
@@ -703,9 +726,25 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td>scale used in deposit/withdraw transaction from/to chain.</td>
 </tr>
 <tr>
-<td><code>positionScale</code></td>
-<td><code>Int</code></td>
-<td>scale used in internal position keeping.</td>
+<td><code>blockChain</code></td>
+<td><code>List</code></td>
+<td>block chain specific details</td>
+</tr>
+</tbody></table>
+
+<p>Blockchain specific details</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>chainName</code></td>
+<td><code>String</code></td>
+<td>name of the blockchain</td>
 </tr>
 <tr>
 <td><code>withdrawFee</code></td>
@@ -713,9 +752,29 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td>fee charged for each withdrawal request. e.g. &quot;0.01&quot;</td>
 </tr>
 <tr>
-<td><code>status</code></td>
+<td><code>allowDepoist</code></td>
+<td><code>Boolean</code></td>
+<td>allow deposit</td>
+</tr>
+<tr>
+<td><code>allowWithdraw</code></td>
+<td><code>Boolean</code></td>
+<td>allow withdrawal</td>
+</tr>
+<tr>
+<td><code>minDepositAmt</code></td>
 <td><code>String</code></td>
-<td>values: <code>Normal</code>, <code>NoDeposit</code>, <code>NoWithdraw</code>, <code>NoTransaction</code></td>
+<td>minimum amount required for the deposit request e.g. &quot;0.0&quot;</td>
+</tr>
+<tr>
+<td><code>minWithdrawalAmt</code></td>
+<td><code>String</code></td>
+<td>minimum amount required for the withdrawal request e.g. &quot;50&quot;</td>
+</tr>
+<tr>
+<td><code>numConfirmations</code></td>
+<td><code>Int</code></td>
+<td>number of confirmations needed for the exchange to recoganize a deposit</td>
 </tr>
 </tbody></table>
 <h3 id='list-all-products'>List all Products</h3>
