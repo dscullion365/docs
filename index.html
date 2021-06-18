@@ -313,6 +313,9 @@
                         <li>
                           <a href="#balance-transfer-for-subaccount" class="toc-h3 toc-link" data-title="Balance Transfer for Subaccount">Balance Transfer for Subaccount</a>
                         </li>
+                        <li>
+                          <a href="#balance-transfer-history-for-subaccount" class="toc-h3 toc-link" data-title="Balance Transfer history for Subaccount">Balance Transfer history for Subaccount</a>
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -1971,6 +1974,109 @@ only 500 bars will be returned. </li>
 <p>Response <code>code</code> value 0 indicates successful transfer and <code>info</code> echos the request parameters. </p>
 <h4 id='code-sample-4'>Code Sample</h4>
 <p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py">transfer token among different sub users</a></p>
+<h3 id='balance-transfer-history-for-subaccount'>Balance Transfer history for Subaccount</h3>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"subUserId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"totalSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1620125922493</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"userFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ParentUser"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"userTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-account-username"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"acFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futures"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"acTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This api allows to fetch balance transfer history among different sub users based on given filtering conditions. You can only call this API from the parent account.</p>
+<h4 id='http-request-6'>HTTP Request</h4>
+<p><code>POST &lt;account-group&gt;/api/pro/v2/subuser/subuser-transfer-hist</code></p>
+<h4 id='signature-6'>Signature</h4>
+<p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
+<h4 id='prehash-string-6'>Prehash String</h4>
+<p><code>&lt;timestamp&gt;+subuser-transfer-hist</code></p>
+<h4 id='request-parameters-5'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>No</td>
+<td>Valid asset code</td>
+<td>asset to query</td>
+</tr>
+<tr>
+<td><strong>subUserId</strong></td>
+<td><code>String</code></td>
+<td>No</td>
+<td>userId</td>
+<td>user id to query</td>
+</tr>
+<tr>
+<td><strong>startTime</strong></td>
+<td><code>Long</code></td>
+<td>No</td>
+<td>timestamp in milliseconds</td>
+<td>start time to query</td>
+</tr>
+<tr>
+<td><strong>endTime</strong></td>
+<td><code>Long</code></td>
+<td>No</td>
+<td>timestamp in milliseconds</td>
+<td>end time to query</td>
+</tr>
+<tr>
+<td><strong>page</strong></td>
+<td><code>Int</code></td>
+<td>Yes</td>
+<td>number of page</td>
+<td>number of page</td>
+</tr>
+<tr>
+<td><strong>pageSize</strong></td>
+<td><code>Int</code></td>
+<td>Yes</td>
+<td>1-10</td>
+<td>record size in one page</td>
+</tr>
+</tbody></table>
+<h4 id='response-content-5'>Response Content</h4>
+<p>Response <code>code</code> value 0 indicates successful query and <code>data</code> shows query result. </p>
+<h4 id='code-sample-5'>Code Sample</h4>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py">transfer history among different sub users</a></p>
 <h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
