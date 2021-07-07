@@ -278,3 +278,81 @@ Response `code` value 0 indicates successful transfer and `info` echos the reque
 #### Code Sample
 
 Please refer to python code to [transfer token among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py)
+
+
+### Balance Transfer history for Subaccount
+
+> Request
+
+```json
+{
+    "subUserId": null,
+    "asset": null,
+    "startTime": null,
+    "endTime": null,
+    "page": 1,
+    "pageSize": 10
+}
+ ```
+
+> Response
+
+```json
+{
+    "code": 0,
+    "data": {
+        "page": 1,
+        "pageSize": 10,
+        "totalSize": 6,
+        "limit": 10,
+        "data": [
+            {
+                "time": 1620125922493,
+                "userFrom": "ParentUser",
+                "userTo": "sub-account-username",
+                "acFrom": "futures",
+                "acTo": "cash",
+                "asset": "USDT",
+                "amount": "11",
+                "status": "SUCCESS"
+            }
+            ...
+        ]
+    }
+}
+```
+
+This api allows to fetch balance transfer history among different sub users based on given filtering conditions. You can only call this API from the parent account.
+
+#### HTTP Request
+
+`POST <account-group>/api/pro/v2/subuser/subuser-transfer-hist`
+
+#### Signature
+
+You should sign the message in header as specified in [**Authenticate a RESTful Request**](#sign-request) section.
+
+#### Prehash String
+
+`<timestamp>+subuser-transfer-hist`
+
+#### Request Parameters 
+
+Name           |  Type     | Required | Value Range               | Description
+-------------- | --------- | -------- | ------------------------- | -----------
+ **asset**     | `String`  |    No    | Valid asset code          | asset to query
+**subUserId**  | `String`  |    No    |   userId                  | user id to query
+**startTime**  |  `Long`   |    No    | timestamp in milliseconds | start time to query
+ **endTime**   |  `Long`   |    No    | timestamp in milliseconds | end time to query
+  **page**     |   `Int`   |   Yes    | number of page            | number of page
+**pageSize**   |   `Int`   |   Yes    |     1-10                  | record size in one page
+
+
+#### Response Content
+
+Response `code` value 0 indicates successful query and `data` shows query result. 
+
+
+#### Code Sample
+
+Please refer to python code to [transfer history among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py)
