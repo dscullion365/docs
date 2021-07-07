@@ -56,7 +56,9 @@ includes:
   - ws_req_trades
   - ws_req_margin_risk
   - expr
-  - error_code
+  - ap_enum
+  - ap_enum_blockchain
+  - ap_enum_error_code
 
 header_navigators:
   - <a href="https://ascendex.github.io/ascendex-pro-api/" class="current">Cash/Margin APIs</a>
