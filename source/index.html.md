@@ -93,6 +93,20 @@ We provide comprehensive demos (currently available in python). We provide two t
 See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascendex/ascendex-pro-api-demo) for more details.
 
 
+## Market Making Incentive Program
+
+AscendEX offers a Market Making Incentive Program for professional liquidity providers. Key benefits of this program include:
+
+* Favorable fee structure.
+* Monthly bonus pending satisfying KPI.
+* Direct Market Access and Co-location service.
+
+Users with good maker strategies and significant trading volume are welcome to participate in this long-term program. If your account has a trading volume of more than 150,000,000 USDT in the last 30 days on any exchange, please send the following information via email to institution@ascendex.com, with the subject "Market Maker Incentive Application":
+
+* One AscendEX account ID.
+* A brief explanation of your market making method (NO detail is needed), as well as estimation of maker orders' percentage.
+
+
 ## Release Note
 
 **2021-06-15**
