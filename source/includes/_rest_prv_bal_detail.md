@@ -277,6 +277,7 @@ Name           |  Type     | Required |           Value Range         | Descript
 `order` field provides an array of asset balance detail from order fill event.
 
 `order` schema
+
  Name            | Type        | Description                    | Sample Response
 -----------------| ----------- | -------------------------------| -------------------------
 **liquidityInd** | `String`    | liquidity indicator            | `RemovedLiquidity` for taker order, `AddedLiquidity` for maker order, or `NULL_VAL`
