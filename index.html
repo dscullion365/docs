@@ -2583,15 +2583,53 @@ only 500 bars will be returned. </li>
 <h5 id='order'>Order</h5>
 <p><code>order</code> field provides an array of asset balance detail from order fill event.</p>
 
-<p><code>order</code> schema
- Name            | Type        | Description                    | Sample Response
------------------| ----------- | -------------------------------| -------------------------
-<strong>liquidityInd</strong> | <code>String</code>    | liquidity indicator            | <code>RemovedLiquidity</code> for taker order, <code>AddedLiquidity</code> for maker order, or <code>NULL_VAL</code>
-<strong>orderId</strong>      | <code>String</code>    | orderId                        | <code>market</code>, <code>limit</code>
-<strong>orderType</strong>    | <code>String</code>    | order type                     | <code>buy</code>, <code>sell</code>
-<strong>sn</strong>           | <code>Long</code>      | sequence number                |
-<strong>transactTime</strong> | <code>Long</code>      | transactTime in milli seconds  |
-<strong>data</strong>         | <code>Json Array</code>| list of order info json objects| see detail below</p>
+<p><code>order</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>liquidityInd</strong></td>
+<td><code>String</code></td>
+<td>liquidity indicator</td>
+<td><code>RemovedLiquidity</code> for taker order, <code>AddedLiquidity</code> for maker order, or <code>NULL_VAL</code></td>
+</tr>
+<tr>
+<td><strong>orderId</strong></td>
+<td><code>String</code></td>
+<td>orderId</td>
+<td><code>market</code>, <code>limit</code></td>
+</tr>
+<tr>
+<td><strong>orderType</strong></td>
+<td><code>String</code></td>
+<td>order type</td>
+<td><code>buy</code>, <code>sell</code></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>transactTime</strong></td>
+<td><code>Long</code></td>
+<td>transactTime in milli seconds</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td><code>Json Array</code></td>
+<td>list of order info json objects</td>
+<td>see detail below</td>
+</tr>
+</tbody></table>
 
 <p>order balance detail by asset</p>
 
