@@ -23,6 +23,7 @@ includes:
   - rest_act_info
   - rest_act_fee
   - rest_prv_bal
+  - rest_prv_bal_detail
   - rest_prv_wal
   - rest_prv_wal_deposit
   - rest_prv_wal_withdraw
@@ -108,6 +109,10 @@ Users with good maker strategies and significant trading volume are welcome to p
 
 
 ## Release Note
+
+**2021-07-16**
+
+* Introduced the experimental [Balance Snapshot](#balance-snapshot) and [Order and Balance Detail](#order-and-balance-detail) api.
 
 **2021-06-15**
 
