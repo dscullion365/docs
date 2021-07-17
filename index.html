@@ -2136,22 +2136,21 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Cash Account Balance Snapshot - Sample response </p>
 </blockquote>
-<pre class="highlight plaintext"><code>
-{
-    "meta": {
-        "ac": "cash",
-        "accountId": "MUXFNEYUJJJ93CRYXT4LTCIDIJPCFNIX",
-        "sn": 10870097597,
-        "snapshotTime": 1617148800000
-    },
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUXFNEYUJJJ93CRYXT4LTCIDIJPCFNIX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10870097597</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snapshotTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617148800000</span><span class="w">
+    </span><span class="p">},</span><span class="w">
 
-    "snapshot": [
-        {"asset": "AKRO", "totalBalance": "1858"},
-        {"asset": "ALTBEAR", "totalBalance": "250"},
-        {"asset": "ANKR", "totalBalance": "200"}
-    ]
-}
-</code></pre><h4 id='request-parameters'>Request Parameters</h4>
+    </span><span class="s2">"snapshot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKRO"</span><span class="p">,</span><span class="w"> </span><span class="s2">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1858"</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALTBEAR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"250"</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ANKR"</span><span class="p">,</span><span class="w"> </span><span class="s2">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2471,35 +2470,35 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Futures Account Balance - Sample response </p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "collateralBalance": [
-        {
-            "asset": "USDT",
-            "totalBalance": "554.896891579"
-        }
-    ],
-    "contractBalance": [
-        {
-            "contract": "BTC-PERP",
-            "futuresAssetBalance": "0",
-            "isolatedMargin": "0",
-            "refCostBalance": "0"
-        },
-        {
-            "contract": "ETH-PERP",
-            "futuresAssetBalance": "0",
-            "isolatedMargin": "0",
-            "refCostBalance": "0"
-        }
-    ],
-    "meta": {
-        "ac": "futures",
-        "accountId": "futTv9jxEyfQNLT1FSZdohpF8W9RKGjr",
-        "sn": 10870105241,
-        "snapshotTime": 1617148800000
-    }
-}
-</code></pre><h4 id='request-parameters-2'>Request Parameters</h4>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"collateralBalance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554.896891579"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"contractBalance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-PERP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"futuresAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"isolatedMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"refCostBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-PERP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"futuresAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"isolatedMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"refCostBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futures"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futTv9jxEyfQNLT1FSZdohpF8W9RKGjr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10870105241</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snapshotTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617148800000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='request-parameters-2'>Request Parameters</h4>
 <table><thead>
 <tr>
 <th>Name</th>
