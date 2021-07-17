@@ -23,8 +23,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 > Cash Account Balance Snapshot - Sample response 
 
-```
-
+```json
 {
     "meta": {
         "ac": "cash",
@@ -215,7 +214,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 > Futures Account Balance - Sample response 
 
-```
+```json
 {
     "collateralBalance": [
         {
