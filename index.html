@@ -322,6 +322,17 @@
                     </ul>
                   </li>
                   <li>
+                    <a href="#balance-snapshot-and-update-experimential-api" class="toc-h2 toc-link" data-title="Balance Snapshot And Update (Experimential API)">Balance Snapshot And Update (<strong>Experimential API</strong>)</a>
+                    <ul class="toc-list-h3">
+                        <li>
+                          <a href="#balance-snapshot" class="toc-h3 toc-link" data-title="Balance Snapshot">Balance Snapshot</a>
+                        </li>
+                        <li>
+                          <a href="#order-and-balance-detail" class="toc-h3 toc-link" data-title="Order and Balance Detail">Order and Balance Detail</a>
+                        </li>
+                    </ul>
+                  </li>
+                  <li>
                     <a href="#wallet" class="toc-h2 toc-link" data-title="Wallet">Wallet</a>
                     <ul class="toc-list-h3">
                         <li>
@@ -558,6 +569,12 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 <li>A brief explanation of your market making method (NO detail is needed), as well as estimation of maker orders&#39; percentage.</li>
 </ul>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2021-07-16</strong></p>
+
+<ul>
+<li>Introduced the experimental <a href="#balance-snapshot">Balance Snapshot</a> and <a href="#order-and-balance-detail">Order and Balance Detail</a> api.</li>
+</ul>
+
 <p><strong>2021-06-15</strong></p>
 
 <ul>
@@ -2103,6 +2120,587 @@ only 500 bars will be returned. </li>
 <p>Response <code>code</code> value 0 indicates successful query and <code>data</code> shows query result. </p>
 <h4 id='code-sample-5'>Code Sample</h4>
 <p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py">transfer history among different sub users</a></p>
+<h2 id='balance-snapshot-and-update-experimential-api'>Balance Snapshot And Update (<strong>Experimential API</strong>)</h2>
+<p>Here we provide experimental API to get daily balance snapshot and intraday balance and order fills update details. We recommend calling balance snapshot to get balance at the beginning of the day, and get the sequence number sn; then start to query balance or order fills update from sn + 1.</p>
+
+<p>Please note we enforcerate limit 8 / minute.</p>
+<h3 id='balance-snapshot'>Balance Snapshot</h3>
+<p>This API returns balance snapshot on daily basis.</p>
+<h4 id='http-request'>HTTP Request</h4>
+<p><code>GET  api/pro/v1/data/balance/snapshot</code></p>
+<h4 id='signature'>Signature</h4>
+<p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
+<h4 id='prehash-string'>Prehash String</h4>
+<p><code>&lt;timestamp&gt;+balance/snapshot</code></p>
+
+<blockquote>
+<p>Cash Account Balance Snapshot - Sample response </p>
+</blockquote>
+<pre class="highlight plaintext"><code>
+{
+    "meta": {
+        "ac": "cash",
+        "accountId": "MUXFNEYUJJJ93CRYXT4LTCIDIJPCFNIX",
+        "sn": 10870097597,
+        "snapshotTime": 1617148800000
+    },
+
+    "snapshot": [
+        {"asset": "AKRO", "totalBalance": "1858"},
+        {"asset": "ALTBEAR", "totalBalance": "250"},
+        {"asset": "ANKR", "totalBalance": "200"}
+    ]
+}
+</code></pre><h4 id='request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>account</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td><code>cash</code>, <code>margin</code>, <code>futures</code></td>
+<td>account type</td>
+</tr>
+<tr>
+<td><strong>date</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td><code>YYYY-mm-dd</code></td>
+<td>balance date</td>
+</tr>
+</tbody></table>
+<h4 id='response-content'>Response Content</h4>
+<p>Response for cash/margin and futures are different (same <code>meta</code> field).</p>
+<h5 id='cash-margin'>Cash/Margin</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>meta</strong></td>
+<td><code>Json</code></td>
+<td><code>meta</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>snapshot</strong></td>
+<td><code>Json Array</code></td>
+<td><code>snapshot</code> info. See detail below</td>
+</tr>
+</tbody></table>
+
+<p><code>meta</code> field provides some basic info.</p>
+
+<p><code>meta</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ac</strong></td>
+<td><code>String</code></td>
+<td>account category</td>
+<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+</tr>
+<tr>
+<td><strong>accountId</strong></td>
+<td><code>String</code></td>
+<td>accountId</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>snapshotTime</strong></td>
+<td><code>Long</code></td>
+<td>snapshotTime in milli seconds</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>snapshot</code> field provides asset balance snapshot info.</p>
+
+<p><code>snapshot</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>totalBalance</strong></td>
+<td><code>String</code></td>
+<td>current asset total balance</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+</tbody></table>
+<h5 id='futures'>Futures</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>meta</strong></td>
+<td><code>Json</code></td>
+<td><code>meta</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>collateralBalance</strong></td>
+<td><code>Json Array</code></td>
+<td><code>collateral balance</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>contractBalance</strong></td>
+<td><code>Json Array</code></td>
+<td><code>contract balance</code> info. See detail below</td>
+</tr>
+</tbody></table>
+
+<p><code>meta</code> field provides some basic info.</p>
+
+<p><code>meta</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ac</strong></td>
+<td><code>String</code></td>
+<td>account category</td>
+<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+</tr>
+<tr>
+<td><strong>accountId</strong></td>
+<td><code>String</code></td>
+<td>accountId</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>snapshotTime</strong></td>
+<td><code>Long</code></td>
+<td>snapshotTime in milli seconds</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><code>collateralBalance</code> field provides array of ‘asset’ and ‘totalBalance’ for collateral balance.</p>
+
+<p><code>collateralBalance</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>totalBalance</strong></td>
+<td><code>String</code></td>
+<td>current asset total balance</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+</tbody></table>
+
+<p><code>collateralBalance</code> field provides array of ‘asset’ and ‘totalBalance’ for collateral balance.</p>
+
+<p><code>collateralBalance</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>contract</strong></td>
+<td><code>String</code></td>
+<td>contract name</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>futuresAssetBalance</strong></td>
+<td><code>String</code></td>
+<td>current contract position</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>isolatedMargin</strong></td>
+<td><code>String</code></td>
+<td>Isolated margin</td>
+<td><code>&quot;134.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>refCostBalance</strong></td>
+<td><code>String</code></td>
+<td>Reference cost</td>
+<td><code>&quot;34.56&quot;</code></td>
+</tr>
+</tbody></table>
+<h4 id='code-sample'>Code Sample</h4>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query balance snapshot</a></p>
+<h3 id='order-and-balance-detail'>Order and Balance Detail</h3>
+<p>This API is for intraday balance change detail from balance event and order fillss.</p>
+<h4 id='http-request-2'>HTTP Request</h4>
+<p><code>GET  api/pro/v1/data/balance/history</code></p>
+<h4 id='prehash-string-2'>Prehash String</h4>
+<p><code>&lt;timestamp&gt;+balance/history</code></p>
+
+<blockquote>
+<p>Cash Account Balance - Sample response </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MPXFNEYEKFK93CREYX3LTCIDIJPCFNIX"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">  
+                    </span><span class="s2">"curBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0301"</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w"> 
+                    </span><span class="s2">"deltaQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"curBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1628.51466633"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deltaQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-5.4175"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"curBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1628.51466633"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fee"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deltaQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-0.00270875"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"liquidityInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RemovedLiquidity"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r17873f13ab2U7684538613bbtcpuHLA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">16823297563</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1616852892564</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX-S"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"curBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40000.112249285"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deltaQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000007"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Btmxmining"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10888843672</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617213942176</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTMX-S"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"curBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40000.112249159"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"deltaQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000029"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Btmxmining"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10870559479</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617149141108</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='signature-2'>Signature</h4>
+<p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
+<h4 id='prehash-string-3'>Prehash String</h4>
+<p><code>&lt;timestamp&gt;+balance/history</code></p>
+
+<blockquote>
+<p>Futures Account Balance - Sample response </p>
+</blockquote>
+<pre class="highlight plaintext"><code>{
+    "collateralBalance": [
+        {
+            "asset": "USDT",
+            "totalBalance": "554.896891579"
+        }
+    ],
+    "contractBalance": [
+        {
+            "contract": "BTC-PERP",
+            "futuresAssetBalance": "0",
+            "isolatedMargin": "0",
+            "refCostBalance": "0"
+        },
+        {
+            "contract": "ETH-PERP",
+            "futuresAssetBalance": "0",
+            "isolatedMargin": "0",
+            "refCostBalance": "0"
+        }
+    ],
+    "meta": {
+        "ac": "futures",
+        "accountId": "futTv9jxEyfQNLT1FSZdohpF8W9RKGjr",
+        "sn": 10870105241,
+        "snapshotTime": 1617148800000
+    }
+}
+</code></pre><h4 id='request-parameters-2'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>account</strong></td>
+<td><code>String</code></td>
+<td>Yes</td>
+<td><code>cash</code>, <code>margin</code>, <code>futures</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>startOffset</strong></td>
+<td><code>Long</code></td>
+<td>Yes</td>
+<td>true / false</td>
+<td>Start offset</td>
+</tr>
+<tr>
+<td><strong>limit</strong></td>
+<td><code>Int</code></td>
+<td>No</td>
+<td>1 to 500</td>
+<td>Number of records. max 500</td>
+</tr>
+</tbody></table>
+<h4 id='response-content-2'>Response Content</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>meta</strong></td>
+<td><code>Json</code></td>
+<td><code>meta</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>order</strong></td>
+<td><code>Json Array</code></td>
+<td><code>order</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>balance</strong></td>
+<td><code>Json Array</code></td>
+<td><code>balance</code> info. See detail below</td>
+</tr>
+</tbody></table>
+<h5 id='meta'>Meta</h5>
+<p><code>meta</code> field provides some basic info.</p>
+
+<p><code>meta</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ac</strong></td>
+<td><code>String</code></td>
+<td>account category</td>
+<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+</tr>
+<tr>
+<td><strong>accountId</strong></td>
+<td><code>String</code></td>
+<td>accountId</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id='order'>Order</h5>
+<p><code>order</code> field provides an array of asset balance detail from order fill event.</p>
+
+<p><code>order</code> schema
+ Name            | Type        | Description                    | Sample Response
+-----------------| ----------- | -------------------------------| -------------------------
+<strong>liquidityInd</strong> | <code>String</code>    | liquidity indicator            | <code>RemovedLiquidity</code> for taker order, <code>AddedLiquidity</code> for maker order, or <code>NULL_VAL</code>
+<strong>orderId</strong>      | <code>String</code>    | orderId                        | <code>market</code>, <code>limit</code>
+<strong>orderType</strong>    | <code>String</code>    | order type                     | <code>buy</code>, <code>sell</code>
+<strong>sn</strong>           | <code>Long</code>      | sequence number                |
+<strong>transactTime</strong> | <code>Long</code>      | transactTime in milli seconds  |
+<strong>data</strong>         | <code>Json Array</code>| list of order info json objects| see detail below</p>
+
+<p>order balance detail by asset</p>
+
+<p><code>data</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>curBalance</strong></td>
+<td><code>String</code></td>
+<td>asset balance after this transaction</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>dataType</strong></td>
+<td><code>String</code></td>
+<td><code>trade</code> for trading asset; <code>fee</code> for fee balance asset</td>
+<td><code>trade</code>, <code>fee</code></td>
+</tr>
+<tr>
+<td><strong>deltaQty</strong></td>
+<td><code>String</code></td>
+<td>balance change in this transaction</td>
+<td><code>100</code></td>
+</tr>
+</tbody></table>
+<h5 id='balance'>Balance</h5>
+<p><code>balance</code> field provides an array of asset balance detail due to balance event.</p>
+
+<p><code>balance</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>eventType</strong></td>
+<td><code>String</code></td>
+<td>balance event type</td>
+<td><code>deposit</code>, <code>withdrawal</code></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>transactTime</strong></td>
+<td><code>Long</code></td>
+<td>transactTime in milli seconds</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td><code>Json Array</code></td>
+<td>list of balance info json objects</td>
+<td>see detail below</td>
+</tr>
+</tbody></table>
+
+<p><code>data</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>curBalance</strong></td>
+<td><code>String</code></td>
+<td>asset balance after this transaction</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>deltaQty</strong></td>
+<td><code>String</code></td>
+<td>balance change in this transaction</td>
+<td><code>100</code></td>
+</tr>
+</tbody></table>
+<h4 id='code-sample-2'>Code Sample</h4>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query order and balance detail</a></p>
 <h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
