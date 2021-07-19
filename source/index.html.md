@@ -83,15 +83,6 @@ to be fast, flexible, stable, and comprehensive.
   life cycle with only one indentifier (`orderId`). 
 * More detailed error message.
 
-## Demo codes
-
-We provide comprehensive demos (currently available in python). We provide two types of demo codes:
-
-* Short, self contained demo scripts that you can plugin to you larger system. 
-* Large, complex demo scripts to show you how to design a trading strategy using APIs from this document.
-
-See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascendex/ascendex-pro-api-demo) for more details.
-
 
 ## Market Making Incentive Program
 
@@ -105,6 +96,23 @@ Users with good maker strategies and significant trading volume are welcome to p
 
 * One AscendEX account ID.
 * A brief explanation of your market making method (NO detail is needed), as well as estimation of maker orders' percentage.
+
+
+
+## SDKs and Client Libraries
+
+### Official SDK
+
+**CCXT** is our authorized SDK provider and you may access the AscendEX API through CCXT. For more information, please visit: https://ccxt.trade.
+
+### Demo Code
+
+We provide comprehensive demos (currently available in python). We provide two types of demo codes:
+
+* Short, self contained demo scripts that you can plugin to you larger system. 
+* Large, complex demo scripts to show you how to design a trading strategy using APIs from this document.
+
+See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascendex/ascendex-pro-api-demo) for more details.
 
 
 ## Release Note
