@@ -1,5 +1,4 @@
-
-# Error Message
+## Error Message
 
 We structure our error message in three levels:
     * Error Group provide a broad error category (Error group id = error code / 10000)
@@ -10,7 +9,7 @@ In most situation, we provide simple error in this way: *{"code": XYABCDE, "reas
 
 Rich format error is derived from simple error, so you could get error message with same error *code* and *reason*, but different *message* content.
 
-## Error Base Group
+### Error Base Group
 
 We summary the major error group below.
 
@@ -25,7 +24,7 @@ SystemError  | 50  | 50XXXX | System related error
 BehaviorError| 90  | 90XXXX | Behavior error
 
 
-## 10XXXX - General Error 
+### 10XXXX - General Error 
 
 code   | reason                 | descripion
 -------|------------------------|---------
@@ -44,13 +43,13 @@ code   | reason                 | descripion
 100013 |INVALID_NUM_FORMAT      | Invalid number input
 100101 | UNKNOWN_ERROR          | Some unknown error
 
-## 15XXXX - Format Error
+### 15XXXX - Format Error
 
 code  | reason                 | descripion
 ------|------------------------|---------
 150001 |INVALID_JSON_FORMAT    | Require a valid json object
 
-## 20XXXX - Auth Error
+### 20XXXX - Auth Error
 
 Auth related errors.
 
@@ -72,7 +71,7 @@ code   | reason               | descripion
 200014 |RESTRICTED_ACCOUNT    | Account is restricted for certain activity, such as trading, or withdraw.
 200015 |PERMISSION_DENIED     | No enough permission for the operation
 
-## 30XXXX - Order Error
+### 30XXXX - Order Error
 
 Order place/cancel/query related errors. We usually provide rich format errors based on these simple ones.
 
@@ -94,7 +93,7 @@ code   | reason                  | descripion
 300021 | TRADING_DISABLED        | Trading is disabled on account or asset
 300031 | NO_MARKET_PRICE         | No market price for market type order trading
 
-## 31XXXX - Margin Error
+### 31XXXX - Margin Error
 
 Margin trading related errors.
 
@@ -106,14 +105,14 @@ code   | reason                  | descripion
 310004 | INVALID_MARGIN_ASSET    | This asset does not support margin trading
 310005 | INVALID_REFERENCE_PRICE | There is no valid reference price
 
-## 50XXXX - System Error
+### 50XXXX - System Error
 
 code   | reason                  | descripion
 -------|-------------------------|----------
 510001 | SERVER_ERROR            | Something wrong with server.
 
 
-## 90XXXX - Behavior Error
+### 90XXXX - Behavior Error
 
 code   | reason               | descripion
 -------|----------------------|----------

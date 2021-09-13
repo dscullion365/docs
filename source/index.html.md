@@ -23,6 +23,7 @@ includes:
   - rest_act_info
   - rest_act_fee
   - rest_prv_bal
+  - rest_prv_bal_detail
   - rest_prv_wal
   - rest_prv_wal_deposit
   - rest_prv_wal_withdraw
@@ -56,7 +57,9 @@ includes:
   - ws_req_trades
   - ws_req_margin_risk
   - expr
-  - error_code
+  - ap_enum
+  - ap_enum_blockchain
+  - ap_enum_error_code
 
 header_navigators:
   - <a href="https://ascendex.github.io/ascendex-pro-api/" class="current">Cash/Margin APIs</a>
@@ -81,7 +84,29 @@ to be fast, flexible, stable, and comprehensive.
   life cycle with only one indentifier (`orderId`). 
 * More detailed error message.
 
-## Demo codes
+
+## Market Making Incentive Program
+
+AscendEX offers a Market Making Incentive Program for professional liquidity providers. Key benefits of this program include:
+
+* Favorable fee structure.
+* Monthly bonus pending satisfying KPI.
+* Direct Market Access and Co-location service.
+
+Users with good maker strategies and significant trading volume are welcome to participate in this long-term program. If your account has a trading volume of more than 150,000,000 USDT in the last 30 days on any exchange, please send the following information via email to institution@ascendex.com, with the subject "Market Maker Incentive Application":
+
+* One AscendEX account ID.
+* A brief explanation of your market making method (NO detail is needed), as well as estimation of maker orders' percentage.
+
+
+
+## SDKs and Client Libraries
+
+### Official SDK
+
+**CCXT** is our authorized SDK provider and you may access the AscendEX API through CCXT. For more information, please visit: [https://ccxt.trade](https://ccxt.trade)
+
+### Demo Code
 
 We provide comprehensive demos (currently available in python). We provide two types of demo codes:
 
@@ -92,6 +117,18 @@ See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascen
 
 
 ## Release Note
+
+**2021-07-16**
+
+* Introduced the experimental [Balance Snapshot](#balance-snapshot) and [Order and Balance Detail](#order-and-balance-detail) api.
+
+**2021-06-15**
+
+* Introduced the [List all Assets (version v2)](#list-all-assets) api. The version v1 api will remain available. However, you are highly recommended to upgrade. 
+
+**2021-06-08**
+
+* Added [balance transfer between sub account](#balance-transfer-for-subaccount). 
 
 **2020-08-10**
 

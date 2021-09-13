@@ -184,7 +184,7 @@ This api allows balance transfer between different accounts of the same user.
 
 #### HTTP Request
 
-`GET <account-group>/api/pro/v1/transfer`
+`POST <account-group>/api/pro/v1/transfer`
 
 #### Signature
 
@@ -203,7 +203,6 @@ Name           |  Type     | Required | Value Range               | Description
 **fromAccount**| `String`  |   Yes    | `cash`/`margin`/`futures` |
 **toAccount**  | `String`  |   Yes    | `cash`/`margin`/`futures` |
 
- Please note, we only support direct balance transfer between `cash` and `margin`, `cash` and `futures`.
 
 #### Response Content
 
@@ -212,4 +211,148 @@ Response `code` value 0 indicate successful transfer.
 
 #### Code Sample
 
-Please refer to python code to [transfer token amount different accounts](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py)
+Please refer to python code to [transfer token among different accounts](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py)
+
+### Balance Transfer for Subaccount
+
+> Request
+
+```json
+{
+    "userFrom": "parent-account-userId",  // support userId or username, pls use "parentUser" for parent account username
+    "userTo": "sub-account-userId",  // support userId or username, pls use "parentUser" for parent account username
+    "acFrom": "cash",
+    "acTo": "cash",
+    "asset": "USDT",
+    "amount": "40"
+}
+ ```
+
+> Response
+
+```json
+{
+   "code":0,
+   "info":{
+      "acFrom":"cash",
+      "acTo":"cash",
+      "amount":"40.0000",
+      "asset":"USDT",
+      "userFrom":"parent-account-userId",
+      "userTo":"sub-account-userId"
+   }
+}
+```
+
+This api allows balance transfer between the parent and sub accounts and between two sub accounts. You can only call this API from the parent account.
+
+#### HTTP Request
+
+`POST <account-group>/api/pro/v2/subuser/subuser-transfer`
+
+#### Signature
+
+You should sign the message in header as specified in [**Authenticate a RESTful Request**](#sign-request) section.
+
+#### Prehash String
+
+`<timestamp>+subuser-transfer`
+
+#### Request Parameters 
+
+Name           |  Type     | Required | Value Range               | Description
+-------------- | --------- | -------- | ------------------------- | -----------
+**amount**     | `String`  |   Yes    | Positive numerical string | Asset amount to transfer.
+ **asset**     | `String`  |   Yes    | Valid asset code          | 
+**userFrom**   | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
+ **userTo**    | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
+ **acFrom**    | `String`  |   Yes    | `cash`/`margin`/`futures` |
+  **acTo**     | `String`  |   Yes    | `cash`/`margin`/`futures` |
+
+
+#### Response Content
+
+Response `code` value 0 indicates successful transfer and `info` echos the request parameters. 
+
+
+#### Code Sample
+
+Please refer to python code to [transfer token among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py)
+
+
+### Balance Transfer history for Subaccount
+
+> Request
+
+```json
+{
+    "subUserId": null,
+    "asset": null,
+    "startTime": null,
+    "endTime": null,
+    "page": 1,
+    "pageSize": 10
+}
+ ```
+
+> Response
+
+```json
+{
+    "code": 0,
+    "data": {
+        "page": 1,
+        "pageSize": 10,
+        "totalSize": 6,
+        "limit": 10,
+        "data": [
+            {
+                "time": 1620125922493,
+                "userFrom": "ParentUser",
+                "userTo": "sub-account-username",
+                "acFrom": "futures",
+                "acTo": "cash",
+                "asset": "USDT",
+                "amount": "11",
+                "status": "SUCCESS"
+            }
+            ...
+        ]
+    }
+}
+```
+
+This api allows to fetch balance transfer history among different sub users based on given filtering conditions. You can only call this API from the parent account.
+
+#### HTTP Request
+
+`POST <account-group>/api/pro/v2/subuser/subuser-transfer-hist`
+
+#### Signature
+
+You should sign the message in header as specified in [**Authenticate a RESTful Request**](#sign-request) section.
+
+#### Prehash String
+
+`<timestamp>+subuser-transfer-hist`
+
+#### Request Parameters 
+
+Name           |  Type     | Required | Value Range               | Description
+-------------- | --------- | -------- | ------------------------- | -----------
+ **asset**     | `String`  |    No    | Valid asset code          | asset to query
+**subUserId**  | `String`  |    No    |   userId                  | user id to query
+**startTime**  |  `Long`   |    No    | timestamp in milliseconds | start time to query
+ **endTime**   |  `Long`   |    No    | timestamp in milliseconds | end time to query
+  **page**     |   `Int`   |   Yes    | number of page            | number of page
+**pageSize**   |   `Int`   |   Yes    |     1-10                  | record size in one page
+
+
+#### Response Content
+
+Response `code` value 0 indicates successful query and `data` shows query result. 
+
+
+#### Code Sample
+
+Please refer to python code to [transfer history among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py)
