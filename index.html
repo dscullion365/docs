@@ -1945,7 +1945,8 @@ only 500 bars will be returned. </li>
     </span><span class="s2">"acFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"acTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ack"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ack/accept.</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">accept</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">hold</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">wait</span><span class="w"> </span><span class="err">ack</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">OMS</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -2021,6 +2022,13 @@ only 500 bars will be returned. </li>
 <td>Yes</td>
 <td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
 <td></td>
+</tr>
+<tr>
+<td><strong>mode</strong></td>
+<td><code>String</code></td>
+<td>No</td>
+<td>empty/<code>ack</code>/<code>accept</code></td>
+<td>use <code>accept</code> to hold-and-wait for confirmation from the exchange backend.</td>
 </tr>
 </tbody></table>
 <h4 id='response-content-4'>Response Content</h4>
