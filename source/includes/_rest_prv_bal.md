@@ -224,7 +224,8 @@ Please refer to python code to [transfer token among different accounts](https:/
     "acFrom": "cash",
     "acTo": "cash",
     "asset": "USDT",
-    "amount": "40"
+    "amount": "40",
+    "mode": "ack" // ack/accept. use accept to hold and wait ack from OMS
 }
  ```
 
@@ -268,6 +269,7 @@ Name           |  Type     | Required | Value Range               | Description
  **userTo**    | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
  **acFrom**    | `String`  |   Yes    | `cash`/`margin`/`futures` |
   **acTo**     | `String`  |   Yes    | `cash`/`margin`/`futures` |
+  **mode**     | `String`  |   No     | empty/`ack`/`accept` | use `accept` to hold-and-wait for ack from OMS
 
 
 #### Response Content
