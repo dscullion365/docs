@@ -269,7 +269,7 @@ Name           |  Type     | Required | Value Range               | Description
  **userTo**    | `String`  |   Yes    | userId or username        | use `parentUser` as parent account username
  **acFrom**    | `String`  |   Yes    | `cash`/`margin`/`futures` |
   **acTo**     | `String`  |   Yes    | `cash`/`margin`/`futures` |
-  **mode**     | `String`  |   No     | empty/`ack`/`accept` | use `accept` to hold-and-wait for ack from OMS
+  **mode**     | `String`  |   No     | empty/`ack`/`accept`      | use `accept` to hold-and-wait for confirmation from the exchange backend.
 
 
 #### Response Content
