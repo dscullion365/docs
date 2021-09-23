@@ -43,7 +43,7 @@
   "accountId": "cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo",
   "ac": "CASH",
   "action": "cancel-order",
-  "status": "Ack",
+  "status": "Err",
   "info": {
     "code":     300006,
     "id":      "x@fabs",
