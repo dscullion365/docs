@@ -209,7 +209,7 @@ Name           | Type     | Description
 `avgPx`        | `String` | average fill price
 `cumFee`       | `String` | cumulated filled comission
 `cumFilledQty` | `String` | cumulated filled qty
-`errorCode`    | `String` | Could be empty
+`errorCode`    | `String` | Could be empty (see detail below)
 `feeAsset`     | `String` | Fee asset, e.g, `USDT`
 `id`           | `String` | id from request
 `lastExecTime` | `String` | latest execution timestamp
@@ -224,11 +224,19 @@ Name           | Type     | Description
 `symbol`       | `String` | symbol
 `execInst`     | `String` | execution instruction, `POST` for Post-Only orders, `Liquidation` for forced-liquidation orders, and `NULL_VAL` otherwise.
 
+`errorCode` Field
+Value           | Description
+----------------|-------------------------------------------------------------- 
+NoOpenForCancel | Order is not in active status: order does not exist or has been filled/canceled.
+TooLateToCancel | Order has been filled/canceled.
+DupCancelCoid   | Order is already in cancel pending status
+
 
 
 *ACCEPT*
 
 Response with 0 `code` and status `ACCEPT` to indicate new order request is accepted by our match engine. Return normal 'Ack' response if no 'New' status update within 5 seconds. Order `status` in `data` could be `New`, or `PendingNew`.
+
 
 *DONE*
 
