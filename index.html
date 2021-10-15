@@ -2945,7 +2945,7 @@ only 500 bars will be returned. </li>
 <td><strong>pageSize</strong></td>
 <td><code>Int</code></td>
 <td>No</td>
-<td>a positive interger</td>
+<td>1-50, default 20</td>
 <td>the page size, must be positive</td>
 </tr>
 </tbody></table>
@@ -3434,7 +3434,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>errorCode</code></td>
 <td><code>String</code></td>
-<td>Could be empty</td>
+<td>Could be empty (see detail below)</td>
 </tr>
 <tr>
 <td><code>feeAsset</code></td>
@@ -3502,6 +3502,13 @@ only 500 bars will be returned. </li>
 <td>execution instruction, <code>POST</code> for Post-Only orders, <code>Liquidation</code> for forced-liquidation orders, and <code>NULL_VAL</code> otherwise.</td>
 </tr>
 </tbody></table>
+
+<p><code>errorCode</code> Field
+Value           | Description
+----------------|-------------------------------------------------------------- 
+NoOpenForCancel | Order is not in active status: order does not exist or has been filled/canceled.
+TooLateToCancel | Order has been filled/canceled.
+DupCancelCoid   | Order is already in cancel pending status</p>
 
 <p><em>ACCEPT</em></p>
 
@@ -6310,7 +6317,7 @@ the timely order book data. </p>
   </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASH"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cancel-order"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ack"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Err"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"code"</span><span class="p">:</span><span class="w">     </span><span class="mi">300006</span><span class="p">,</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w">      </span><span class="s2">"x@fabs"</span><span class="p">,</span><span class="w">
