@@ -131,10 +131,6 @@ This API is for intraday balance change detail from balance event and order fill
 
 `GET  api/pro/v1/data/balance/history`
 
-#### Prehash String
-
-`<timestamp>+balance/history`
-
 > Cash Account Balance - Sample response 
 
 ```json
