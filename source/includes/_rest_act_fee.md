@@ -22,7 +22,7 @@
 ```json
 {"code": 0,
 
- "data": {"domain": "generic",
+ "data": {"domain": "spot",
 
           "userUID": "U0866943712",
 
@@ -50,7 +50,7 @@
 
 **HTTP Request(general)** 
 
-`GET <account-group>/api/pro/v1/<generic/futures>/fee/info`
+`GET <account-group>/api/pro/v1/<spot/futures>/fee/info`
 
 **Signature**
 
@@ -63,7 +63,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 **HTTP Request(each symbol)** 
 
-`GET <account-group>/api/pro/v1/<generic/futures>/fee`
+`GET <account-group>/api/pro/v1/<spot/futures>/fee`
 
 **Signature**
 
@@ -73,4 +73,5 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 `<timestamp>+fee`
 
+See a demo at [query fee](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py).
 
