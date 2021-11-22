@@ -118,6 +118,11 @@ See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascen
 
 ## Release Note
 
+**2021-11-22**
+
+* Replaced the ticker API `GET api/pro/v1/ticker` with `GET api/pro/v1/spot/ticker` to include only spot symbols. The old API will still be available but will be removed in the future.
+* Added the [VIP fee schedule API](#vip-fee-schedule) and the [Fee Schedule by Symbol API](#fee-schedule-by-symbol).
+
 **2021-07-16**
 
 * Introduced the experimental [Balance Snapshot](#balance-snapshot) and [Order and Balance Detail](#order-and-balance-detail) api.
