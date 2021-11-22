@@ -3,46 +3,46 @@
 > Fee Schedule - Sample response for general info::
 
 ```json
-{'code': 0,
+{"code": 0,
 
- 'data': {'domain': 'futures',
+ "data": {"domain": "futures",
 
-          'genericFee': {'largeCap': {'maker': 0.00085, 'taker': 0.00085},
+          "genericFee": {"largeCap": {"maker": 0.00085, "taker": 0.00085},
 
-                         'smallCap': {'maker': 0.001, 'taker': 0.001}},
+                         "smallCap": {"maker": 0.001, "taker": 0.001}},
 
-          'userUID': 'U0866943712',
+          "userUID": "U0866943712",
 
-          'vipLevel': 0
+          "vipLevel": 0
         }
 }
 ```
 > Fee Schedule - Sample response for each symbol::
 
 ```json
-{'code': 0,
+{"code": 0,
 
- 'data': {'domain': 'generic',
+ "data": {"domain": "generic",
 
-          'userUID': 'U0866943712',
+          "userUID": "U0866943712",
 
-          'vipLevel': 0,
+          "vipLevel": 0,
 
-          'productFee': [{'fee': {'maker': 0.0001, 'taker': 0.0001},
+          "productFee": [{"fee": {"maker": 0.0001, "taker": 0.0001},
 
-                          'symbol': 'ZEC/BTC'},
+                          "symbol": "ZEC/BTC"},
 
-                         {'fee': {'maker': 0.0001, 'taker': 0.0001},
+                         {"fee": {"maker": 0.0001, "taker": 0.0001},
 
-                          'symbol': 'ETC/USDT'},
+                          "symbol": "ETC/USDT"},
 
-                         {'fee': {'maker': 0.002, 'taker': 0.002},
+                         {"fee": {"maker": 0.002, "taker": 0.002},
 
-                          'symbol': 'ONG/USDT'},
+                          "symbol": "ONG/USDT"},
 
-                         {'fee': {'maker': 0.002, 'taker': 0.002},
+                         {"fee": {"maker": 0.002, "taker": 0.002},
 
-                          ‘symbol': 'IBVOL/USDT'} …]
+                          "symbol": "IBVOL/USDT"}]
 
         }
 }
