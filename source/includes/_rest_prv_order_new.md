@@ -224,7 +224,8 @@ Name           | Type     | Description
 `symbol`       | `String` | symbol
 `execInst`     | `String` | execution instruction, `POST` for Post-Only orders, `Liquidation` for forced-liquidation orders, and `NULL_VAL` otherwise.
 
-`errorCode` Field
+`errorCode` Field:
+
 Value           | Description
 ----------------|-------------------------------------------------------------- 
 NoOpenForCancel | Order is not in active status: order does not exist or has been filled/canceled.
