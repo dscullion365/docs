@@ -3611,12 +3611,27 @@ only 500 bars will be returned. </li>
 </tr>
 </tbody></table>
 
-<p><code>errorCode</code> Field
-Value           | Description
-----------------|-------------------------------------------------------------- 
-NoOpenForCancel | Order is not in active status: order does not exist or has been filled/canceled.
-TooLateToCancel | Order has been filled/canceled.
-DupCancelCoid   | Order is already in cancel pending status</p>
+<p><code>errorCode</code> Field:</p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>NoOpenForCancel</td>
+<td>Order is not in active status: order does not exist or has been filled/canceled.</td>
+</tr>
+<tr>
+<td>TooLateToCancel</td>
+<td>Order has been filled/canceled.</td>
+</tr>
+<tr>
+<td>DupCancelCoid</td>
+<td>Order is already in cancel pending status</td>
+</tr>
+</tbody></table>
 
 <p><em>ACCEPT</em></p>
 
