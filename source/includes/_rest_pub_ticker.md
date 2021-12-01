@@ -1,9 +1,9 @@
-### Ticker 
+### Ticker
 
-> Ticker for one product
+> Ticker for one trading pair
 
 ```json
-// curl -X GET 'https://ascendex.com/api/pro/v1/ticker?symbol=ASD/USDT'
+// curl -X GET 'https://ascendex.com/api/pro/v1/spot/ticker?symbol=ASD/USDT'
 {
     "code": 0,
     "data": {
@@ -25,10 +25,10 @@
 }
 ```
 
-> List of Tickers for one or multiple products
+> List of Tickers for one or multiple trading pairs
 
 ```json
-// curl -X GET "https://ascendex.com/api/pro/v1/ticker?symbol=ASD/USDT,"
+// curl -X GET "https://ascendex.com/api/pro/v1/spot/ticker?symbol=ASD/USDT,"
 {
     "code": 0,
     "data": [
@@ -54,9 +54,9 @@
 
 #### HTTP Request
 
-`GET api/pro/v1/ticker`
+`GET api/pro/v1/spot/ticker`
 
-You can get summary statistics of one or multiple symbols with this API. 
+You can get summary statistics of one or multiple symbols (spot market) with this API. 
 
 #### Request Parameters
 

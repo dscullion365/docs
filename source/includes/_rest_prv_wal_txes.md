@@ -51,7 +51,7 @@ Name          |  Type    | Required | Value Range              | Description
 **asset**     | `String` |   No     | valid asset code         | this allow you query single asset balance, e.g. `BTC`
 **txType**    | `String` |   No     | `deposit` / `withdrawal` | add the (optional) transaction type filter
 **page**      | `Int`    |   No     | a positive interger      | the page number, starting at 1
-**pageSize**  | `Int`    |   No     | a positive interger      | the page size, must be positive
+**pageSize**  | `Int`    |   No     | 1-50, default 20      | the page size, must be positive
 
 
 #### Response Content
