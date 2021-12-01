@@ -116,6 +116,11 @@ We provide comprehensive demos (currently available in python). We provide two t
 See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascendex/ascendex-pro-api-demo) for more details.
 
 
+## Got Questions?
+
+Join our official telegram channel: [https://t.me/AscendEX_Official_API](https://t.me/AscendEX_Official_API)
+
+
 ## Release Note
 
 **2021-07-16**
