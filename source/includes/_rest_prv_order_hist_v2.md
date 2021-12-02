@@ -32,7 +32,7 @@ This API returns history orders according to specified parameters (up to 500 rec
 
 #### HTTP Request
 
-`GET <account-group>/api/pro/v2/order/hist`
+`GET api/pro/data/v2/order/hist`
 
 #### Signature
 
@@ -40,7 +40,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 #### Prehash String
 
-`<timestamp>+order/hist`
+`<timestamp>+data/v2/order/hist`
 
 #### Request Parameters
 
