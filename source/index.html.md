@@ -118,6 +118,11 @@ See [https://github.com/ascendex/ascendex-pro-api-demo](https://github.com/ascen
 
 ## Release Note
 
+** 2021-12-02**
+
+* Update the [Balance Snapshot API](#balance-snapshot) and [Order and Balance Detail API](#order-and-balance-detail) to different endpoints by account type: `api/pro/data/v1/cash/balance/snapshot` for cash and `api/pro/data/v1/margin/balance/snapshot` for margin balance;`api/pro/data/v1/cash/balance/history` for cash and `api/pro/data/v1/margin/balance/history` for margin balance or order fill detail.
+* Redirect the [Order Hist v2 API](#list-history-orders-v2) to new endpoint `api/pro/data/v2/order/hist` (No group in the endpoint anymore), and change prehash string to `data/v2/order/hist`.  Original way through `<group>/api/pro/v2/order/hist` is still supported, but will be removed in the future.
+
 **2021-11-22**
 
 * Replaced the ticker API `GET api/pro/v1/ticker` with `GET api/pro/v1/spot/ticker` to include only spot symbols. The old API will still be available but will be removed in the future.

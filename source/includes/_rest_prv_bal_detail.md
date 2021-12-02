@@ -1,10 +1,10 @@
-## Balance Snapshot And Update
+## Balance Snapshot And Update Detail
 
 Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(`<cash/margin>/balance/snapshot`) to get balance at the beginning of the day, and get the sequence number `sn`; then start to query balance or order fills update from `<cash/margin>/balance/history` by setting parameter `sn` value to be `sn + 1`.
 
 Please note we enforce rate limit 8 / minute. Data query for most recent 7 days is supported.
 
-### Cash/Margin Account Balance Snapshot
+### Balance Snapshot
 
 This API returns cash or margin balance snapshot infomation on daily basis.
 
@@ -85,7 +85,7 @@ Name        |  Type     | Required |           Value Range       | Description
 Please refer to python code to [query balance snapshot](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py)
 
 
-### Cash/Margin Order and Balance Detail
+### Order and Balance Detail
 
 This API is for intraday balance change detail from balance event and order fillss.
 
