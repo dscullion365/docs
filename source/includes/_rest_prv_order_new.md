@@ -224,14 +224,14 @@ Name           | Type     | Description
 `symbol`       | `String` | symbol
 `execInst`     | `String` | execution instruction, `POST` for Post-Only orders, `Liquidation` for forced-liquidation orders, and `NULL_VAL` otherwise.
 
-`errorCode` Field:
+
+`errorCode` Field
 
 Value           | Description
-----------------|-------------------------------------------------------------- 
-NoOpenForCancel | Order is not in active status: order does not exist or has been filled/canceled.
+----------------| -------------------------------------------------
+NoOpenForCancel | Active order is not found: order does not exist or has been filled/canceled.
 TooLateToCancel | Order has been filled/canceled.
 DupCancelCoid   | Order is already in cancel pending status
-
 
 
 *ACCEPT*
@@ -241,7 +241,7 @@ Response with 0 `code` and status `ACCEPT` to indicate new order request is acce
 
 *DONE*
 
-Response with 0 `code` and status `Done` to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal 'Ack' response if no order status update within 5 seconds. Order `status` in `data` could be `Filled`, `PartiallyFilled`, `Cancelled`, or `Rejected`, and so on.
+Response with 0 `code` and status `Done` to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal 'Ack' response if no order status update within 5 seconds. Order `status` in `data` could be `Filled`, `PartiallyFilled`, `Canceled`, or `Rejected`, and so on.
 
 
 *ERR*
