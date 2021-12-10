@@ -336,7 +336,7 @@
                     </ul>
                   </li>
                   <li>
-                    <a href="#balance-snapshot-and-update-experimential-api" class="toc-h2 toc-link" data-title="Balance Snapshot And Update (Experimential API)">Balance Snapshot And Update (<strong>Experimential API</strong>)</a>
+                    <a href="#balance-snapshot-and-update-detail" class="toc-h2 toc-link" data-title="Balance Snapshot And Update Detail">Balance Snapshot And Update Detail</a>
                     <ul class="toc-list-h3">
                         <li>
                           <a href="#balance-snapshot" class="toc-h3 toc-link" data-title="Balance Snapshot">Balance Snapshot</a>
@@ -587,6 +587,13 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 <h2 id='got-questions'>Got Questions?</h2>
 <p>Join our official telegram channel: <a href="https://t.me/AscendEX_Official_API">https://t.me/AscendEX_Official_API</a></p>
 <h2 id='release-note'>Release Note</h2>
+<p>** 2021-12-02**</p>
+
+<ul>
+<li>Update the <a href="#balance-snapshot">Balance Snapshot API</a> and <a href="#order-and-balance-detail">Order and Balance Detail API</a> to different endpoints by account type: <code>api/pro/data/v1/cash/balance/snapshot</code> for cash and <code>api/pro/data/v1/margin/balance/snapshot</code> for margin balance;<code>api/pro/data/v1/cash/balance/history</code> for cash and <code>api/pro/data/v1/margin/balance/history</code> for margin balance or order fill detail.</li>
+<li>Redirect the <a href="#list-history-orders-v2">Order Hist v2 API</a> to new endpoint <code>api/pro/data/v2/order/hist</code> (No group in the endpoint anymore), and change prehash string to <code>data/v2/order/hist</code>.  Original way through <code>&lt;group&gt;/api/pro/v2/order/hist</code> is still supported, but will be removed in the future.</li>
+</ul>
+
 <p><strong>2021-11-22</strong></p>
 
 <ul>
@@ -2253,26 +2260,34 @@ only 500 bars will be returned. </li>
 <p>Response <code>code</code> value 0 indicates successful query and <code>data</code> shows query result. </p>
 <h4 id='code-sample-5'>Code Sample</h4>
 <p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py">transfer history among different sub users</a></p>
-<h2 id='balance-snapshot-and-update-experimential-api'>Balance Snapshot And Update (<strong>Experimential API</strong>)</h2>
-<p>Here we provide experimental API to get daily balance snapshot and intraday balance and order fills update details. We recommend calling balance snapshot to get balance at the beginning of the day, and get the sequence number sn; then start to query balance or order fills update from sn + 1.</p>
+<h2 id='balance-snapshot-and-update-detail'>Balance Snapshot And Update Detail</h2>
+<p>Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(<code>&lt;cash/margin&gt;/balance/snapshot</code>) to get balance at the beginning of the day, and get the sequence number <code>sn</code>; then start to query balance or order fills update from <code>&lt;cash/margin&gt;/balance/history</code> by setting parameter <code>sn</code> value to be <code>sn + 1</code>.</p>
 
-<p>Please note we enforcerate limit 8 / minute.</p>
+<p>Please note we enforce rate limit 8 / minute. Data query for most recent 7 days is supported.</p>
 <h3 id='balance-snapshot'>Balance Snapshot</h3>
-<p>This API returns balance snapshot on daily basis.</p>
+<p>This API returns cash or margin balance snapshot infomation on daily basis.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>GET  api/pro/v1/data/balance/snapshot</code></p>
+<p>For cash
+<code>GET  api/pro/data/v1/cash/balance/snapshot</code></p>
+
+<p>For margin
+<code>GET  api/pro/data/v1/margin/balance/snapshot</code></p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+balance/snapshot</code></p>
+<p>For cash
+<code>&lt;timestamp&gt;+data/v1/cash/balance/snapshot</code></p>
+
+<p>For margin
+<code>&lt;timestamp&gt;+data/v1/margin/balance/snapshot</code></p>
 
 <blockquote>
-<p>Cash Account Balance Snapshot - Sample response </p>
+<p>Cash Account Balance Snapshot - Sample response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUXFNEYUJJJ93CRYXT4LTCIDIJPCFNIX"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cshfi7p9j312936d2hkjJpAahWyb4RCJ"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10870097597</span><span class="p">,</span><span class="w">
         </span><span class="s2">"snapshotTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617148800000</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -2294,13 +2309,6 @@ only 500 bars will be returned. </li>
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>account</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>, <code>margin</code>, <code>futures</code></td>
-<td>account type</td>
-</tr>
-<tr>
 <td><strong>date</strong></td>
 <td><code>String</code></td>
 <td>Yes</td>
@@ -2309,8 +2317,6 @@ only 500 bars will be returned. </li>
 </tr>
 </tbody></table>
 <h4 id='response-content'>Response Content</h4>
-<p>Response for cash/margin and futures are different (same <code>meta</code> field).</p>
-<h5 id='cash-margin'>Cash/Margin</h5>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2324,9 +2330,9 @@ only 500 bars will be returned. </li>
 <td><code>meta</code> info. See detail below</td>
 </tr>
 <tr>
-<td><strong>snapshot</strong></td>
+<td><strong>balance</strong></td>
 <td><code>Json Array</code></td>
-<td><code>snapshot</code> info. See detail below</td>
+<td><code>balance</code> info. See detail below</td>
 </tr>
 </tbody></table>
 
@@ -2346,7 +2352,7 @@ only 500 bars will be returned. </li>
 <td><strong>ac</strong></td>
 <td><code>String</code></td>
 <td>account category</td>
-<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+<td><code>&quot;cash&quot; or &quot;margin&quot;</code></td>
 </tr>
 <tr>
 <td><strong>accountId</strong></td>
@@ -2361,16 +2367,16 @@ only 500 bars will be returned. </li>
 <td></td>
 </tr>
 <tr>
-<td><strong>snapshotTime</strong></td>
+<td><strong>balanceTime</strong></td>
 <td><code>Long</code></td>
-<td>snapshotTime in milli seconds</td>
+<td>balance snapshot time in milli seconds</td>
 <td></td>
 </tr>
 </tbody></table>
 
-<p><code>snapshot</code> field provides asset balance snapshot info.</p>
+<p><code>balance</code> field provides asset balance snapshot info.</p>
 
-<p><code>snapshot</code> schema</p>
+<p><code>balance</code> schema</p>
 
 <table><thead>
 <tr>
@@ -2391,132 +2397,6 @@ only 500 bars will be returned. </li>
 <td><code>String</code></td>
 <td>current asset total balance</td>
 <td><code>&quot;1234.56&quot;</code></td>
-</tr>
-</tbody></table>
-<h5 id='futures'>Futures</h5>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>meta</strong></td>
-<td><code>Json</code></td>
-<td><code>meta</code> info. See detail below</td>
-</tr>
-<tr>
-<td><strong>collateralBalance</strong></td>
-<td><code>Json Array</code></td>
-<td><code>collateral balance</code> info. See detail below</td>
-</tr>
-<tr>
-<td><strong>contractBalance</strong></td>
-<td><code>Json Array</code></td>
-<td><code>contract balance</code> info. See detail below</td>
-</tr>
-</tbody></table>
-
-<p><code>meta</code> field provides some basic info.</p>
-
-<p><code>meta</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>ac</strong></td>
-<td><code>String</code></td>
-<td>account category</td>
-<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
-</tr>
-<tr>
-<td><strong>accountId</strong></td>
-<td><code>String</code></td>
-<td>accountId</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>sn</strong></td>
-<td><code>Long</code></td>
-<td>sequence number</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>snapshotTime</strong></td>
-<td><code>Long</code></td>
-<td>snapshotTime in milli seconds</td>
-<td></td>
-</tr>
-</tbody></table>
-
-<p><code>collateralBalance</code> field provides array of ‘asset’ and ‘totalBalance’ for collateral balance.</p>
-
-<p><code>collateralBalance</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>asset code</td>
-<td><code>&quot;USDT&quot;</code></td>
-</tr>
-<tr>
-<td><strong>totalBalance</strong></td>
-<td><code>String</code></td>
-<td>current asset total balance</td>
-<td><code>&quot;1234.56&quot;</code></td>
-</tr>
-</tbody></table>
-
-<p><code>collateralBalance</code> field provides array of ‘asset’ and ‘totalBalance’ for collateral balance.</p>
-
-<p><code>collateralBalance</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>contract</strong></td>
-<td><code>String</code></td>
-<td>contract name</td>
-<td><code>&quot;USDT&quot;</code></td>
-</tr>
-<tr>
-<td><strong>futuresAssetBalance</strong></td>
-<td><code>String</code></td>
-<td>current contract position</td>
-<td><code>&quot;1234.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>isolatedMargin</strong></td>
-<td><code>String</code></td>
-<td>Isolated margin</td>
-<td><code>&quot;134.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>refCostBalance</strong></td>
-<td><code>String</code></td>
-<td>Reference cost</td>
-<td><code>&quot;34.56&quot;</code></td>
 </tr>
 </tbody></table>
 <h4 id='code-sample'>Code Sample</h4>
@@ -2524,10 +2404,20 @@ only 500 bars will be returned. </li>
 <h3 id='order-and-balance-detail'>Order and Balance Detail</h3>
 <p>This API is for intraday balance change detail from balance event and order fillss.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET  api/pro/v1/data/balance/history</code></p>
+<p>For cash
+<code>GET  api/pro/data/v1/cash/balance/history</code></p>
+
+<p>For margin
+<code>GET  api/pro/data/v1/margin/balance/history</code></p>
+<h4 id='prehash-string-2'>Prehash String</h4>
+<p>For cash
+<code>&lt;timestamp&gt;+data/v1/cash/balance/history</code></p>
+
+<p>For margin
+<code>&lt;timestamp&gt;+data/v1/margin/balance/history</code></p>
 
 <blockquote>
-<p>Cash Account Balance - Sample response </p>
+<p>Cash Account Balance Detail - Sample response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2593,283 +2483,7 @@ only 500 bars will be returned. </li>
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='signature-2'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-2'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+balance/history</code></p>
-
-<blockquote>
-<p>Futures Account Balance - Sample response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"collateralBalance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"totalBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554.896891579"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"contractBalance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-PERP"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"futuresAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"isolatedMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"refCostBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"contract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-PERP"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"futuresAssetBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"isolatedMargin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"refCostBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futures"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futTv9jxEyfQNLT1FSZdohpF8W9RKGjr"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="mi">10870105241</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"snapshotTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617148800000</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='request-parameters-2'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>account</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>, <code>margin</code>, <code>futures</code></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>startOffset</strong></td>
-<td><code>Long</code></td>
-<td>Yes</td>
-<td>true / false</td>
-<td>Start offset</td>
-</tr>
-<tr>
-<td><strong>limit</strong></td>
-<td><code>Int</code></td>
-<td>No</td>
-<td>1 to 500</td>
-<td>Number of records. max 500</td>
-</tr>
-</tbody></table>
-<h4 id='response-content-2'>Response Content</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>meta</strong></td>
-<td><code>Json</code></td>
-<td><code>meta</code> info. See detail below</td>
-</tr>
-<tr>
-<td><strong>order</strong></td>
-<td><code>Json Array</code></td>
-<td><code>order</code> info. See detail below</td>
-</tr>
-<tr>
-<td><strong>balance</strong></td>
-<td><code>Json Array</code></td>
-<td><code>balance</code> info. See detail below</td>
-</tr>
-</tbody></table>
-<h5 id='meta'>Meta</h5>
-<p><code>meta</code> field provides some basic info.</p>
-
-<p><code>meta</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>ac</strong></td>
-<td><code>String</code></td>
-<td>account category</td>
-<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
-</tr>
-<tr>
-<td><strong>accountId</strong></td>
-<td><code>String</code></td>
-<td>accountId</td>
-<td></td>
-</tr>
-</tbody></table>
-<h5 id='order'>Order</h5>
-<p><code>order</code> field provides an array of asset balance detail from order fill event.</p>
-
-<p><code>order</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>liquidityInd</strong></td>
-<td><code>String</code></td>
-<td>liquidity indicator</td>
-<td><code>RemovedLiquidity</code> for taker order, <code>AddedLiquidity</code> for maker order, or <code>NULL_VAL</code></td>
-</tr>
-<tr>
-<td><strong>orderId</strong></td>
-<td><code>String</code></td>
-<td>orderId</td>
-<td><code>market</code>, <code>limit</code></td>
-</tr>
-<tr>
-<td><strong>orderType</strong></td>
-<td><code>String</code></td>
-<td>order type</td>
-<td><code>buy</code>, <code>sell</code></td>
-</tr>
-<tr>
-<td><strong>sn</strong></td>
-<td><code>Long</code></td>
-<td>sequence number</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>transactTime</strong></td>
-<td><code>Long</code></td>
-<td>transactTime in milli seconds</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>data</strong></td>
-<td><code>Json Array</code></td>
-<td>list of order info json objects</td>
-<td>see detail below</td>
-</tr>
-</tbody></table>
-
-<p>order balance detail by asset</p>
-
-<p><code>data</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>asset code</td>
-<td><code>&quot;USDT&quot;</code></td>
-</tr>
-<tr>
-<td><strong>curBalance</strong></td>
-<td><code>String</code></td>
-<td>asset balance after this transaction</td>
-<td><code>&quot;1234.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>dataType</strong></td>
-<td><code>String</code></td>
-<td><code>trade</code> for trading asset; <code>fee</code> for fee balance asset</td>
-<td><code>trade</code>, <code>fee</code></td>
-</tr>
-<tr>
-<td><strong>deltaQty</strong></td>
-<td><code>String</code></td>
-<td>balance change in this transaction</td>
-<td><code>100</code></td>
-</tr>
-</tbody></table>
-<h5 id='balance'>Balance</h5>
-<p><code>balance</code> field provides an array of asset balance detail due to balance event.</p>
-
-<p><code>balance</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>eventType</strong></td>
-<td><code>String</code></td>
-<td>balance event type</td>
-<td><code>deposit</code>, <code>withdrawal</code></td>
-</tr>
-<tr>
-<td><strong>sn</strong></td>
-<td><code>Long</code></td>
-<td>sequence number</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>transactTime</strong></td>
-<td><code>Long</code></td>
-<td>transactTime in milli seconds</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>data</strong></td>
-<td><code>Json Array</code></td>
-<td>list of balance info json objects</td>
-<td>see detail below</td>
-</tr>
-</tbody></table>
-
-<p><code>data</code> schema</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>asset code</td>
-<td><code>&quot;USDT&quot;</code></td>
-</tr>
-<tr>
-<td><strong>curBalance</strong></td>
-<td><code>String</code></td>
-<td>asset balance after this transaction</td>
-<td><code>&quot;1234.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>deltaQty</strong></td>
-<td><code>String</code></td>
-<td>balance change in this transaction</td>
-<td><code>100</code></td>
-</tr>
-</tbody></table>
-<h4 id='code-sample-2'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query order and balance detail</a></p>
-<h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
+</span></code></pre><h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
 </blockquote>
@@ -3616,7 +3230,7 @@ only 500 bars will be returned. </li>
 </tr>
 </tbody></table>
 
-<p><code>errorCode</code> Field:</p>
+<p><code>errorCode</code> Field</p>
 
 <table><thead>
 <tr>
@@ -3626,7 +3240,7 @@ only 500 bars will be returned. </li>
 </thead><tbody>
 <tr>
 <td>NoOpenForCancel</td>
-<td>Order is not in active status: order does not exist or has been filled/canceled.</td>
+<td>Active order is not found: order does not exist or has been filled/canceled.</td>
 </tr>
 <tr>
 <td>TooLateToCancel</td>
@@ -3644,7 +3258,7 @@ only 500 bars will be returned. </li>
 
 <p><em>DONE</em></p>
 
-<p>Response with 0 <code>code</code> and status <code>Done</code> to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal &#39;Ack&#39; response if no order status update within 5 seconds. Order <code>status</code> in <code>data</code> could be <code>Filled</code>, <code>PartiallyFilled</code>, <code>Cancelled</code>, or <code>Rejected</code>, and so on.</p>
+<p>Response with 0 <code>code</code> and status <code>Done</code> to indicate the order request is partially filled, fully filled, or rejected by matching engine. Return normal &#39;Ack&#39; response if no order status update within 5 seconds. Order <code>status</code> in <code>data</code> could be <code>Filled</code>, <code>PartiallyFilled</code>, <code>Canceled</code>, or <code>Rejected</code>, and so on.</p>
 
 <p><em>ERR</em></p>
 
@@ -3833,6 +3447,24 @@ only 500 bars will be returned. </li>
 <p><em>ERR</em></p>
 
 <p>Response with status &quot;Err&quot; to indicate there is something wrong with the cancel order request. We echo back the <em>coid</em> field in your request.</p>
+
+<p>Error <code>message</code> for error code <code>300019</code> :</p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Duplicated order cancel request.</code></td>
+<td>Trying to cancel the same order again in a short time.</td>
+</tr>
+<tr>
+<td><code>Trying to cancel non-open order</code></td>
+<td>Trying to cancel a completed (filled/canceled/rejected) or not existed order.</td>
+</tr>
+</tbody></table>
 <h4 id='code-sample'>Code Sample</h4>
 <p>Refer to sample python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel.py">cancel order</a></p>
 <h3 id='cancel-all-orders'>Cancel All Orders</h3>
@@ -4941,11 +4573,11 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 </span></code></pre>
 <p>This API returns history orders according to specified parameters (up to 500 records). You have access to at least 30 days of order history.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>GET &lt;account-group&gt;/api/pro/v2/order/hist</code></p>
+<p><code>GET api/pro/data/v2/order/hist</code></p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+order/hist</code></p>
+<p><code>&lt;timestamp&gt;+data/v2/order/hist</code></p>
 <h4 id='request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
