@@ -90,6 +90,4 @@ To query APIs with private data, you must include a signature using base64 encod
 The `timestamp` is the UTC timestamp in milliseconds.  
 
 
-See the code demos in (`bash`/`python`/`java`) on the right.
-
-
+See the code demos in `bash` on the right. For other programming languages, please refer to [https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo](https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo).
