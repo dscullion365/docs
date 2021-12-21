@@ -22,6 +22,7 @@ includes:
   - rest_act
   - rest_act_info
   - rest_act_fee
+  - rest_exchange_info
   - rest_prv_bal
   - rest_prv_bal_detail
   - rest_prv_wal
