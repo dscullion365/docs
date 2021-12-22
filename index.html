@@ -310,6 +310,9 @@
                         <li>
                           <a href="#fee-schedule-by-symbol" class="toc-h3 toc-link" data-title="Fee Schedule by Symbol">Fee Schedule by Symbol</a>
                         </li>
+                        <li>
+                          <a href="#exchange-latency-info" class="toc-h3 toc-link" data-title="Exchange Latency Info">Exchange Latency Info</a>
+                        </li>
                     </ul>
                   </li>
                   <li>
@@ -1782,6 +1785,46 @@ only 500 bars will be returned. </li>
 <p><code>&lt;timestamp&gt;+fee</code></p>
 
 <p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py">query fee</a>.</p>
+<h3 id='exchange-latency-info'>Exchange Latency Info</h3>
+<blockquote>
+<p>Latency Info </p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
+</code></pre>
+<blockquote>
+<p>Latency Info - Sample response::</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"requestTimeEcho"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640052379050</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requestReceiveAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640052379063</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latency"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>HTTP Request</strong> </p>
+
+<p><code>GET /api/pro/v1/exchange-info</code></p>
+<h4 id='request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>requestTime</td>
+<td>Long</td>
+<td>Yes</td>
+<td>milliseconds since UNIX epoch in UTC</td>
+<td>the client&#39;s local time. The server compare it with the system time to calculate latency.</td>
+</tr>
+</tbody></table>
 <h2 id='balance'>Balance</h2><h3 id='cash-account-balance'>Cash Account Balance</h3>
 <blockquote>
 <p>Cash Account Balance - Sample response </p>
