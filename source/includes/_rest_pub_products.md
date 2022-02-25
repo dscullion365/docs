@@ -3,7 +3,8 @@
 > List all Products 
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/products"
+curl -X GET "https://ascendex.com/api/pro/v1/cash/products"
+curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
 ```
 
 > Sample Response 
@@ -31,7 +32,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/products"
 
 #### HTTP Request
 
-`GET /api/pro/v1/cash/products`
+`GET /api/pro/v1/{accountCategory}/products`
 
 #### Response Content
 
