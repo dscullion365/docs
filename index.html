@@ -590,6 +590,12 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 <h2 id='got-questions'>Got Questions?</h2>
 <p>Join our official telegram channel: <a href="https://t.me/AscendEX_Official_API">https://t.me/AscendEX_Official_API</a></p>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2022-02-25</strong></p>
+
+<ul>
+<li>Update the <a href="#list-all-products">List all Products API</a> to different endpoints by account type: for cash <code>/api/pro/v1/cash/products</code>, for margin <code>/api/pro/v1/margin/products</code>.</li>
+</ul>
+
 <p><strong>2021-12-02</strong></p>
 
 <ul>
@@ -862,7 +868,8 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>List all Products </p>
 </blockquote>
-<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/products"
+<pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/cash/products"
+curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
 </code></pre>
 <blockquote>
 <p>Sample Response </p>
@@ -886,7 +893,7 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h4 id='http-request'>HTTP Request</h4>
-<p><code>GET /api/pro/v1/products</code></p>
+<p><code>GET /api/pro/v1/{accountCategory}/products</code></p>
 <h4 id='response-content'>Response Content</h4>
 <p>You can obtain a list of all products traded on the exchange through this API.</p>
 
@@ -931,6 +938,41 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 </tr>
 </thead><tbody>
 <tr>
+<td><code>symbol</code></td>
+<td><code>String</code></td>
+<td>Symbol like <code>BTC/USDT</code></td>
+</tr>
+<tr>
+<td><code>displayName</code></td>
+<td><code>String</code></td>
+<td>Symbol&#39;s display Name</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>String</code></td>
+<td>Symbol&#39;s Tradins Domain <code>USDS</code> / <code>ETH</code> / <code>BTC</code></td>
+</tr>
+<tr>
+<td><code>tradingStartTime</code></td>
+<td><code>Number</code></td>
+<td>Trading Start Time</td>
+</tr>
+<tr>
+<td><code>collapseDecimals</code></td>
+<td><code>String</code></td>
+<td>Trading Start Time</td>
+</tr>
+<tr>
+<td><code>minQty</code></td>
+<td><code>String</code></td>
+<td>minimum quantity of an order</td>
+</tr>
+<tr>
+<td><code>maxQty</code></td>
+<td><code>String</code></td>
+<td>minimum quantity of an order</td>
+</tr>
+<tr>
 <td><code>minNotional</code></td>
 <td><code>String</code></td>
 <td>minimum notional of an order</td>
@@ -941,9 +983,24 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td>maximum notional of an order</td>
 </tr>
 <tr>
+<td><code>statusCode</code></td>
+<td><code>String</code></td>
+<td>Symbol&#39;s status code</td>
+</tr>
+<tr>
+<td><code>statusMessage</code></td>
+<td><code>String</code></td>
+<td>Symbol&#39;s status message</td>
+</tr>
+<tr>
 <td><code>tickSize</code></td>
 <td><code>String</code></td>
 <td>tick size of order price</td>
+</tr>
+<tr>
+<td><code>useTick</code></td>
+<td><code>Boolean</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>lotSize</code></td>
@@ -951,9 +1008,9 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td>lot size of order quantity</td>
 </tr>
 <tr>
-<td><code>marginTradable</code></td>
+<td><code>useLot</code></td>
 <td><code>Boolean</code></td>
-<td><code>true</code> if the product is tradable in the margin account; <code>false</code> otherwise.</td>
+<td></td>
 </tr>
 <tr>
 <td><code>commissionType</code></td>
@@ -964,6 +1021,16 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <td><code>commissionReserveRate</code></td>
 <td><code>String</code></td>
 <td>e.g. <code>&quot;0.001&quot;</code>, see below.</td>
+</tr>
+<tr>
+<td><code>qtyScale</code></td>
+<td><code>Number</code></td>
+<td>Quantity Scale</td>
+</tr>
+<tr>
+<td><code>notionalScale</code></td>
+<td><code>Number</code></td>
+<td>Notional Scale</td>
 </tr>
 </tbody></table>
 
