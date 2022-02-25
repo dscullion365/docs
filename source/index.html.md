@@ -126,7 +126,8 @@ Join our official telegram channel: [https://t.me/AscendEX_Official_API](https:/
 
 **2022-02-25**
 
-* Update the [List all Products API](#list-all-products) to different endpoints: `/api/pro/v1/products`
+* Update the [List all Products API](#list-all-products) to different endpoints by account type: for cash `/api/pro/v1/cash/products`, for margin `/api/pro/v1/margin/products`.
+
 
 **2021-12-02**
 
