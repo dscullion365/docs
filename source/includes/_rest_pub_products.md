@@ -14,18 +14,27 @@ curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
     "code": 0,
     "data": [
         {
-            "symbol":                "ASD/USDT",
-            "baseAsset":             "ASD",
-            "quoteAsset":            "USDT",
-            "status":                "Normal",
-            "minNotional":           "5",
-            "maxNotional":           "100000",
-            "marginTradable":         true,
-            "commissionType":        "Quote",
-            "commissionReserveRate": "0.001",
-            "tickSize":              "0.000001",
-            "lotSize":               "0.001"
-        }
+          "symbol": "BTC/USDT",
+          "displayName": "BTC/USDT",
+          "domain": "USDS",
+          "tradingStartTime": 1546300800000,
+          "collapseDecimals": "1,0.1,0.01",
+          "minQty": "0.000000001",
+          "maxQty": "1000000000",
+          "minNotional": "5",
+          "maxNotional": "400000",
+          "statusCode": "Normal",
+          "statusMessage": "",
+          "tickSize": "0.01",
+          "useTick": false,
+          "lotSize": "0.00001",
+          "useLot": false,
+          "commissionType": "Quote",
+          "commissionReserveRate": "0.001",
+          "qtyScale": 5,
+          "priceScale": 2,
+          "notionalScale": 4
+        },
     ]
 }
 ```
