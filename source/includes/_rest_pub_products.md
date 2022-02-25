@@ -31,7 +31,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/products"
 
 #### HTTP Request
 
-`GET /api/pro/v1/products`
+`GET /api/pro/v1/cash/products`
 
 #### Response Content
 
@@ -50,13 +50,25 @@ The response also contains criteria for new order request.
 
  Name                    | Type      | Description                                                                                 
 ------------------------ | --------- | --------------------- 
+ `symbol`                | `String`  | Symbol like `BTC/USDT`
+ `displayName`           | `String`  | Symbol's display Name
+ `domain`                | `String`  | Symbol's Tradins Domain `USDS` / `ETH` / `BTC`
+ `tradingStartTime`      | `Number`  | Trading Start Time
+ `collapseDecimals`      | `String`  | Trading Start Time
+ `minQty`                | `String`  | minimum quantity of an order
+ `maxQty`                | `String`  | minimum quantity of an order
  `minNotional`           | `String`  | minimum notional of an order 
  `maxNotional`           | `String`  | maximum notional of an order 
+ `statusCode`            | `String`  | Symbol's status code
+ `statusMessage`         | `String`  | Symbol's status message
  `tickSize`              | `String`  | tick size of order price 
+ `useTick`               | `Boolean` | 
  `lotSize`               | `String`  | lot size of order quantity 
- `marginTradable`        | `Boolean` | `true` if the product is tradable in the margin account; `false` otherwise.
+ `useLot`                | `Boolean` | 
  `commissionType`        | `String`  | `"Base"`, `"Quote"`, `"Received"`
  `commissionReserveRate` | `String`  | e.g. `"0.001"`, see below.
+ `qtyScale`              | `Number`  | Quantity Scale
+ `notionalScale`         | `Number`  | Notional Scale
 
 
 When placing orders, you should comply with all criteria above. More details can be found in the [Order Request Criteria](#order-request-criteria) section.
