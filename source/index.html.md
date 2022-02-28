@@ -22,6 +22,7 @@ includes:
   - rest_act
   - rest_act_info
   - rest_act_fee
+  - rest_risk_limit_info
   - rest_exchange_info
   - rest_prv_bal
   - rest_prv_bal_detail
@@ -123,6 +124,10 @@ Join our official telegram channel: [https://t.me/AscendEX_Official_API](https:/
 
 
 ## Release Note
+
+**2022-02-28**
+
+* Added the [Limit Info API](#risk_limit_info) to get ban info and risk limit info.
 
 **2021-12-02**
 
