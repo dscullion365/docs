@@ -129,6 +129,10 @@ Join our official telegram channel: [https://t.me/AscendEX_Official_API](https:/
 
 * Added the [Limit Info API](#risk_limit_info) to get ban info and risk limit info.
 
+**2022-02-25**
+
+* Update the [List all Products API](#list-all-products) to different endpoints by account type: for cash `/api/pro/v1/cash/products`, for margin `/api/pro/v1/margin/products`.
+
 **2021-12-02**
 
 * Update the [Balance Snapshot API](#balance-snapshot) and [Order and Balance Detail API](#order-and-balance-detail) to different endpoints by account type: `api/pro/data/v1/cash/balance/snapshot` for cash and `api/pro/data/v1/margin/balance/snapshot` for margin balance;`api/pro/data/v1/cash/balance/history` for cash and `api/pro/data/v1/margin/balance/history` for margin balance or order fill detail.
