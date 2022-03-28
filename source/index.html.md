@@ -127,7 +127,7 @@ Join our official telegram channel: [https://t.me/AscendEX_Official_API](https:/
 
 **2022-02-28**
 
-* Added the [Limit Info API](#risk_limit_info) to get ban info and risk limit info.
+* Added the [Limit Info API](#risk-limit-info) to get ban info and risk limit info.
 
 **2022-02-25**
 
