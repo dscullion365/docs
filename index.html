@@ -311,6 +311,9 @@
                           <a href="#fee-schedule-by-symbol" class="toc-h3 toc-link" data-title="Fee Schedule by Symbol">Fee Schedule by Symbol</a>
                         </li>
                         <li>
+                          <a href="#exchange-risk-limit-info" class="toc-h3 toc-link" data-title="Exchange Risk Limit Info">Exchange Risk Limit Info</a>
+                        </li>
+                        <li>
                           <a href="#exchange-latency-info" class="toc-h3 toc-link" data-title="Exchange Latency Info">Exchange Latency Info</a>
                         </li>
                     </ul>
@@ -590,6 +593,12 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 <h2 id='got-questions'>Got Questions?</h2>
 <p>Join our official telegram channel: <a href="https://t.me/AscendEX_Official_API">https://t.me/AscendEX_Official_API</a></p>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2022-02-28</strong></p>
+
+<ul>
+<li>Added the <a href="#risk_limit_info">Limit Info API</a> to get ban info and risk limit info.</li>
+</ul>
+
 <p><strong>2022-02-25</strong></p>
 
 <ul>
@@ -1861,6 +1870,52 @@ only 500 bars will be returned. </li>
 <p><code>&lt;timestamp&gt;+fee</code></p>
 
 <p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py">query fee</a>.</p>
+<h3 id='exchange-risk-limit-info'>Exchange Risk Limit Info</h3>
+<blockquote>
+<p>Risk Limit Info </p>
+</blockquote>
+<pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v1/risk-limit-info"
+</code></pre>
+<blockquote>
+<p>Risk Limit Info - Sample response::</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"webSocket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"windowSizeInMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maxNumRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"maxSessionPerIp"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"isBanned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bannedUntil"</span><span class="p">:</span><span class="w"> </span><span class="mi">1644807691158</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"violationCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">100014</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exceeds MAX_REQ_COUNT_PER_IP[45], 49 requests recently"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>HTTP Request</strong> </p>
+
+<p><code>GET /api/pro/v1/exchange-info</code></p>
+<h4 id='request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>No</td>
+<td>valid ip address</td>
+<td>the client&#39;s ip address to be checked if it is banned due to violation of risk limits.</td>
+</tr>
+</tbody></table>
 <h3 id='exchange-latency-info'>Exchange Latency Info</h3>
 <blockquote>
 <p>Latency Info </p>
