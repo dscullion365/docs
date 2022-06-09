@@ -37,7 +37,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 **prehash string** 
 
-`<timestamp>+fee/info`
+`<timestamp>+fee`
 
 See a demo at [query fee](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py).
 
