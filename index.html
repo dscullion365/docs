@@ -311,7 +311,10 @@
                           <a href="#fee-schedule-by-symbol" class="toc-h3 toc-link" data-title="Fee Schedule by Symbol">Fee Schedule by Symbol</a>
                         </li>
                         <li>
-                          <a href="#risk-limit-info" class="toc-h3 toc-link" data-title="Risk Limit Info">Risk Limit Info</a>
+                          <a href="#risk-limit-info-deprecated" class="toc-h3 toc-link" data-title="Risk Limit Info(Deprecated)">Risk Limit Info(Deprecated)</a>
+                        </li>
+                        <li>
+                          <a href="#risk-limit-info-v2" class="toc-h3 toc-link" data-title="Risk Limit Info (v2)">Risk Limit Info (v2)</a>
                         </li>
                         <li>
                           <a href="#exchange-latency-info" class="toc-h3 toc-link" data-title="Exchange Latency Info">Exchange Latency Info</a>
@@ -593,6 +596,10 @@ life cycle with only one indentifier (<code>orderId</code>). </li>
 <h2 id='got-questions'>Got Questions?</h2>
 <p>Join our official telegram channel: <a href="https://t.me/AscendEX_Official_API">https://t.me/AscendEX_Official_API</a></p>
 <h2 id='release-note'>Release Note</h2>
+<p><strong>2022-05-19</strong></p>
+
+<p><a href="#risk-limit-info">Limit Info API</a> is deprecated, use  <a href="#risk-limit-info-v2">Limit Info API v2</a> to get ban info and message threshold.</p>
+
 <p><strong>2022-02-28</strong></p>
 
 <ul>
@@ -1805,7 +1812,7 @@ only 500 bars will be returned. </li>
 
 <p><strong>prehash string</strong> </p>
 
-<p><code>&lt;timestamp&gt;+fee/info</code></p>
+<p><code>&lt;timestamp&gt;+fee</code></p>
 
 <p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py">query fee</a>.</p>
 <h3 id='fee-schedule-by-symbol'>Fee Schedule by Symbol</h3>
@@ -1870,7 +1877,9 @@ only 500 bars will be returned. </li>
 <p><code>&lt;timestamp&gt;+fee</code></p>
 
 <p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py">query fee</a>.</p>
-<h3 id='risk-limit-info'>Risk Limit Info</h3>
+<h3 id='risk-limit-info-deprecated'>Risk Limit Info(Deprecated)</h3>
+<p>This API has been deprecated, please use <a href="#risk-limit-info-v2">risk limit info v2</a> instead.</p>
+
 <blockquote>
 <p>Risk Limit Info </p>
 </blockquote>
@@ -1898,6 +1907,120 @@ only 500 bars will be returned. </li>
 <p><strong>HTTP Request</strong> </p>
 
 <p><code>GET /api/pro/v1/risk-limit-info</code></p>
+<h4 id='request-parameters'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>No</td>
+<td>valid ip address</td>
+<td>the client&#39;s ip address to be checked if it is banned due to violation of risk limits.</td>
+</tr>
+</tbody></table>
+<h3 id='risk-limit-info-v2'>Risk Limit Info (v2)</h3>
+<blockquote>
+<p>Risk Limit Info v2</p>
+</blockquote>
+
+<p>Our message thresholds in web socket are based on <code>op</code> field and <code>action</code> field.  Each threshold will have two levels, which are based on counts of messages received in <code>1</code> minute. If level 1 threshold is violated, this type of messages will be ignored in the following 15 minutes, other functions are not affected. If you keep sending these messages and triggered level 2 threshold, the violated WebSocket session will be killed and this ip will be banned for 15 minutes. Currently, We have following threshold groups:</p>
+
+<ul>
+<li><p><code>admin op</code>, includes <code>auth/ping/pong</code></p></li>
+<li><p><code>stream op</code>, includes <code>sub/unsub</code></p></li>
+<li><p><code>req op</code>, includes all <code>req</code> op, but <code>order req</code> and <code>snapshot req</code> have their own thresholds</p>
+
+<ul>
+<li><code>order req</code>, includes <code>place_order/cancel_order/cancel_all</code></li>
+<li><code>snapshot req</code>, includes <code>depth_snapshot/depth_snapshot_top100</code></li>
+</ul></li>
+</ul>
+
+<p>All the operations fall into same <code>op</code>/<code>req</code> group will share a threshold, meaning the sum of count of these messages should not violate the threshold.</p>
+
+<p>For <code>req op</code>, we have two fine granularity threshold <code>order req</code> and <code>snapshot req</code>, which will have their specialized threshold value for messages belonging to their types.</p>
+<pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v2/risk-limit-info"
+</code></pre>
+<blockquote>
+<p>Risk Limit Info - Sample response::</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"173.123.133.23"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"webSocket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"isBanned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bannedUntil"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"violationCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"maxWebSocketSessionsPerIpAccountGroup"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"maxWebSocketSessionsPerIpTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"messageThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"level1OpThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"auth"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ping"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pong"</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unsub"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"req"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"level2OpThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"auth"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ping"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"pong"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"sub"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unsub"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"req"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"level1ReqThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"place_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cancel_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cancel_all"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"batch_place_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"batch_cancel_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"depth_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"depth_snapshot_top100"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"market_trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"open_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"margin_risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"futures_account_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"futures_open_orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"level2ReqThreshold"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"place_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cancel_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"cancel_all"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"batch_place_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"batch_cancel_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"depth_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"depth_snapshot_top100"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"market_trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"open_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"margin_risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"futures_account_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"futures_open_orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>HTTP Request</strong> </p>
+
+<p><code>GET /api/pro/v2/risk-limit-info</code></p>
 <h4 id='request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
