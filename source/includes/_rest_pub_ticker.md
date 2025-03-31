@@ -85,7 +85,7 @@ Each ticker object contains the following fields:
  `close`    |  `String`            | the last traded price
  `high`     |  `String`            | the highest price over the past 24 hours 
  `low`      |  `String`            | the lowest price over the past 24 hours 
- `volume`   |  `String`            | the total traded volume in quote asset over the paste 24 hours
+ `volume`   |  `String`            | the total traded volume in base asset over the paste 24 hours
  `ask`      |  `[String, String]`  | the price and size at the current best ask level
  `bid`      |  `[String, String]`  | the price and size at the current best bid level
 

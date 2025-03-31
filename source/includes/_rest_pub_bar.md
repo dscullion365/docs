@@ -172,7 +172,7 @@ Name     | Type   |   value  | Description
 `c`      | String |          | close price
 `h`      | String |          | high price
 `l`      | String |          | low price
-`v`      | String |          | volume in quote asset
+`v`      | String |          | volume in base asset
 
 #### Code Sample
 
