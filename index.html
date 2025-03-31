@@ -1181,7 +1181,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <tr>
 <td><code>volume</code></td>
 <td><code>String</code></td>
-<td>the total traded volume in quote asset over the paste 24 hours</td>
+<td>the total traded volume in base asset over the paste 24 hours</td>
 </tr>
 <tr>
 <td><code>ask</code></td>
@@ -1447,7 +1447,7 @@ only 500 bars will be returned. </li>
 <td><code>v</code></td>
 <td>String</td>
 <td></td>
-<td>volume in quote asset</td>
+<td>volume in base asset</td>
 </tr>
 </tbody></table>
 <h4 id='code-sample'>Code Sample</h4>
@@ -2780,7 +2780,246 @@ only 500 bars will be returned. </li>
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
+</span></code></pre><h4 id='request-parameters-2'>Request Parameters</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Value Range</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>Yes</td>
+<td>start from snapshot <code>sn</code></td>
+<td>Start sn</td>
+</tr>
+<tr>
+<td><strong>limit</strong></td>
+<td><code>Int</code></td>
+<td>No</td>
+<td>1 to 500</td>
+<td>Number of records. max 500</td>
+</tr>
+</tbody></table>
+<h4 id='response-content-2'>Response Content</h4>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>meta</strong></td>
+<td><code>Json</code></td>
+<td><code>meta</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>order</strong></td>
+<td><code>Json Array</code></td>
+<td><code>order</code> info. See detail below</td>
+</tr>
+<tr>
+<td><strong>balance</strong></td>
+<td><code>Json Array</code></td>
+<td><code>balance</code> info. See detail below</td>
+</tr>
+</tbody></table>
+<h5 id='meta'>Meta</h5>
+<p><code>meta</code> field provides some basic info.</p>
+
+<p><code>meta</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ac</strong></td>
+<td><code>String</code></td>
+<td>account category</td>
+<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+</tr>
+<tr>
+<td><strong>accountId</strong></td>
+<td><code>String</code></td>
+<td>accountId</td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id='order'>Order</h5>
+<p><code>order</code> field provides an array of asset balance detail from order fill event.</p>
+
+<p><code>order</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>liquidityInd</strong></td>
+<td><code>String</code></td>
+<td>liquidity indicator</td>
+<td><code>RemovedLiquidity</code> for taker order, <code>AddedLiquidity</code> for maker order, or <code>NULL_VAL</code></td>
+</tr>
+<tr>
+<td><strong>orderId</strong></td>
+<td><code>String</code></td>
+<td>orderId</td>
+<td>order Id</td>
+</tr>
+<tr>
+<td><strong>orderType</strong></td>
+<td><code>String</code></td>
+<td>order type</td>
+<td><code>market</code>, <code>limit</code></td>
+</tr>
+<tr>
+<td><strong>side</strong></td>
+<td><code>String</code></td>
+<td>order side</td>
+<td><code>buy</code>, <code>sell</code></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td>unique and increasing sequence number</td>
+</tr>
+<tr>
+<td><strong>transactTime</strong></td>
+<td><code>Long</code></td>
+<td>transactTime in milli seconds</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td><code>Json Array</code></td>
+<td>list of order info json objects</td>
+<td>see detail below</td>
+</tr>
+</tbody></table>
+
+<p>order balance detail by asset</p>
+
+<p><code>data</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>curBalance</strong></td>
+<td><code>String</code></td>
+<td>asset balance after this transaction</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>dataType</strong></td>
+<td><code>String</code></td>
+<td><code>trade</code> for trading asset; <code>fee</code> for fee balance asset</td>
+<td><code>trade</code>, <code>fee</code></td>
+</tr>
+<tr>
+<td><strong>deltaQty</strong></td>
+<td><code>String</code></td>
+<td>balance change in this transaction</td>
+<td><code>100</code></td>
+</tr>
+</tbody></table>
+<h5 id='balance'>Balance</h5>
+<p><code>balance</code> field provides an array of asset balance detail due to balance event.</p>
+
+<p><code>balance</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>eventType</strong></td>
+<td><code>String</code></td>
+<td>balance event type</td>
+<td><code>deposit</code>, <code>withdrawal</code></td>
+</tr>
+<tr>
+<td><strong>sn</strong></td>
+<td><code>Long</code></td>
+<td>sequence number</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>transactTime</strong></td>
+<td><code>Long</code></td>
+<td>transactTime in milli seconds</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td><code>Json Array</code></td>
+<td>list of balance info json objects</td>
+<td>see detail below</td>
+</tr>
+</tbody></table>
+
+<p><code>data</code> schema</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Sample Response</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>asset</strong></td>
+<td><code>String</code></td>
+<td>asset code</td>
+<td><code>&quot;USDT&quot;</code></td>
+</tr>
+<tr>
+<td><strong>curBalance</strong></td>
+<td><code>String</code></td>
+<td>asset balance after this transaction</td>
+<td><code>&quot;1234.56&quot;</code></td>
+</tr>
+<tr>
+<td><strong>deltaQty</strong></td>
+<td><code>String</code></td>
+<td>balance change in this transaction</td>
+<td><code>100</code></td>
+</tr>
+</tbody></table>
+<h4 id='code-sample-2'>Code Sample</h4>
+<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query order and balance detail</a></p>
+<h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
 </blockquote>
