@@ -28,11 +28,12 @@ end
 
 activate :sprockets
 
-activate :autoprefixer do |config|
-  config.browsers = ['last 2 version', 'Firefox ESR']
-  config.cascade  = false
-  config.inline   = true
-end
+# Autoprefixer disabled due to Node.js compatibility issues
+# activate :autoprefixer do |config|
+#   config.browsers = ['last 2 version', 'Firefox ESR']
+#   config.cascade  = false
+#   config.inline   = true
+# end
 
 # Github pages require relative links
 activate :relative_assets
