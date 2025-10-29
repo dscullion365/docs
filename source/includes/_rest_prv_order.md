@@ -4,7 +4,7 @@ Trading and Order related APIs. API path usually depend on account-group and acc
 
   * account-group   : get your account-group from 'Account Info' API
 
-  * account-category: cash or margin
+  * account-category: cash
 
 For all order related ack or data, there is *orderId* field to identify the order. 
 

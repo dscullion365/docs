@@ -37,7 +37,7 @@ This API returns all current open orders for the account specified.
 
 `GET <account-group>/api/pro/v1/{account-category}/order/open`
 
-Set `account-category` to`cash` for cash account and `margin` for margin account. 
+Set `account-category` to`cash` for cash account
 
 #### Signature
 

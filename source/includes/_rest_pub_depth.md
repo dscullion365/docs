@@ -3,7 +3,7 @@
 > Request for Order Book (Depth) Data
 
 ```
-curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=ASD/USDT"
+curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=BTC/USDT"
 ```
 
 > Order Book (Depth) Data - Sample response 
@@ -13,7 +13,7 @@ curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=ASD/USDT"
     "code": 0,
     "data": {
         "m":      "depth-snapshot",
-        "symbol": "ASD/USDT",
+        "symbol": "BTC/USDT",
         "data": {
             "seqnum":  5068757,
             "ts":      1573165838976,
@@ -59,7 +59,7 @@ curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=ASD/USDT"
    Name    | Type               | Description 
 ---------- | ------------------ | -----------------------------
  `m`       | `String`           | `"depth-snapshot"`
- `symbol`  | `String`           | e.g. `"ASD/USDT"`
+ `symbol`  | `String`           | e.g. `"BTC/USDT"`
  `data`    | `Json`             | actual bid and ask info. See below for detail.
 
 Actual depth data in `data` section:

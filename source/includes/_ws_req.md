@@ -15,7 +15,7 @@ All operation or data request follow the same uniform format:
 **op**      | `String`     | Yes     | `req`                  |                                                                                 
 **id**      | `String`     | No      | digits and numbers     | if provided, the server will echo back this value in the response message 
 **action**  | `String`     | Yes     | See below              | name of the request action with optional arguments  
-**account** | `String`     | NO      | `cash`, `margin`       | the account of the interest, this field is not required for public data request
+**account** | `String`     | NO      | `cash`      | the account of the interest, this field is not required for public data request
 **args**    | `{key:value}`| No      |                        | each `action` has different args, please see each action for detail.
 
 
@@ -32,7 +32,7 @@ Name                      | Description
 **market-trades**         | Get market trades for a symbol
 **balance**               | Request balance
 **open-order**            | Query open order
-**margin-risk**           | Get margin risk
+
 
 
 ### WebSocket Response Schema

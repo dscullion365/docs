@@ -67,28 +67,10 @@
 }
 ```
 
-> Balance Update Message (Margin Account)
-
-```json
-{
-    "m": "balance",
-    "accountId": "marOxpKJV83dxTRx0Eyxpa0gxc4Txt0P",
-    "ac": "MARGIN",
-    "data": {
-        "a"  : "USDT",
-        "sn" : 8159802,
-        "tb" : "400",
-        "ab" : "400",
-        "brw": "0",
-        "int": "0"
-    }
-}
-```
-
 
 Note: once you subscribe to the **order** channel, you will start receiving messages from the **balance** channel automatically. If you unsubscribe from the **order** channel, you will simultaneously unsubscribe from the **balance** channel.
 
-You need to specify the account when subscribing to the order channel. You could specify account category `cash`, `margin`, or specific account id.
+You need to specify the account when subscribing to the order channel. You could specify account category `cash` or specific account id.
 
 #### Order Messages
 
@@ -119,9 +101,7 @@ Name     | Type     | Description
 
 #### Balance Messages
 
-You will also receive balance update message (`m=balance`) for the asset balance updates not caused by orders. For instance, when you make wallet deposits/withdrawals, or when you transfer asset from the cash account 
-to the margin account, you will receive balance update message.
-
+You will also receive balance update message (`m=balance`) for the asset balance updates not caused by orders.
 For *Cash Account Balance Update*, the data field contains:
 
 Name     | Type     | Description                                                                                    
@@ -130,15 +110,4 @@ Name     | Type     | Description
 `sn`     | `long`   | sequence number
 `tb`     | `String` | total balance
 `ab`     | `String` | available balance
-
-For *Margin Account Balance Update*, the data field contains:
-
-Name     | Type     | Description                                                                                    
----------| -------- | ---------------------------------
-`a`      | `String` | asset
-`sn`     | `long`   | sequence number
-`tb`     | `String` | total balance
-`ab`     | `String` | available balance
-`brw`    | `String` | borrowed amount
-`int`    | `String` | interest amount
 

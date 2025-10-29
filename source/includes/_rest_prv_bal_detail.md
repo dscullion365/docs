@@ -1,20 +1,16 @@
 ## Balance Snapshot And Update Detail
 
-Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(`<cash/margin>/balance/snapshot`) to get balance at the beginning of the day, and get the sequence number `sn`; then start to query balance or order fills update from `<cash/margin>/balance/history` by setting parameter `sn` value to be `sn + 1`.
+Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(`<cash//balance/snapshot`) to get balance at the beginning of the day, and get the sequence number `sn`; then start to query balance or order fills update from `<cash/balance/history` by setting parameter `sn` value to be `sn + 1`.
 
 Please note we enforce rate limit 8 / minute. Data query for most recent 7 days is supported.
 
 ### Balance Snapshot
 
-This API returns cash or margin balance snapshot infomation on daily basis.
+This API returns cash  balance snapshot infomation on daily basis.
 
 #### HTTP Request
 
-For cash
 `GET  api/pro/data/v1/cash/balance/snapshot`
-
-For margin
-`GET  api/pro/data/v1/margin/balance/snapshot`
 
 #### Signature
 
@@ -22,11 +18,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 #### Prehash String
 
-For cash
 `<timestamp>+data/v1/cash/balance/snapshot`
-
-For margin
-`<timestamp>+data/v1/margin/balance/snapshot`
 
 > Cash Account Balance Snapshot - Sample response
 
@@ -66,7 +58,7 @@ Name        |  Type     | Required |           Value Range       | Description
 
  Name            | Type     | Description                    | Sample Response
 -----------------| -------- | -------------------------------| -------------------------
-**ac**           | `String` | account category               | `"cash" or "margin"`
+**ac**           | `String` | account category               | `"cash"`
 **accountId**    | `String` | accountId                      |
 **sn**           | `Long`   | sequence number                |
 **balanceTime**  | `Long`   | balance snapshot time in milli seconds  |
@@ -90,18 +82,10 @@ This API is for intraday balance change detail from balance event and order fill
 For cash
 `GET  api/pro/data/v1/cash/balance/history`
 
-For margin
-`GET  api/pro/data/v1/margin/balance/history`
-
-
 #### Prehash String
 
 For cash
 `<timestamp>+data/v1/cash/balance/history`
-
-For margin
-`<timestamp>+data/v1/margin/balance/history`
-
 > Cash Account Balance Detail - Sample response 
 
 ```json
@@ -194,7 +178,7 @@ Name           |  Type     | Required |           Value Range         | Descript
 
  Name                | Type     | Description      | Sample Response
 -------------------- | -------- | -----------------| -------------------------
-**ac**               | `String` | account category | `"cash", "margin", "futures`
+**ac**               | `String` | account category | `"cash"`
 **accountId**        | `String` | accountId        | 
 
 ##### Order
