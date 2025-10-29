@@ -40,7 +40,7 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
 
 #### HTTP Request
 
-`GET /api/pro/v1/{accountCategory}/products`
+`GET /api/pro/v1/cash/products`
 
 #### Response Content
 
