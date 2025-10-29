@@ -225,7 +225,7 @@
           <img src="images/logo.png" class="logo" alt="" />
         </a>
         <div class="navbox">
-            <span class="navsell navtab"><a href="https://dscullion365.github.io/docs/#bakkt-documentation" class="current">Cash/Margin APIs</a></span>
+            <span class="navsell navtab"><a href="https://dscullion365.github.io/docs/#bakkt-documentation" class="current">CashAPIs</a></span>
         </div>
       </div>
     </header>
@@ -296,9 +296,6 @@
                           <a href="#fee-schedule-by-symbolls" class="toc-h3 toc-link" data-title="Fee Schedule by Symbolls">Fee Schedule by Symbolls</a>
                         </li>
                         <li>
-                          <a href="#risk-limit-info-deprecated" class="toc-h3 toc-link" data-title="Risk Limit Info(Deprecated)">Risk Limit Info(Deprecated)</a>
-                        </li>
-                        <li>
                           <a href="#risk-limit-info-v2" class="toc-h3 toc-link" data-title="Risk Limit Info (v2)">Risk Limit Info (v2)</a>
                         </li>
                         <li>
@@ -311,21 +308,6 @@
                     <ul class="toc-list-h3">
                         <li>
                           <a href="#cash-account-balance" class="toc-h3 toc-link" data-title="Cash Account Balance">Cash Account Balance</a>
-                        </li>
-                        <li>
-                          <a href="#margin-account-balance" class="toc-h3 toc-link" data-title="Margin Account Balance">Margin Account Balance</a>
-                        </li>
-                        <li>
-                          <a href="#margin-risk-profile" class="toc-h3 toc-link" data-title="Margin Risk Profile">Margin Risk Profile</a>
-                        </li>
-                        <li>
-                          <a href="#balance-transfer" class="toc-h3 toc-link" data-title="Balance Transfer">Balance Transfer</a>
-                        </li>
-                        <li>
-                          <a href="#balance-transfer-for-subaccount" class="toc-h3 toc-link" data-title="Balance Transfer for Subaccount">Balance Transfer for Subaccount</a>
-                        </li>
-                        <li>
-                          <a href="#balance-transfer-history-for-subaccount" class="toc-h3 toc-link" data-title="Balance Transfer history for Subaccount">Balance Transfer history for Subaccount</a>
                         </li>
                     </ul>
                   </li>
@@ -345,9 +327,6 @@
                     <ul class="toc-list-h3">
                         <li>
                           <a href="#query-deposit-addresses" class="toc-h3 toc-link" data-title="Query Deposit Addresses">Query Deposit Addresses</a>
-                        </li>
-                        <li>
-                          <a href="#wallet-withdrawal" class="toc-h3 toc-link" data-title="Wallet Withdrawal">Wallet Withdrawal</a>
                         </li>
                         <li>
                           <a href="#query-wallet-transaction-history" class="toc-h3 toc-link" data-title="Query Wallet Transaction History">Query Wallet Transaction History</a>
@@ -473,9 +452,6 @@
                         <li>
                           <a href="#ws-recent-market-trades" class="toc-h3 toc-link" data-title="WS: Recent Market Trades">WS: Recent Market Trades</a>
                         </li>
-                        <li>
-                          <a href="#ws-margin-risk-for-symbol" class="toc-h3 toc-link" data-title="WS: Margin Risk for Symbol">WS: Margin Risk for Symbol</a>
-                        </li>
                     </ul>
                   </li>
               </ul>
@@ -511,9 +487,6 @@
                         </li>
                         <li>
                           <a href="#30xxxx-order-error" class="toc-h3 toc-link" data-title="30XXXX - Order Error">30XXXX - Order Error</a>
-                        </li>
-                        <li>
-                          <a href="#31xxxx-margin-error" class="toc-h3 toc-link" data-title="31XXXX - Margin Error">31XXXX - Margin Error</a>
                         </li>
                         <li>
                           <a href="#50xxxx-system-error" class="toc-h3 toc-link" data-title="50XXXX - System Error">50XXXX - System Error</a>
@@ -747,7 +720,6 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <p>List all Products </p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
-curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 </code></pre></div>
 <blockquote>
 <p>Sample Response </p>
@@ -796,7 +768,7 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
+<td>e.g. <code>&quot;BTC/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>baseAsset</code></td>
@@ -926,11 +898,11 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 <blockquote>
 <p>Ticker for one trading pair</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://bakkt.exchange.test.com</span><span class="w"> </span><span class="err">/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=ASD/USDT'</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://bakkt.exchange.test.com</span><span class="w"> </span><span class="err">/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=BTC/USDT'</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"open"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06777"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"close"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"high"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06899"</span><span class="p">,</span><span class="w">
@@ -950,12 +922,12 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 <blockquote>
 <p>List of Tickers for one or multiple trading pairs</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://bakkt.exchange.test.com/api/pro/v1/spot/ticker?symbol=ASD/USDT,"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://bakkt.exchange.test.com/api/pro/v1/spot/ticker?symbol=BTC/USDT,"</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"open"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06777"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"close"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"high"</span><span class="p">:</span><span class="w">   </span><span class="s2">"0.06809"</span><span class="p">,</span><span class="w">
@@ -999,9 +971,9 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 
 <ul>
 <li>If you do not specify <code>symbol</code>, the API will responde with tickers of all symbols in a list. </li>
-<li>If you set <code>symbol</code> to be a single symbol, such as <code>ASD/USDT</code>, the API will respond with the ticker of the target symbol as an object. 
-If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>ASD/USDT,</code>.</li>
-<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>ASD/USDT,BTC/USDT</code>. The API will respond with a list of tickers. </li>
+<li>If you set <code>symbol</code> to be a single symbol, such as <code>BTC/USDT</code>, the API will respond with the ticker of the target symbol as an object. 
+If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>BTC/USDT,</code>.</li>
+<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>BTC/USDT,BTC/USDT</code>. The API will respond with a list of tickers. </li>
 </ul>
 <h4 id='respond-content'>Respond Content</h4>
 <p>The API will respond with a ticker object or a list of ticker objects, depending on how you set the <code>symbol</code> parameter. </p>
@@ -1153,7 +1125,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <blockquote>
 <p>Request </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/barhist?symbol=ASD/USDT&amp;interval=1"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/barhist?symbol=BTC/USDT&amp;interval=1"
 </code></pre></div>
 <blockquote>
 <p>Sample response</p>
@@ -1171,7 +1143,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
                 </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575409260000</span><span class="p">,</span><span class="w">
                 </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1612"</span><span class="p">},</span><span class="w">
            </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">},</span><span class="w">
+           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"c"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
@@ -1183,7 +1155,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
                 </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57242"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
            </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">},</span><span class="w">
+           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">},</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='http-request'>HTTP Request</h4>
@@ -1203,7 +1175,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>Yes</td>
-<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
+<td>e.g. <code>&quot;BTC/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>interval</code></td>
@@ -1314,7 +1286,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Request for Order Book (Depth) Data</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=ASD/USDT"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=BTC/USDT"
 </code></pre></div>
 <blockquote>
 <p>Order Book (Depth) Data - Sample response </p>
@@ -1323,7 +1295,7 @@ only 500 bars will be returned. </li>
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"m"</span><span class="p">:</span><span class="w">      </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nl">"seqnum"</span><span class="p">:</span><span class="w">  </span><span class="mi">5068757</span><span class="p">,</span><span class="w">
             </span><span class="nl">"ts"</span><span class="p">:</span><span class="w">      </span><span class="mi">1573165838976</span><span class="p">,</span><span class="w">
@@ -1388,7 +1360,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>e.g. <code>&quot;ASD/USDT&quot;</code></td>
+<td>e.g. <code>&quot;BTC/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>data</code></td>
@@ -1431,7 +1403,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Request </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=ASD/USDT"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=BTC/USDT"
 </code></pre></div>
 <blockquote>
 <p>Sample response </p>
@@ -1440,7 +1412,7 @@ only 500 bars will be returned. </li>
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nl">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">144115191800016553</span><span class="p">,</span><span class="w">
@@ -1543,9 +1515,6 @@ only 500 bars will be returned. </li>
         </span><span class="nl">"cashAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"dadFNEYEJIJ93CRxdafd3LTCIDIJPCFNIX"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"marginAccount"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"mar2z3CMIEQx4UadasbtQ9JcxWJYgHmcb"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
         </span><span class="nl">"userUID"</span><span class="p">:</span><span class="w">            </span><span class="s2">"U0866943712"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"tradePermission"</span><span class="p">:</span><span class="w">     </span><span class="err">True</span><span class="p">,</span><span class="w">
         </span><span class="nl">"transferPermission"</span><span class="p">:</span><span class="w">  </span><span class="err">True</span><span class="p">,</span><span class="w">
@@ -1598,11 +1567,6 @@ only 500 bars will be returned. </li>
 </tr>
 <tr>
 <td><code>cashAccount</code></td>
-<td><code>List[String]</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>marginAccount</code></td>
 <td><code>List[String]</code></td>
 <td></td>
 </tr>
@@ -1725,54 +1689,6 @@ only 500 bars will be returned. </li>
 <p><strong>prehash string</strong> </p>
 
 <p><code>&lt;timestamp&gt;+fee</code></p>
-<h3 id='risk-limit-info-deprecated'>Risk Limit Info(Deprecated)</h3>
-<p>This API has been deprecated, please use <a href="#risk-limit-info-v2">risk limit info v2</a> instead.</p>
-
-<blockquote>
-<p>Risk Limit Info </p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://bakkt.exchange.test.com /api/pro/v1/risk-limit-info"
-</code></pre></div>
-<blockquote>
-<p>Risk Limit Info - Sample response::</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"webSocket"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"windowSizeInMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"maxNumRequests"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"maxSessionPerIp"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"isBanned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"bannedUntil"</span><span class="p">:</span><span class="w"> </span><span class="mi">1644807691158</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"violationCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">100014</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"exceeds MAX_REQ_COUNT_PER_IP[45], 49 requests recently"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><strong>HTTP Request</strong> </p>
-
-<p><code>GET /api/pro/v1/risk-limit-info</code></p>
-<h4 id='request-parameters'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ip</td>
-<td>String</td>
-<td>No</td>
-<td>valid ip address</td>
-<td>the client&#39;s ip address to be checked if it is banned due to violation of risk limits.</td>
-</tr>
-</tbody></table>
 <h3 id='risk-limit-info-v2'>Risk Limit Info (v2)</h3>
 <blockquote>
 <p>Risk Limit Info v2</p>
@@ -1842,7 +1758,6 @@ only 500 bars will be returned. </li>
           </span><span class="nl">"market_trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"open_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"margin_risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"futures_account_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"futures_open_orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
         </span><span class="p">},</span><span class="w">
@@ -1857,7 +1772,6 @@ only 500 bars will be returned. </li>
           </span><span class="nl">"market_trades"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"open_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"margin_risk"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"futures_account_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
           </span><span class="nl">"futures_open_orders"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -2010,411 +1924,18 @@ only 500 bars will be returned. </li>
 <td><code>&quot;234.56&quot;</code></td>
 </tr>
 </tbody></table>
-<h3 id='margin-account-balance'>Margin Account Balance</h3>
-<blockquote>
-<p>Margin Account Balance - Sample response </p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w">            </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w">     </span><span class="s2">"11200"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11200"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"borrowed"</span><span class="p">:</span><span class="w">         </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"interest"</span><span class="p">:</span><span class="w">         </span><span class="s2">"0"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"asset"</span><span class="p">:</span><span class="w">            </span><span class="s2">"ETH"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"totalBalance"</span><span class="p">:</span><span class="w">     </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"availableBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"borrowed"</span><span class="p">:</span><span class="w">         </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"interest"</span><span class="p">:</span><span class="w">         </span><span class="s2">"0"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='http-request-2'>HTTP Request</h4>
-<p><code>GET &lt;account-group&gt;/api/pro/v1/margin/balance</code></p>
-<h4 id='signature-2'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-2'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+balance</code></p>
-<h4 id='request-parameters-2'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>No</td>
-<td>valid asset code</td>
-<td>this allow you query single asset balance, e.g. <code>BTC</code></td>
-</tr>
-<tr>
-<td><strong>showAll</strong></td>
-<td><code>Boolean</code></td>
-<td>No</td>
-<td>true / false</td>
-<td>by default, the API will only respond with assets with non-zero balances. Set <code>showAll=true</code> to include all assets in the response.</td>
-</tr>
-</tbody></table>
-<h4 id='response-content-2'>Response Content</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Sample Response</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>asset code</td>
-<td><code>&quot;USDT&quot;</code></td>
-</tr>
-<tr>
-<td><strong>totalBalance</strong></td>
-<td><code>String</code></td>
-<td>total balance</td>
-<td><code>&quot;1234.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>availableBalance</strong></td>
-<td><code>String</code></td>
-<td>available balance</td>
-<td><code>&quot;234.56&quot;</code></td>
-</tr>
-<tr>
-<td><strong>borrowed</strong></td>
-<td><code>String</code></td>
-<td>borrowed amount</td>
-<td><code>&quot;0&quot;</code></td>
-</tr>
-<tr>
-<td><strong>interest</strong></td>
-<td><code>String</code></td>
-<td>interest owed</td>
-<td><code>&quot;0&quot;</code></td>
-</tr>
-</tbody></table>
-<h3 id='margin-risk-profile'>Margin Risk Profile</h3>
-<blockquote>
-<p>Margin Account Risk Profile - Sample response </p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"accountMaxLeverage"</span><span class="p">:</span><span class="w">     </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"availableBalanceInUSDT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17715.8175"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalBalanceInUSDT"</span><span class="p">:</span><span class="w">     </span><span class="s2">"17715.8175"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalBorrowedInUSDT"</span><span class="p">:</span><span class="w">    </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalInterestInUSDT"</span><span class="p">:</span><span class="w">    </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"netBalanceInUSDT"</span><span class="p">:</span><span class="w">       </span><span class="s2">"17715.8175"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pointsBalance"</span><span class="p">:</span><span class="w">          </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"currentLeverage"</span><span class="p">:</span><span class="w">        </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cushion"</span><span class="p">:</span><span class="w">                </span><span class="s2">"-1"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='http-request-3'>HTTP Request</h4>
-<p><code>POST &lt;account-group&gt;/api/pro/v1/margin/risk</code></p>
-<h4 id='signature-3'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-3'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+margin/risk</code></p>
-<h3 id='balance-transfer'>Balance Transfer</h3>
-<blockquote>
-<p>Transfer from Cash To Margin - Sample request and response</p>
-
-<p>Request</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fromAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"toAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"margin"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This api allows balance transfer between different accounts of the same user.</p>
-<h4 id='http-request-4'>HTTP Request</h4>
-<p><code>POST &lt;account-group&gt;/api/pro/v1/transfer</code></p>
-<h4 id='signature-4'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-4'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+transfer</code></p>
-<h4 id='request-parameters-3'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>amount</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>Positive numerical string</td>
-<td>Asset amount to transfer.</td>
-</tr>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>Valid asset code</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>fromAccount</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>toAccount</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
-<td></td>
-</tr>
-</tbody></table>
-<h4 id='response-content-3'>Response Content</h4>
-<p>Response <code>code</code> value 0 indicate successful transfer. </p>
-<h3 id='balance-transfer-for-subaccount'>Balance Transfer for Subaccount</h3>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"userFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent-account-userId"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">support</span><span class="w"> </span><span class="err">userId</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">username</span><span class="p">,</span><span class="w"> </span><span class="err">pls</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="s2">"parentUser"</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">parent</span><span class="w"> </span><span class="err">account</span><span class="w"> </span><span class="err">username</span><span class="w">
-    </span><span class="nl">"userTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-account-userId"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">support</span><span class="w"> </span><span class="err">userId</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">username</span><span class="p">,</span><span class="w"> </span><span class="err">pls</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="s2">"parentUser"</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">parent</span><span class="w"> </span><span class="err">account</span><span class="w"> </span><span class="err">username</span><span class="w">
-    </span><span class="nl">"acFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"acTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ack"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">ack/accept.</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">accept</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">hold</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">wait</span><span class="w"> </span><span class="err">ack</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">OMS</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"info"</span><span class="p">:{</span><span class="w">
-      </span><span class="nl">"acFrom"</span><span class="p">:</span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"acTo"</span><span class="p">:</span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="s2">"40.0000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"asset"</span><span class="p">:</span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"userFrom"</span><span class="p">:</span><span class="s2">"parent-account-userId"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"userTo"</span><span class="p">:</span><span class="s2">"sub-account-userId"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This api allows balance transfer between the parent and sub accounts and between two sub accounts. You can only call this API from the parent account.</p>
-<h4 id='http-request-5'>HTTP Request</h4>
-<p><code>POST &lt;account-group&gt;/api/pro/v2/subuser/subuser-transfer</code></p>
-<h4 id='signature-5'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-5'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+subuser-transfer</code></p>
-<h4 id='request-parameters-4'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>amount</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>Positive numerical string</td>
-<td>Asset amount to transfer.</td>
-</tr>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>Valid asset code</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>userFrom</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>userId or username</td>
-<td>use <code>parentUser</code> as parent account username</td>
-</tr>
-<tr>
-<td><strong>userTo</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>userId or username</td>
-<td>use <code>parentUser</code> as parent account username</td>
-</tr>
-<tr>
-<td><strong>acFrom</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>acTo</strong></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td><code>cash</code>/<code>margin</code>/<code>futures</code></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>mode</strong></td>
-<td><code>String</code></td>
-<td>No</td>
-<td>empty/<code>ack</code>/<code>accept</code></td>
-<td>use <code>accept</code> to hold-and-wait for confirmation from the exchange backend.</td>
-</tr>
-</tbody></table>
-<h4 id='response-content-4'>Response Content</h4>
-<p>Response <code>code</code> value 0 indicates successful transfer and <code>info</code> echos the request parameters. </p>
-<h3 id='balance-transfer-history-for-subaccount'>Balance Transfer history for Subaccount</h3>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"subUserId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"totalSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1620125922493</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"userFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ParentUser"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"userTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub-account-username"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"acFrom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"futures"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"acTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cash"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-            </span><span class="err">...</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This api allows to fetch balance transfer history among different sub users based on given filtering conditions. You can only call this API from the parent account.</p>
-<h4 id='http-request-6'>HTTP Request</h4>
-<p><code>POST &lt;account-group&gt;/api/pro/v2/subuser/subuser-transfer-hist</code></p>
-<h4 id='signature-6'>Signature</h4>
-<p>You should sign the message in header as specified in <a href="#sign-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-<h4 id='prehash-string-6'>Prehash String</h4>
-<p><code>&lt;timestamp&gt;+subuser-transfer-hist</code></p>
-<h4 id='request-parameters-5'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Value Range</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><strong>asset</strong></td>
-<td><code>String</code></td>
-<td>No</td>
-<td>Valid asset code</td>
-<td>asset to query</td>
-</tr>
-<tr>
-<td><strong>subUserId</strong></td>
-<td><code>String</code></td>
-<td>No</td>
-<td>userId</td>
-<td>user id to query</td>
-</tr>
-<tr>
-<td><strong>startTime</strong></td>
-<td><code>Long</code></td>
-<td>No</td>
-<td>timestamp in milliseconds</td>
-<td>start time to query</td>
-</tr>
-<tr>
-<td><strong>endTime</strong></td>
-<td><code>Long</code></td>
-<td>No</td>
-<td>timestamp in milliseconds</td>
-<td>end time to query</td>
-</tr>
-<tr>
-<td><strong>page</strong></td>
-<td><code>Int</code></td>
-<td>Yes</td>
-<td>number of page</td>
-<td>number of page</td>
-</tr>
-<tr>
-<td><strong>pageSize</strong></td>
-<td><code>Int</code></td>
-<td>Yes</td>
-<td>1-10</td>
-<td>record size in one page</td>
-</tr>
-</tbody></table>
-<h4 id='response-content-5'>Response Content</h4>
-<p>Response <code>code</code> value 0 indicates successful query and <code>data</code> shows query result. </p>
 <h2 id='balance-snapshot-and-update-detail'>Balance Snapshot And Update Detail</h2>
-<p>Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(<code>&lt;cash/margin&gt;/balance/snapshot</code>) to get balance at the beginning of the day, and get the sequence number <code>sn</code>; then start to query balance or order fills update from <code>&lt;cash/margin&gt;/balance/history</code> by setting parameter <code>sn</code> value to be <code>sn + 1</code>.</p>
+<p>Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(<code>&lt;cash//balance/snapshot</code>) to get balance at the beginning of the day, and get the sequence number <code>sn</code>; then start to query balance or order fills update from <code>&lt;cash/balance/history</code> by setting parameter <code>sn</code> value to be <code>sn + 1</code>.</p>
 
 <p>Please note we enforce rate limit 8 / minute. Data query for most recent 7 days is supported.</p>
 <h3 id='balance-snapshot'>Balance Snapshot</h3>
-<p>This API returns cash or margin balance snapshot infomation on daily basis.</p>
+<p>This API returns cash  balance snapshot infomation on daily basis.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p>For cash
-<code>GET  api/pro/data/v1/cash/balance/snapshot</code></p>
-
-<p>For margin
-<code>GET  api/pro/data/v1/margin/balance/snapshot</code></p>
+<p><code>GET  api/pro/data/v1/cash/balance/snapshot</code></p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
-<p>For cash
-<code>&lt;timestamp&gt;+data/v1/cash/balance/snapshot</code></p>
-
-<p>For margin
-<code>&lt;timestamp&gt;+data/v1/margin/balance/snapshot</code></p>
+<p><code>&lt;timestamp&gt;+data/v1/cash/balance/snapshot</code></p>
 
 <blockquote>
 <p>Cash Account Balance Snapshot - Sample response</p>
@@ -2487,7 +2008,7 @@ only 500 bars will be returned. </li>
 <td><strong>ac</strong></td>
 <td><code>String</code></td>
 <td>account category</td>
-<td><code>&quot;cash&quot; or &quot;margin&quot;</code></td>
+<td><code>&quot;cash&quot;</code></td>
 </tr>
 <tr>
 <td><strong>accountId</strong></td>
@@ -2539,15 +2060,9 @@ only 500 bars will be returned. </li>
 <h4 id='http-request-2'>HTTP Request</h4>
 <p>For cash
 <code>GET  api/pro/data/v1/cash/balance/history</code></p>
-
-<p>For margin
-<code>GET  api/pro/data/v1/margin/balance/history</code></p>
 <h4 id='prehash-string-2'>Prehash String</h4>
 <p>For cash
 <code>&lt;timestamp&gt;+data/v1/cash/balance/history</code></p>
-
-<p>For margin
-<code>&lt;timestamp&gt;+data/v1/margin/balance/history</code></p>
 
 <blockquote>
 <p>Cash Account Balance Detail - Sample response </p>
@@ -2682,7 +2197,7 @@ only 500 bars will be returned. </li>
 <td><strong>ac</strong></td>
 <td><code>String</code></td>
 <td>account category</td>
-<td><code>&quot;cash&quot;, &quot;margin&quot;, &quot;futures</code></td>
+<td><code>&quot;cash&quot;</code></td>
 </tr>
 <tr>
 <td><strong>accountId</strong></td>
@@ -2969,8 +2484,6 @@ only 500 bars will be returned. </li>
 <td></td>
 </tr>
 </tbody></table>
-<h3 id='wallet-withdrawal'>Wallet Withdrawal</h3>
-<p>We do support API withdrawals. Please contact your dedicated sales contaact for further information</p>
 <h3 id='query-wallet-transaction-history'>Query Wallet Transaction History</h3>
 <blockquote>
 <p>Query Wallet Transaction History - Sample Response</p>
@@ -3146,7 +2659,7 @@ only 500 bars will be returned. </li>
 
 <ul>
 <li><p>account-group   : get your account-group from &#39;Account Info&#39; API</p></li>
-<li><p>account-category: cash or margin</p></li>
+<li><p>account-category: cash</p></li>
 </ul>
 
 <p>For all order related ack or data, there is <em>orderId</em> field to identify the order. </p>
@@ -3174,7 +2687,7 @@ only 500 bars will be returned. </li>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARGIN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASH"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"place-order"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3297,7 +2810,7 @@ only 500 bars will be returned. </li>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>POST &lt;account-group&gt;/api/pro/v1/{account-category}/order</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -3480,16 +2993,15 @@ only 500 bars will be returned. </li>
 <li>The order notional must be within range <code>[minNotional, maxNotional]</code>. For limit orders, the order notional is defined as the product of <code>orderPrice</code> and <code>orderQty</code>.</li>
 <li><code>orderPrice</code> and <code>stopPrice</code> must be multiples of <code>tickSize</code>.</li>
 <li><code>orderQty</code> must be a multiple of <code>lotSize</code>.</li>
-<li>If you are trading using the margin account, <code>marginTradable</code> must be <code>true</code>. </li>
 <li>For cash trading, you must have sufficient balance to fund the order. 
 
 <ul>
 <li>for buy orders, if <code>commissionType=Quote</code>, the quote asset balance must be no less than <code>orderPrice * orderQty * (1 + commissionReserveRate)</code>. For all other <code>commissionType</code>s (<code>Base</code> and <code>Received</code>), the quote asset balance must be no less than <code>orderPrice * orderQty</code></li>
-<li>for sell orders, if <code>commissionType=Base</code>, your base asset balance must be no less than <code>orderQty * (1 + commissionReserveRate)</code>, For other <code>commissionType</code>s (<code>Received</code> and <code>Quote</code>), the base asset balance must be no less than <code>orderQty</code>.</li>
+<li>for sell orders, if <code>commissionType=Base</code>, your base asset balance must be no less than <code>orderQty * (1 + commissionReserveRate)</code>, For other <code>commissionType</code>s (<code>Received</code> and <code>Quote</code>), the base asset balance must be no less than <code>orderQty</code>.
+#### Response</li>
 </ul></li>
-<li>For margin trading, you must make sure you have sufficient <strong>max sellable amount</strong> to fund the order. </li>
 </ul>
-<h4 id='response'>Response</h4>
+
 <p>In &quot;Err&quot; response, <em>id</em> is the id provided by user when placing order; for other responses, <em>orderId</em> is the id generated by server following &quot;Order id generation method&quot; above, and this is the id you should provide for future order query or cancel. </p>
 
 <p>In case you want to cancel an order before response from server, you could figure out the orderId following <strong>Order id generation method</strong> above.</p>
@@ -3545,7 +3057,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>orderId</code></td>
 <td><code>String</code></td>
-<td>order id, this is what you should provide for future order query or cancel.</td>
+<td>order id</td>
 </tr>
 <tr>
 <td><code>orderQty</code></td>
@@ -3643,7 +3155,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -3757,7 +3269,7 @@ only 500 bars will be returned. </li>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>DELETE &lt;account-group&gt;/api/pro/v1/{account-category}/order</code></p>
 
-<p>Set <code>account-category</code> to <code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to <code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -3852,7 +3364,7 @@ only 500 bars will be returned. </li>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>DELETE &lt;account-group&gt;/api/pro/v1/{account-category}/order/all</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -3890,7 +3402,7 @@ only 500 bars will be returned. </li>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -4032,9 +3544,7 @@ to obtain the latest status of each order. </p>
 
 <p>You may submit up to 10 orders at a time. Server will respond with error if you submit more than 10 orders.</p>
 <h4 id='http-request'>HTTP Request</h4>
-<p><code>POST &lt;account-group&gt;/api/pro/v1/{account-category}/order/batch</code></p>
-
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account.</p>
+<p><code>POST cash/api/pro/v1/{account-category}/order/batch</code></p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -4072,7 +3582,7 @@ to obtain the latest status of each order. </p>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -4153,7 +3663,7 @@ to obtain the latest status of each order. </p>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -4292,7 +3802,7 @@ to obtain the latest status of each order. </p>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>DELETE &lt;account-group&gt;/api/pro/v1/{account-category}/order/batch</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -4315,7 +3825,7 @@ Order detail for each order is in <code>info</code> field list.</p>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -4396,7 +3906,7 @@ Order detail for each order is in <code>info</code> field list.</p>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>CASH</code>, <code>MARGIN</code></td>
+<td><code>CASH</code></td>
 </tr>
 <tr>
 <td><code>accountId</code></td>
@@ -4522,7 +4032,7 @@ Order detail for each order is in <code>info</code> field list.</p>
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>GET &lt;account-group&gt;/api/pro/v1/{account-category}/order/status?orderId={orderId}</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='request-parameters'>Request Parameters</h4>
 <table><thead>
 <tr>
@@ -4545,9 +4055,9 @@ Order detail for each order is in <code>info</code> field list.</p>
 <p><code>orderId</code> could be a single order Id, or multiple order Ids separated by a comma (<code>,</code>):</p>
 
 <ul>
-<li>If you set <code>symbol</code> to be a single symbol, such as <code>ASD/USDT</code>, the API will respond with the target order as an object. 
-If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>ASD/USDT,</code>.</li>
-<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>ASD/USDT,BTC/USDT</code>. The API will respond with a list of order objects. </li>
+<li>If you set <code>symbol</code> to be a single symbol, such as <code>BTC/USDT</code>, the API will respond with the target order as an object. 
+If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. <code>BTC/USDT,</code>.</li>
+<li>You shall specify <code>symbol</code> as a comma separated symbol list, e.g. <code>BTC/USDT,BTC/USDT</code>. The API will respond with a list of order objects. </li>
 </ul>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
@@ -4678,7 +4188,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>GET &lt;account-group&gt;/api/pro/v1/{account-category}/order/open</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account. </p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -4852,7 +4362,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <h4 id='http-request'>HTTP Request</h4>
 <p><code>GET &lt;account-group&gt;/api/pro/v1/{account-category}/order/hist/current</code></p>
 
-<p>Set <code>account-category</code> to<code>cash</code> for cash account and <code>margin</code> for margin account.</p>
+<p>Set <code>account-category</code> to<code>cash</code> for cash account</p>
 <h4 id='signature'>Signature</h4>
 <p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string'>Prehash String</h4>
@@ -4876,7 +4386,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>No</td>
-<td>symbol filter, e.g. <code>&quot;ASD/USDT&quot;</code></td>
+<td>symbol filter, e.g. <code>&quot;BTC/USDT&quot;</code></td>
 </tr>
 <tr>
 <td><code>executedOnly</code></td>
@@ -4937,13 +4447,13 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>account</code></td>
 <td><code>String</code></td>
 <td>Yes</td>
-<td>account type: <code>cash</code>/<code>margin</code>/<code>futures</code>, or actual accountId</td>
+<td>account type: <code>cash</code>  or actual accountId</td>
 </tr>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
 <td>No</td>
-<td>symbol filter, e.g. <code>ASD/USDT</code></td>
+<td>symbol filter, e.g. <code>BTC/USDT</code></td>
 </tr>
 <tr>
 <td><code>startTime</code></td>
@@ -5204,7 +4714,7 @@ for 30 seconds if a client initiated <code>ping</code> message is received. </p>
 wscat <span class="nt">-H</span> <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
-  <span class="nt">-c</span> wss://bakkt.exchange.test.com /1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:ASD/USDT"}'</span>
+  <span class="nt">-c</span> wss://bakkt.exchange.test.com /1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTC/USDT"}'</span>
 </code></pre></div>
 <p>This is similar to the way you authenticate any RESTful request. You need to add the following header fields to the 
 connection request:</p>
@@ -5334,7 +4844,7 @@ wscat <span class="nt">-c</span> wss:// bakkt.exchange.test.com/1/api/v1/pro/str
 npm <span class="nb">install</span> <span class="nt">-g</span> wscat
 
 <span class="c"># Connect to websocket</span>
-wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:ASD/USDT"}'</span>
+wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:BTC/USDT"}'</span>
 </code></pre></div>
 <blockquote>
 <p>You can also setup authorized session</p>
@@ -5387,7 +4897,7 @@ wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/str
 <blockquote>
 <p>Subscribe to <em>trade</em> stream for a list of symbols</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades:BTC/USDT,ETH/USDT,ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades:BTC/USDT,ETH/USDT,BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Unsubscribes from the <em>depth</em> stream for all symbols (method 1)</p>
@@ -5410,19 +4920,19 @@ wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/str
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:1"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unsubscribes from <em>bar</em> streams of all frequencies for <code>ASD/USDT</code></p>
+<p>Unsubscribes from <em>bar</em> streams of all frequencies for <code>BTC/USDT</code></p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response for sub multiple symbols in one single message</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"m"</span><span class="p">:</span><span class="s2">"sub"</span><span class="p">,</span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"abc23g"</span><span class="p">,</span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"summary:BTC/USDT,ASD/USDT"</span><span class="p">,</span><span class="nl">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"m"</span><span class="p">:</span><span class="s2">"sub"</span><span class="p">,</span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"abc23g"</span><span class="p">,</span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"summary:BTC/USDT,BTC/USDT"</span><span class="p">,</span><span class="nl">"code"</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response for unsub multiple symbols in one single message</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar:*:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='customize-channel-content-with-ch'>Customize Channel content with <code>ch</code></h4>
 <p>You can customize the channel content by setting <code>ch</code> according to the table below:</p>
 
@@ -5456,7 +4966,7 @@ wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/str
 <tr>
 <td>public</td>
 <td><code>ref-px:&lt;symbol&gt;</code></td>
-<td>Reference prices used by margin risk Calculation.</td>
+<td>Reference prices</td>
 </tr>
 <tr>
 <td>Private</td>
@@ -5482,14 +4992,14 @@ the following rules:</p>
 <p>@ToDo rule: maximum number of channels </p>
 <h3 id='channel-level-1-order-book-data-bbo'>Channel: Level 1 Order Book Data (BBO)</h3>
 <blockquote>
-<p>Subscribe to <code>ASD/USDT</code> quote stream</p>
+<p>Subscribe to <code>BTC/USDT</code> quote stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bbo:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bbo:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unsubscribe to <code>ASD/USDT</code> quote stream</p>
+<p>Unsubscribe to <code>BTC/USDT</code> quote stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bbo:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bbo:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>BBO Message </p>
@@ -5516,21 +5026,21 @@ the price and/or size changes at the top of the order book. </p>
 <p>Each BBO message contains price and size data for exactly one bid level and one ask level. </p>
 <h3 id='channel-level-2-order-book-updates'>Channel: Level 2 Order Book Updates</h3>
 <blockquote>
-<p>Subscribe to <code>ASD/USDT</code> depth updates stream</p>
+<p>Subscribe to <code>BTC/USDT</code> depth updates stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"depth:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"depth:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unsubscribe to <code>ASD/USDT</code> depth updates stream</p>
+<p>Unsubscribe to <code>BTC/USDT</code> depth updates stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"depth:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"depth:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>The Depth Message </p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573069021376</span><span class="p">,</span><span class="w">
         </span><span class="nl">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">2097965</span><span class="p">,</span><span class="w">
@@ -5565,21 +5075,21 @@ you can use to update the order book snapshot. In the message, <code>price</code
 </ul>
 <h3 id='channel-market-trades'>Channel: Market Trades</h3>
 <blockquote>
-<p>Subscribe to <code>ASD/USDT</code> market trades stream</p>
+<p>Subscribe to <code>BTC/USDT</code> market trades stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"trades:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"trades:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unsubscribe to <code>ASD/USDT</code> market trades stream</p>
+<p>Unsubscribe to <code>BTC/USDT</code> market trades stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"trades:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"trades:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Trade Message </p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trades"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"p"</span><span class="p">:</span><span class="w">      </span><span class="s2">"0.068600"</span><span class="p">,</span><span class="w">
@@ -5629,17 +5139,17 @@ value into one aggregated item. Each trade object contains the following fields:
 </tbody></table>
 <h3 id='channel-bar-data'>Channel: Bar Data</h3>
 <blockquote>
-<p>Subscribe to <code>ASD/USDT</code> 1 minute bar stream</p>
+<p>Subscribe to <code>BTC/USDT</code> 1 minute bar stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
-<p>Unsubscribe to <code>ASD/USDT</code> 1 minute bar stream</p>
+<p>Unsubscribe to <code>BTC/USDT</code> 1 minute bar stream</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 
-</span><span class="err">//</span><span class="w">  </span><span class="err">Alternatively,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">streams</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">ASD/USDT</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:*:ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">//</span><span class="w">  </span><span class="err">Alternatively,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">streams</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">BTC/USDT</span><span class="w">
+</span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:*:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
 
 </span><span class="err">//</span><span class="w"> </span><span class="err">Or</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">minute</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">stream</span><span class="w">
 </span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1"</span><span class="w"> </span><span class="p">}</span><span class="w">
@@ -5652,7 +5162,7 @@ value into one aggregated item. Each trade object contains the following fields:
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">    
+    </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">    
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"i"</span><span class="p">:</span><span class="w">  </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575398940000</span><span class="p">,</span><span class="w">
@@ -5762,26 +5272,9 @@ value into one aggregated item. Each trade object contains the following fields:
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<blockquote>
-<p>Balance Update Message (Margin Account)</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"balance"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"marOxpKJV83dxTRx0Eyxpa0gxc4Txt0P"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARGIN"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"a"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"sn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8159802</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"tb"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ab"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"400"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"brw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"int"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
 <p>Note: once you subscribe to the <strong>order</strong> channel, you will start receiving messages from the <strong>balance</strong> channel automatically. If you unsubscribe from the <strong>order</strong> channel, you will simultaneously unsubscribe from the <strong>balance</strong> channel.</p>
 
-<p>You need to specify the account when subscribing to the order channel. You could specify account category <code>cash</code>, <code>margin</code>, or specific account id.</p>
+<p>You need to specify the account when subscribing to the order channel. You could specify account category <code>cash</code> or specific account id.</p>
 <h4 id='order-messages'>Order Messages</h4>
 <p>You can track the state change of each order thoughout its life cycle with the order update message (<code>m=order</code>). The <code>data</code> field is a single order udpate object.  Each order update object contains the following fields:</p>
 
@@ -5894,10 +5387,8 @@ value into one aggregated item. Each trade object contains the following fields:
 </tr>
 </tbody></table>
 <h4 id='balance-messages'>Balance Messages</h4>
-<p>You will also receive balance update message (<code>m=balance</code>) for the asset balance updates not caused by orders. For instance, when you make wallet deposits/withdrawals, or when you transfer asset from the cash account 
-to the margin account, you will receive balance update message.</p>
-
-<p>For <em>Cash Account Balance Update</em>, the data field contains:</p>
+<p>You will also receive balance update message (<code>m=balance</code>) for the asset balance updates not caused by orders.
+For <em>Cash Account Balance Update</em>, the data field contains:</p>
 
 <table><thead>
 <tr>
@@ -5925,47 +5416,6 @@ to the margin account, you will receive balance update message.</p>
 <td><code>ab</code></td>
 <td><code>String</code></td>
 <td>available balance</td>
-</tr>
-</tbody></table>
-
-<p>For <em>Margin Account Balance Update</em>, the data field contains:</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>a</code></td>
-<td><code>String</code></td>
-<td>asset</td>
-</tr>
-<tr>
-<td><code>sn</code></td>
-<td><code>long</code></td>
-<td>sequence number</td>
-</tr>
-<tr>
-<td><code>tb</code></td>
-<td><code>String</code></td>
-<td>total balance</td>
-</tr>
-<tr>
-<td><code>ab</code></td>
-<td><code>String</code></td>
-<td>available balance</td>
-</tr>
-<tr>
-<td><code>brw</code></td>
-<td><code>String</code></td>
-<td>borrowed amount</td>
-</tr>
-<tr>
-<td><code>int</code></td>
-<td><code>String</code></td>
-<td>interest amount</td>
 </tr>
 </tbody></table>
 <h2 id='data-query-order-request'>Data Query / Order Request</h2>
@@ -6013,7 +5463,7 @@ request message. Here are some use cases: </p>
 <td><strong>account</strong></td>
 <td><code>String</code></td>
 <td>NO</td>
-<td><code>cash</code>, <code>margin</code></td>
+<td><code>cash</code></td>
 <td>the account of the interest, this field is not required for public data request</td>
 </tr>
 <tr>
@@ -6062,10 +5512,6 @@ request message. Here are some use cases: </p>
 <tr>
 <td><strong>open-order</strong></td>
 <td>Query open order</td>
-</tr>
-<tr>
-<td><strong>margin-risk</strong></td>
-<td>Get margin risk</td>
 </tr>
 </tbody></table>
 <h3 id='websocket-response-schema'>WebSocket Response Schema</h3>
@@ -6154,14 +5600,14 @@ request message. Here are some use cases: </p>
 <blockquote>
 <p>Requesting the current order book snapshot</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefg"</span><span class="p">,</span><span class="w"> </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w"> </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefg"</span><span class="p">,</span><span class="w"> </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w"> </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Depth snapshot message</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"depth-snapshot"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"seqnum"</span><span class="p">:</span><span class="w"> </span><span class="mi">3167819629</span><span class="p">,</span><span class="w">
         </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1573142900389</span><span class="p">,</span><span class="w">
@@ -6217,7 +5663,7 @@ request message. Here are some use cases: </p>
 <tr>
 <td><code>args:symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>ASD/USDT</code></td>
+<td>Symbol, e.g. <code>BTC/USDT</code></td>
 </tr>
 </tbody></table>
 
@@ -6238,7 +5684,7 @@ request message. Here are some use cases: </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>ASD/USDT</code></td>
+<td>Symbol, e.g. <code>BTC/USDT</code></td>
 </tr>
 <tr>
 <td><code>data:seqnum</code></td>
@@ -6354,7 +5800,7 @@ the timely order book data. </p>
 
 <p>With <em>status</em> field as <em>Ack</em> to indicate this new order request pass some basic sanity check, and has been sent to matching engine. </p>
 
-<p><em>info</em> field provide some detail: if you provide <em>id</em> in your request, it will be echoed back as <em>id</em> to help you identify; we also provide server side generated <em>orderId</em>, which is the id you should use for future track or action on the order.  </p>
+<p><em>info</em> field provide some detail: if you provide <em>id</em> in your request, it will be echoed back as <em>id</em> to help you identify; we also provide server side generated <em>orderId</em>.</p>
 
 <p><em>ERR</em> </p>
 
@@ -6560,7 +6006,7 @@ the timely order book data. </p>
 <tr>
 <td><code>account</code></td>
 <td><code>String</code></td>
-<td><code>cash</code>, <code>margin</code></td>
+<td><code>cash</code></td>
 </tr>
 <tr>
 <td><code>args:symbols</code></td>
@@ -6599,7 +6045,7 @@ the timely order book data. </p>
 <tr>
 <td><code>ac</code></td>
 <td><code>String</code></td>
-<td><code>cash</code>, <code>margin</code></td>
+<td><code>cash</code></td>
 </tr>
 <tr>
 <td><code>id</code></td>
@@ -6614,9 +6060,9 @@ the timely order book data. </p>
 </tbody></table>
 <h3 id='ws-recent-market-trades'>WS: Recent Market Trades</h3>
 <blockquote>
-<p>Requesting the most recent 12 trades for symbol ASD/USDT</p>
+<p>Requesting the most recent 12 trades for symbol BTC/USDT</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w"> </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w"> </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w"> </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Trades snapshot message</p>
@@ -6624,7 +6070,7 @@ the timely order book data. </p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market-trades"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1334"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASD/USDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nl">"p"</span><span class="p">:</span><span class="w">      </span><span class="s2">"0.068600"</span><span class="p">,</span><span class="w">
@@ -6666,7 +6112,7 @@ the timely order book data. </p>
 
 <p>The <code>args</code> schema:</p>
 
-<p><code>symbol</code> | <code>String</code>            | Symbol, e.g. <code>ASD/USDT</code><br>
+<p><code>symbol</code> | <code>String</code>            | Symbol, e.g. <code>BTC/USDT</code><br>
  <code>level</code>  | Int                 | Number of trades to request</p>
 
 <p>The response schema:</p>
@@ -6686,7 +6132,7 @@ the timely order book data. </p>
 <tr>
 <td><code>symbol</code></td>
 <td><code>String</code></td>
-<td>Symbol, e.g. <code>ASD/USDT</code></td>
+<td>Symbol, e.g. <code>BTC/USDT</code></td>
 </tr>
 <tr>
 <td><code>data</code></td>
@@ -6728,176 +6174,6 @@ the timely order book data. </p>
 <td><code>bm</code></td>
 <td><code>Boolean</code></td>
 <td>if true, the buyer of the trade is the maker.</td>
-</tr>
-</tbody></table>
-<h3 id='ws-margin-risk-for-symbol'>WS: Margin Risk for Symbol</h3>
-<blockquote>
-<p>Request margin risk for symbol <code>BTC/USDT</code></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"req"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"margin-risk"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcefg"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"margin"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Margin Risk Response </p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"m"</span><span class="p">:</span><span class="s2">"margin-risk"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"accountId"</span><span class="p">:</span><span class="s2">"marGad02EnGqSo6P2SMBoNUX4lGyxjsy"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ac"</span><span class="p">:</span><span class="s2">"MARGIN"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"abcefg"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"tb"</span><span class="p">:</span><span class="s2">"14058.242182715"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ab"</span><span class="p">:</span><span class="s2">"14058.242182715"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"nb"</span><span class="p">:</span><span class="s2">"14058.242182715"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"eim"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"emm"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"clv"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ilv"</span><span class="p">:</span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"alv"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"cus"</span><span class="p">:</span><span class="s2">"-1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pts"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>You can request margin risk for a symbol via websocket by an <code>margin-risk</code> request. </p>
-
-<p>The <code>args</code> schema:</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>op</code></td>
-<td><code>String</code></td>
-<td><code>req</code></td>
-</tr>
-<tr>
-<td><code>action</code></td>
-<td><code>String</code></td>
-<td><code>margin-risk</code></td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td><code>String</code></td>
-<td>for result match purpose</td>
-</tr>
-<tr>
-<td><code>args:symbol</code></td>
-<td><code>String</code></td>
-<td>Symbol, e.g. <code>ASD/USDT</code></td>
-</tr>
-</tbody></table>
-
-<p>The response schema:</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>m</code></td>
-<td><code>String</code></td>
-<td><code>margin-risk</code></td>
-</tr>
-<tr>
-<td><code>accountId</code></td>
-<td><code>String</code></td>
-<td>margin accountId</td>
-</tr>
-<tr>
-<td><code>ac</code></td>
-<td><code>String</code></td>
-<td><code>MARGIN</code></td>
-</tr>
-<tr>
-<td><code>symbol</code></td>
-<td><code>String</code></td>
-<td>Symbol, e.g. <code>ASD/USDT</code></td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td><code>String</code></td>
-<td>echo back <code>id</code> in request</td>
-</tr>
-<tr>
-<td><code>data</code></td>
-<td><code>Json</code></td>
-<td>See <code>data</code> detail below</td>
-</tr>
-</tbody></table>
-
-<p><code>data</code> field detail</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>tb</code></td>
-<td><code>String</code></td>
-<td>total balance</td>
-</tr>
-<tr>
-<td><code>ab</code></td>
-<td><code>String</code></td>
-<td>available balance</td>
-</tr>
-<tr>
-<td><code>nb</code></td>
-<td><code>String</code></td>
-<td>net balance</td>
-</tr>
-<tr>
-<td><code>eim</code></td>
-<td><code>String</code></td>
-<td>effective initial margin</td>
-</tr>
-<tr>
-<td><code>emm</code></td>
-<td><code>String</code></td>
-<td>effective maintaince margin</td>
-</tr>
-<tr>
-<td><code>clv</code></td>
-<td><code>String</code></td>
-<td>current leverage</td>
-</tr>
-<tr>
-<td><code>ilv</code></td>
-<td><code>String</code></td>
-<td>initial leverage</td>
-</tr>
-<tr>
-<td><code>alv</code></td>
-<td><code>String</code></td>
-<td>account max leverage</td>
-</tr>
-<tr>
-<td><code>cus</code></td>
-<td><code>String</code></td>
-<td>cushion</td>
-</tr>
-<tr>
-<td><code>pts</code></td>
-<td><code>String</code></td>
-<td>points balance</td>
 </tr>
 </tbody></table>
 <h1 id='experimental-apis'>Experimental APIs</h1><h2 id='subscribe-to-order-channel-with-ready-ack-mode'>Subscribe to Order Channel with Ready Ack Mode</h2>
@@ -7022,7 +6298,7 @@ This makes it hard for trading bots to decide when to take actions.</p>
 <td>MarginError</td>
 <td>31</td>
 <td>31XXXX</td>
-<td>Margin account and trading related error</td>
+<td>account and trading related error</td>
 </tr>
 <tr>
 <td>SystemError</td>
@@ -7300,42 +6576,6 @@ This makes it hard for trading bots to decide when to take actions.</p>
 <td>300031</td>
 <td>NO_MARKET_PRICE</td>
 <td>No market price for market type order trading</td>
-</tr>
-</tbody></table>
-<h3 id='31xxxx-margin-error'>31XXXX - Margin Error</h3>
-<p>Margin trading related errors.</p>
-
-<table><thead>
-<tr>
-<th>code</th>
-<th>reason</th>
-<th>descripion</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>310001</td>
-<td>INVALID_MARGIN_BALANCE</td>
-<td>No enough margin balance</td>
-</tr>
-<tr>
-<td>310002</td>
-<td>INVALID_MARGIN_ACCOUNT</td>
-<td>Not a valid account for margin trading</td>
-</tr>
-<tr>
-<td>310003</td>
-<td>MARGIN_TOO_RISKY</td>
-<td>Leverage is too high</td>
-</tr>
-<tr>
-<td>310004</td>
-<td>INVALID_MARGIN_ASSET</td>
-<td>This asset does not support margin trading</td>
-</tr>
-<tr>
-<td>310005</td>
-<td>INVALID_REFERENCE_PRICE</td>
-<td>There is no valid reference price</td>
 </tr>
 </tbody></table>
 <h3 id='50xxxx-system-error'>50XXXX - System Error</h3>
