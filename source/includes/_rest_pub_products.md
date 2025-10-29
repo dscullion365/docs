@@ -3,8 +3,8 @@
 > List all Products 
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/cash/products"
-curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
+curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
+curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 ```
 
 > Sample Response 

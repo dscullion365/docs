@@ -67,8 +67,3 @@ Content of elements in the `address` field:
 **destTag**    | `String` | the destination tag (or memo for some tokens) attached to the address. This field could be an empty string. |
 
 
-#### Code Sample
-
-Please refer to python code to [query deposit addresses](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_deposit_address.py)
-
-

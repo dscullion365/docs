@@ -57,11 +57,6 @@ Name          |  Type     | Required | Value Range    | Description
 **availableBalance** | `String` | available balance in string format | `"234.56"`
 
 
-#### Code Sample
-
-Please refer to python code to [query balance](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_balance.py)
-
-
 ### Margin Account Balance 
 
 > Margin Account Balance - Sample response 
@@ -152,10 +147,6 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
 `<timestamp>+margin/risk`
 
-#### Code Sample
-
-Please refer to python code to[query margin risk]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_margin_risk.py}
-
 
 ### Balance Transfer
 
@@ -208,10 +199,6 @@ Name           |  Type     | Required | Value Range               | Description
 
 Response `code` value 0 indicate successful transfer. 
 
-
-#### Code Sample
-
-Please refer to python code to [transfer token among different accounts](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py)
 
 ### Balance Transfer for Subaccount
 
@@ -275,12 +262,6 @@ Name           |  Type     | Required | Value Range               | Description
 #### Response Content
 
 Response `code` value 0 indicates successful transfer and `info` echos the request parameters. 
-
-
-#### Code Sample
-
-Please refer to python code to [transfer token among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py)
-
 
 ### Balance Transfer history for Subaccount
 
@@ -353,8 +334,3 @@ Name           |  Type     | Required | Value Range               | Description
 #### Response Content
 
 Response `code` value 0 indicates successful query and `data` shows query result. 
-
-
-#### Code Sample
-
-Please refer to python code to [transfer history among different sub users](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py)

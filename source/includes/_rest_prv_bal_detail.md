@@ -80,10 +80,6 @@ Name        |  Type     | Required |           Value Range       | Description
 **asset**          | `String` | asset code                    | `"USDT"`
 **totalBalance**   | `String` | current asset total balance   | `"1234.56"`
 
-#### Code Sample
-
-Please refer to python code to [query balance snapshot](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py)
-
 
 ### Order and Balance Detail
 
@@ -249,7 +245,3 @@ order balance detail by asset
 **curBalance**       | `String` | asset balance after this transaction                  | `"1234.56"`
 **deltaQty**         | `String` | balance change in this transaction                    | `100`
 
-
-#### Code Sample
-
-Please refer to python code to [query order and balance detail](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py)

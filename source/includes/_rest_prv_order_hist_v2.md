@@ -89,7 +89,3 @@ Name           | Type     | Description
 `fillQty`      | `String` | cumulated filled qty
 `fee`          | `String` | cummulative fee. if positive, this value is the commission charged; if negative, this value is the rebate received.
 `feeAsset`     | `String` | Fee asset, e.g, `USDT`
-
-***Code Sample***
-
-Please refer to python code to [get hist orders](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_order_hist_v2.py)

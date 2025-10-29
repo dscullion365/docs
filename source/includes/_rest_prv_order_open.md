@@ -85,10 +85,6 @@ HTTP Status Code | Error Code | Reason           | Example
 ---------------- | ---------- | ---------------- | ----------------------------------------------------------------------
 400              | xxx        | Parameter Error  | `{"code": xxx, "message": "missing requird parameter \"account\"} "}`  @TODO
 
-#### Code Sample
-
-Please refer to python code to [get open orders](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_query.py)
-
 Change from the previous version:
 
 * `execId`, `asdCommission`, `notional` are no longer included in the response. 

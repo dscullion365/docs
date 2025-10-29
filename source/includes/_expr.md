@@ -9,6 +9,3 @@ immediately change status. For instance, when you place a Post-only order that c
 in the New Ack Mode, you will first receive an order message with `st=New`, then immediately receive another message with `st=Canceled`. However, 
 if your order successfully enters the orderbook without crossing with order on the opposite side, you will only receive one message with `st=New`. 
 This makes it hard for trading bots to decide when to take actions.
-
-To address this issue, we introduced the **Ready Ack** mode. Follow this [link](https://github.com/ascendex/ascendex-pro-api/blob/master/misc/ws_order_channel_ready_mode.md) for more details.
-

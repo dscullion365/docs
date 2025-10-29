@@ -67,10 +67,6 @@ Name       |  Type    | Description
 `symbol`   | `String` | `symbol` in request
 `timestamp`| `Long`   | server received timestamp
 
-#### Code Sample
-
-Refer to sample python code to [cancel all order](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel_all.py)
-
 #### Caveat 
 
 The server will process the cancel all request with best effort. Orders sent but un-acked will not be canceled. You should rely on websocket order update messages or the RESTful api 

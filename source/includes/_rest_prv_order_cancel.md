@@ -81,7 +81,3 @@ Value                               |   Description
 ------------------------------------| --------------------------------------------------------
 `Duplicated order cancel request.`  |   Trying to cancel the same order again in a short time.
 `Trying to cancel non-open order`   |   Trying to cancel a completed (filled/canceled/rejected) or not existed order.
-
-#### Code Sample
-
-Refer to sample python code to [cancel order](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel.py)

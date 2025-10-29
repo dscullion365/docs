@@ -36,8 +36,3 @@ We use the following method to generate an unique id for each order place/cancel
  * `id` value with length < 9 will not be used in order Id generation, but we still echo it back in order ack message (empty string when no `id` value provided).
 
  * If a valid `id` value is provided when placing order, order Id from server side is pre-determined. This could be helpful for order status check in case of accidently internet connection issue.
-
-#### Code Sample
-
-Please refer to python code to [gen server order id](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/util.py)
-

@@ -273,7 +273,3 @@ Error Response Messages (TODO: verify HTTP Status Code)
 HTTP Status Code | Error Code | Reason           | Example
 ---------------- | ---------- | ---------------- | ----------------------------------------------------------------------
 400              | xxx        | Parameter Error  | 
-
-#### Code Sample
-
-Refer to sample python code to [place order](https://github.com/ascendex/ascendex-pro-api-demo/tree/master/python/order_new.py)

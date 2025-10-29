@@ -58,7 +58,3 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 #### Response
 
 Return a list of history orders in *"data"* field.
-
-#### Code Sample
-
-Please refer to python code to [get recent hist orders](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_order_hist_curr.py)

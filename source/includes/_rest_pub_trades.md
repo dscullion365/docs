@@ -3,7 +3,7 @@
 > Request 
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=ASD/USDT"
+curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=ASD/USDT"
 ```
 
 > Sample response 
@@ -64,7 +64,3 @@ Trade record information in `data`:
   `q`      | `String`   | trade size in string format
   `ts`     | `Long`     | UTC timestamp in milliseconds
   `bm`     | `Boolean`  | If true, the maker of the trade is the buyer. 
-
-#### Code Sample
-
-Please refer to python code to [query trades]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_pub_trades.py}

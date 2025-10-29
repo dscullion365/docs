@@ -101,7 +101,3 @@ Name           | Type     | Description
 `stopPrice`    | `String` | stop price(could be empty)
 `symbol`       | `String` | symbol
 `execInst`     | `String` | execution instruction, `POST` for Post-Only orders, `Liquidation` for forced-liquidation orders, and `NULL_VAL` otherwise.
-
-#### Code Sample
-
-Please refer to python code to [get order status](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_query.py)
