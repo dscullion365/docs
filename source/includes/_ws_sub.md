@@ -10,7 +10,7 @@
 npm install -g wscat
 
 # Connect to websocket
-wscat -c wss://ascendex.com/0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:ASD/USDT"}'
+wscat -c wss://bakkt.exchange.test.com /0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:ASD/USDT"}'
 ```
 
 > You can also setup authorized session

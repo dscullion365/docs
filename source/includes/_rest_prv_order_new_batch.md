@@ -163,6 +163,3 @@ Name        |  Type    | Description
 `reason`    | `String` | short error message 
 `symbol`    | `String` | symbol in order
 
-#### Code Sample
-
-Please refer to python code to [place batch order](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_new.py)

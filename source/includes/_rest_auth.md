@@ -32,7 +32,7 @@ curl -X GET -i \
   -H "x-auth-key: $APIKEY" \
   -H "x-auth-signature: $SIGNATURE" \
   -H "x-auth-timestamp: $TIMESTAMP" \
-  https://ascendex.com/api/pro/v1/info
+  https://bakkt.exchange.test.com/api/pro/v1/info
 ```
 
 ```python
@@ -89,5 +89,3 @@ public class SignatureExample {
 To query APIs with private data, you must include a signature using base64 encoded HMAC sha256 algorithm. The prehash string is `<timestamp>+<api-path>`. 
 The `timestamp` is the UTC timestamp in milliseconds.  
 
-
-See the code demos in `bash` on the right. For other programming languages, please refer to [https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo](https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo).

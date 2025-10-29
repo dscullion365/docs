@@ -3,7 +3,7 @@
 > Latency Info 
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
+curl -X GET https://bakkt.exchange.test.com /api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
 ```
 
 > Latency Info - Sample response::

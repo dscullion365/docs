@@ -19,7 +19,7 @@ All the operations fall into same `op`/`req` group will share a threshold, meani
 For `req op`, we have two fine granularity threshold `order req` and `snapshot req`, which will have their specialized threshold value for messages belonging to their types.
 
 ```
-curl -X GET https://ascendex.com/api/pro/v2/risk-limit-info"
+curl -X GET https:// bakkt.exchange.test.com/api/pro/v2/risk-limit-info"
 ```
 
 > Risk Limit Info - Sample response::

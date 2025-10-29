@@ -78,7 +78,3 @@ The `depth-snapshot` message is constructed in a consistent way with all `depth`
 Please note that the `depth-snapshot` API has higher latency. The response time is usually between 
 1000 - 2000 milliseconds. It is intended to help you initialize the orderbook, not to be used to obtain 
 the timely order book data. 
-
-More comprehensive examples can be found at:
-
-* Python: [websocket orderbook snapshot](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/websocket_orderbook_snapshot.py)

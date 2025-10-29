@@ -135,7 +135,3 @@ Name        |  Type    | Description
 `message`   | `String` | error message detail
 `reason`    | `String` | short error message
 `symbol`    | `String` | symbol in order
-
-#### Code Sample
-
-please refer to python code to [cancel batch order](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel.py)

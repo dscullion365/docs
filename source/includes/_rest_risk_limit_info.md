@@ -5,7 +5,7 @@ This API has been deprecated, please use [risk limit info v2](#risk-limit-info-v
 > Risk Limit Info 
 
 ```
-curl -X GET https://ascendex.com/api/pro/v1/risk-limit-info"
+curl -X GET https://bakkt.exchange.test.com /api/pro/v1/risk-limit-info"
 ```
 
 > Risk Limit Info - Sample response::

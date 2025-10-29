@@ -3,7 +3,7 @@
 > List all Assets
 
 ```
-curl -X GET "https://ascendex.com/api/pro/v2/assets"
+curl -X GET "https://bakkt.exchange.test.com /api/pro/v2/assets"
 ```
 
 > Sample Response 

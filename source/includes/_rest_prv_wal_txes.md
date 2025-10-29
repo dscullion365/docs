@@ -77,7 +77,3 @@ Content of elements in the `destAddress` field:
 **address** | `String`           | wallet address  
 **destTag** | `Optional[String]` | the destination tag (or memo for some tokens) attached to the address. This field could be an empty string.
 
-
-#### Code Sample 
-
-Please refer to python code to [query wallet transactions](https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_wallet_tx_hist.py)
