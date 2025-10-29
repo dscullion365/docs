@@ -225,7 +225,7 @@
           <img src="images/logo.png" class="logo" alt="" />
         </a>
         <div class="navbox">
-            <span class="navsell navtab"><a href="https://dscullion365.github.io/docs/#bakkt-documentation" class="current">CashAPIs</a></span>
+            <span class="navsell navtab"><a href="https://dscullion365.github.io/docs/#bakkt-documentation" class="current">API Reference</a></span>
         </div>
       </div>
     </header>
@@ -270,12 +270,6 @@
                           <a href="#ticker" class="toc-h3 toc-link" data-title="Ticker">Ticker</a>
                         </li>
                         <li>
-                          <a href="#bar-info" class="toc-h3 toc-link" data-title="Bar Info">Bar Info</a>
-                        </li>
-                        <li>
-                          <a href="#historical-bar-data" class="toc-h3 toc-link" data-title="Historical Bar Data">Historical Bar Data</a>
-                        </li>
-                        <li>
                           <a href="#order-book-depth" class="toc-h3 toc-link" data-title="Order Book (Depth)">Order Book (Depth)</a>
                         </li>
                         <li>
@@ -288,12 +282,6 @@
                     <ul class="toc-list-h3">
                         <li>
                           <a href="#account-info" class="toc-h3 toc-link" data-title="Account Info">Account Info</a>
-                        </li>
-                        <li>
-                          <a href="#vip-fee-schedule" class="toc-h3 toc-link" data-title="VIP Fee Schedule">VIP Fee Schedule</a>
-                        </li>
-                        <li>
-                          <a href="#fee-schedule-by-symbolls" class="toc-h3 toc-link" data-title="Fee Schedule by Symbolls">Fee Schedule by Symbolls</a>
                         </li>
                         <li>
                           <a href="#risk-limit-info-v2" class="toc-h3 toc-link" data-title="Risk Limit Info (v2)">Risk Limit Info (v2)</a>
@@ -416,9 +404,6 @@
                         </li>
                         <li>
                           <a href="#channel-market-trades" class="toc-h3 toc-link" data-title="Channel: Market Trades">Channel: Market Trades</a>
-                        </li>
-                        <li>
-                          <a href="#channel-bar-data" class="toc-h3 toc-link" data-title="Channel: Bar Data">Channel: Bar Data</a>
                         </li>
                         <li>
                           <a href="#channel-order-and-balance" class="toc-h3 toc-link" data-title="Channel: Order (and Balance)">Channel: Order (and Balance)</a>
@@ -752,7 +737,7 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='http-request'>HTTP Request</h4>
-<p><code>GET /api/pro/v1/{accountCategory}/products</code></p>
+<p><code>GET /api/pro/v1/cash/products</code></p>
 <h4 id='response-content'>Response Content</h4>
 <p>You can obtain a list of all products traded on the exchange through this API.</p>
 
@@ -898,7 +883,7 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>Ticker for one trading pair</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://bakkt.exchange.test.com</span><span class="w"> </span><span class="err">/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=BTC/USDT'</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://bakkt.exchange.test.com/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=BTC/USDT'</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1028,265 +1013,11 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td>the price and size at the current best bid level</td>
 </tr>
 </tbody></table>
-<h3 id='bar-info'>Bar Info</h3>
-<blockquote>
-<p>Request </p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/barhist/info"
-</code></pre></div>
-<blockquote>
-<p>Sample response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">300000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">900000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">1800000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">3600000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">7200000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">14400000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"360"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">21600000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"720"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">43200000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">86400000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1w"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">604800000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1m"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"intervalInMillis"</span><span class="p">:</span><span class="w"> </span><span class="mi">2592000000</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><strong>HTTP Request</strong></p>
-
-<p><code>GET /api/pro/v1/barhist/info</code></p>
-
-<p>This API returns a list of all bar intervals supported by the server. </p>
-<h4 id='request-parameters'>Request Parameters</h4>
-<p>This API endpoint does not take any parameters. </p>
-<h4 id='resposne'>Resposne</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>name</code></td>
-<td><code>String</code></td>
-<td>name of the interval</td>
-</tr>
-<tr>
-<td><code>intervalInMillis</code></td>
-<td><code>Long</code></td>
-<td>length of the interval</td>
-</tr>
-</tbody></table>
-
-<p>Plesae note that the one-month bar (<code>1m</code>) always resets at the month start. The <code>intervalInMillis</code> value for the one-month <code>bar</code> is only indicative. </p>
-
-<p>The value in the <code>name</code> field should be your input to the <a href="#historical-bar-data">Historical Bar Data</a> API.</p>
-<h3 id='historical-bar-data'>Historical Bar Data</h3>
-<blockquote>
-<p>Request </p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/barhist?symbol=BTC/USDT&amp;interval=1"
-</code></pre></div>
-<blockquote>
-<p>Sample response</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"c"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"i"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"l"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"o"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575409260000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1612"</span><span class="p">},</span><span class="w">
-           </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"c"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05019"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05027"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"i"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"l"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05017"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"o"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05017"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575409200000</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57242"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-           </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-           </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">},</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h4 id='http-request'>HTTP Request</h4>
-<p><code>GET /api/pro/v1/barhist</code></p>
-
-<p>This API returns a list of <strong>bar</strong>s, with each contains the open/close/high/low prices of a symbol for a specific time range. </p>
-<h4 id='request-parameters-2'>Request Parameters</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>symbol</code></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>e.g. <code>&quot;BTC/USDT&quot;</code></td>
-</tr>
-<tr>
-<td><code>interval</code></td>
-<td><code>String</code></td>
-<td>Yes</td>
-<td>a string representing the interval type.</td>
-</tr>
-<tr>
-<td><code>to</code></td>
-<td><code>Long</code></td>
-<td>No</td>
-<td>UTC timestamp in milliseconds. If not provided, this field will be set to the current time.</td>
-</tr>
-<tr>
-<td><code>from</code></td>
-<td><code>Long</code></td>
-<td>No</td>
-<td>UTC timestamp in milliseconds.</td>
-</tr>
-<tr>
-<td><code>n</code></td>
-<td><code>Int</code></td>
-<td>No</td>
-<td>default 10, number of bars to be returned, this number will be capped at 500</td>
-</tr>
-</tbody></table>
-
-<p>The requested time range is determined by three parameters - <code>to</code>, <code>from</code>, and <code>n</code> - according to rules below:</p>
-
-<ul>
-<li><code>from</code>/<code>to</code> each specifies the start timestamp of the first/last bar. </li>
-<li><code>to</code> is always honored. If not provided, this field will be set to the current system time. </li>
-<li>For <code>from</code> and <code>to</code>: 
-
-<ul>
-<li>if only <code>from</code> is provided, then the request range is determined by <code>[from, to]</code>, inclusive. However, if the range is too wide,
-the server will increase <code>from</code> so the number of bars in the response won&#39;t exceed 500. </li>
-<li>if only <code>n</code> is provided, then the server will return the most recent <code>n</code> data bars to time <code>to</code>. However, if <code>n</code> is greater than 500, 
-only 500 bars will be returned. </li>
-<li>if both <code>from</code> and <code>n</code> are specified, the server will pick one that returns fewer bars. </li>
-</ul></li>
-</ul>
-<h4 id='response'>Response</h4>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>value</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>m</code></td>
-<td>String</td>
-<td><code>bar</code></td>
-<td>message type</td>
-</tr>
-<tr>
-<td><code>s</code></td>
-<td>String</td>
-<td></td>
-<td>symbol</td>
-</tr>
-<tr>
-<td><code>data:ts</code></td>
-<td>Long</td>
-<td></td>
-<td>bar start time in milliseconds</td>
-</tr>
-<tr>
-<td><code>i</code></td>
-<td>String</td>
-<td></td>
-<td>interval</td>
-</tr>
-<tr>
-<td><code>o</code></td>
-<td>String</td>
-<td></td>
-<td>open price</td>
-</tr>
-<tr>
-<td><code>c</code></td>
-<td>String</td>
-<td></td>
-<td>close price</td>
-</tr>
-<tr>
-<td><code>h</code></td>
-<td>String</td>
-<td></td>
-<td>high price</td>
-</tr>
-<tr>
-<td><code>l</code></td>
-<td>String</td>
-<td></td>
-<td>low price</td>
-</tr>
-<tr>
-<td><code>v</code></td>
-<td>String</td>
-<td></td>
-<td>volume in base asset</td>
-</tr>
-</tbody></table>
 <h3 id='order-book-depth'>Order Book (Depth)</h3>
 <blockquote>
 <p>Request for Order Book (Depth) Data</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=BTC/USDT"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/depth?symbol=BTC/USDT"
 </code></pre></div>
 <blockquote>
 <p>Order Book (Depth) Data - Sample response </p>
@@ -1591,104 +1322,6 @@ only 500 bars will be returned. </li>
 <td>an unique id associated with user</td>
 </tr>
 </tbody></table>
-<h3 id='vip-fee-schedule'>VIP Fee Schedule</h3>
-<blockquote>
-<p>Fee Schedule - Sample response for general info::</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"userUID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U0866943712"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"vipLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"genericFee"</span><span class="p">:</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"largeCap"</span><span class="p">:</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00085"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00085"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"smallCap"</span><span class="p">:</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><strong>HTTP Request</strong> </p>
-
-<p><code>GET &lt;account-group&gt;/api/pro/v1/spot/fee/info</code></p>
-
-<p><strong>Signature</strong></p>
-
-<p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-
-<p><strong>prehash string</strong> </p>
-
-<p><code>&lt;timestamp&gt;+fee</code></p>
-<h3 id='fee-schedule-by-symbolls'>Fee Schedule by Symbolls</h3>
-<blockquote>
-<p>Fee Schedule - Sample response for each symbol::</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"userUID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U0866943712"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"vipLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"productFee"</span><span class="p">:</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZEC/BTC"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0001"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC/USDT"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ONG/USDT"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"fee"</span><span class="p">:</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-                    </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IBVOL/USDT"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p><strong>HTTP Request</strong> </p>
-
-<p><code>GET &lt;account-group&gt;/api/pro/v1/spot/fee</code></p>
-
-<p><strong>Signature</strong></p>
-
-<p>You should sign the message in header as specified in <a href="#sign-a-request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
-
-<p><strong>prehash string</strong> </p>
-
-<p><code>&lt;timestamp&gt;+fee</code></p>
 <h3 id='risk-limit-info-v2'>Risk Limit Info (v2)</h3>
 <blockquote>
 <p>Risk Limit Info v2</p>
@@ -1805,7 +1438,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Latency Info </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://bakkt.exchange.test.com /api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://bakkt.exchange.test.com/api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
 </code></pre></div>
 <blockquote>
 <p>Latency Info - Sample response::</p>
@@ -4714,7 +4347,7 @@ for 30 seconds if a client initiated <code>ping</code> message is received. </p>
 wscat <span class="nt">-H</span> <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
-  <span class="nt">-c</span> wss://bakkt.exchange.test.com /1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTC/USDT"}'</span>
+  <span class="nt">-c</span> wss://bakkt.exchange.test.com/1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTC/USDT"}'</span>
 </code></pre></div>
 <p>This is similar to the way you authenticate any RESTful request. You need to add the following header fields to the 
 connection request:</p>
@@ -4844,7 +4477,7 @@ wscat <span class="nt">-c</span> wss:// bakkt.exchange.test.com/1/api/v1/pro/str
 npm <span class="nb">install</span> <span class="nt">-g</span> wscat
 
 <span class="c"># Connect to websocket</span>
-wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:BTC/USDT"}'</span>
+wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com/0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:BTC/USDT"}'</span>
 </code></pre></div>
 <blockquote>
 <p>You can also setup authorized session</p>
@@ -5099,79 +4732,6 @@ you can use to update the order book snapshot. In the message, <code>price</code
             </span><span class="nl">"seqnum"</span><span class="p">:</span><span class="w">  </span><span class="mi">144115188077966308</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>The <code>data</code> field is a list containing one or more trade objects. The server may combine consecutive trades with the same price and <code>bm</code> 
-value into one aggregated item. Each trade object contains the following fields:</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>seqnum</code></td>
-<td><code>Long</code></td>
-<td>the sequence number of the trade record. <code>seqnum</code> is always increasing for each symbol, but may not be consecutive</td>
-</tr>
-<tr>
-<td><code>p</code></td>
-<td><code>String</code></td>
-<td>the executed price expressed as a string</td>
-</tr>
-<tr>
-<td><code>q</code></td>
-<td><code>String</code></td>
-<td>the aggregated traded amount expressed as string</td>
-</tr>
-<tr>
-<td><code>ts</code></td>
-<td><code>Long</code></td>
-<td>the UTC timestamp in milliseconds of the first trade</td>
-</tr>
-<tr>
-<td><code>bm</code></td>
-<td><code>Boolean</code></td>
-<td>if true, the buyer of the trade is the maker.</td>
-</tr>
-</tbody></table>
-<h3 id='channel-bar-data'>Channel: Bar Data</h3>
-<blockquote>
-<p>Subscribe to <code>BTC/USDT</code> 1 minute bar stream</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Unsubscribe to <code>BTC/USDT</code> 1 minute bar stream</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w">  </span><span class="err">Alternatively,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">streams</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">BTC/USDT</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:*:BTC/USDT"</span><span class="w"> </span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w"> </span><span class="err">Or</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">minute</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">stream</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar:1"</span><span class="w"> </span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w"> </span><span class="err">Or</span><span class="w"> </span><span class="err">unsubscribe</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">bar</span><span class="w"> </span><span class="err">stream</span><span class="w">
-</span><span class="p">{</span><span class="w"> </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unsub"</span><span class="p">,</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc123"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ch"</span><span class="p">:</span><span class="s2">"bar"</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote>
-<p>Bar Data Message </p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"m"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">    
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"i"</span><span class="p">:</span><span class="w">  </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1575398940000</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"o"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.04993"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"c"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.04970"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"h"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.04993"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"l"</span><span class="p">:</span><span class="w">  </span><span class="s2">"0.04970"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"v"</span><span class="p">:</span><span class="w">  </span><span class="s2">"8052"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>The <code>data</code> field is a list containing one or more trade objects. The server may combine consecutive trades with the same price and <code>bm</code> 
