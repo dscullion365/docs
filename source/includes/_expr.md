@@ -1,10 +1,5 @@
 # Experimental APIs
 
-## Real Time Level 2 Orderbook Updates
-
-WebSocket messages from the default `depth` channel are throttled with 300 milliseconds throttling intervals. If you want to 
-subscribe to realtime orderbook updates, please refer to this [article](https://github.com/ascendex/ascendex-pro-api/blob/master/misc/real_time_orderbook_feed.md).
-
 
 ## Subscribe to Order Channel with Ready Ack Mode
 
