@@ -36,7 +36,7 @@ SIGNATURE=`echo -n $MESSAGE | openssl dgst -sha256 -hmac $SECRET -binary | base6
 wscat -H "x-auth-key: $APIKEY" \
   -H "x-auth-signature: $SIGNATURE" \
   -H "x-auth-timestamp: $TIMESTAMP" \
-  -c wss://bakkt.exchange.test.com /1/api/pro/v1/stream -w 1 -x '{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTC/USDT"}'
+  -c wss://bakkt.exchange.test.com/1/api/pro/v1/stream -w 1 -x '{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:BTC/USDT"}'
 ```
 
 This is similar to the way you authenticate any RESTful request. You need to add the following header fields to the 

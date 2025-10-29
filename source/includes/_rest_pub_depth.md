@@ -3,7 +3,7 @@
 > Request for Order Book (Depth) Data
 
 ```
-curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=BTC/USDT"
+curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/depth?symbol=BTC/USDT"
 ```
 
 > Order Book (Depth) Data - Sample response 

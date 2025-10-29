@@ -3,7 +3,7 @@
 > Ticker for one trading pair
 
 ```json
-// curl -X GET 'https://bakkt.exchange.test.com /api/pro/v1/spot/ticker?symbol=BTC/USDT'
+// curl -X GET 'https://bakkt.exchange.test.com/api/pro/v1/spot/ticker?symbol=BTC/USDT'
 {
     "code": 0,
     "data": {
