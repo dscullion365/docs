@@ -7,7 +7,7 @@ If the request is successful, you will receive the full orderbook in the WebSock
 
     {
       "m": "depth-snapshot-realtime",
-      "symbol": "ASD/USDT",
+      "symbol": "BTC/USDT",
       "data": {
         "ts": 0,
         "seqnum": 33346,
@@ -42,12 +42,12 @@ intervals while `depth-realtime` streams the unthrottled data feed. As a result,
 
 Subscribing to the real-time depht channle is similar to subscribing the regular `depth` channel. 
 
-To subscribe to `ASD/USDT` real-time depth update stream, send a json messge to the server:
+To subscribe to `BTC/USDT` real-time depth update stream, send a json messge to the server:
 
     {
       "op": "sub",
       "id": "abc123", // optional
-      "ch": "depth-realtime:ASD/USDT"
+      "ch": "depth-realtime:BTC/USDT"
     }
 
 In the above message, the `id` field is an optional string field. If an string value is provided, the server will echo back the `id` field 
@@ -57,7 +57,7 @@ If the subscription is successful, you will receive an ack message with `code=0`
 
     {
       "m": "sub",
-      "ch": "depth-realtime:ASD/USDT",
+      "ch": "depth-realtime:BTC/USDT",
       "id": "abc123",
       "code": 0
     }
@@ -66,7 +66,7 @@ If the subscription failed, you will receive an ack message with non-zero `code`
 
     {
       "m": "sub",
-      "ch": "depth-realtime:ASD/USDT",
+      "ch": "depth-realtime:BTC/USDT",
       "id": "abc123",
       "code": 100008,
       "reason": "Unable to handle symbol USDT/ASD"
@@ -79,7 +79,7 @@ Once subscribed to the `depth-realtime` channel, you will start receiving update
 
     {
       "m": "depth-realtime",
-      "symbol": "ASD/USDT",
+      "symbol": "BTC/USDT",
       "data": {
         "ts": 1573069021376,
         "seqnum": 2097965,
@@ -109,14 +109,14 @@ you can use to update the order book snapshot. You should use the following rule
 
 ## Requesting the Full Orderbook 
 
-To request a full orderbook of `ASD/USDT`, send a `depth-snapshot-realtime` request in json format to the server via WebSocket.
+To request a full orderbook of `BTC/USDT`, send a `depth-snapshot-realtime` request in json format to the server via WebSocket.
 
     {
       "op": "req",
       "id": "Q9rK5r74",  // optional
       "action": "depth-snapshot-realtime",
       "args": {
-        "symbol": "ASD/USDT"
+        "symbol": "BTC/USDT"
       }
     }
 
@@ -124,7 +124,7 @@ If the request is successful, you will receive the full orderbook in the WebSock
 
     {
       "m": "depth-snapshot-realtime",
-      "symbol": "ASD/USDT",
+      "symbol": "BTC/USDT",
       "data": {
         "ts": 0,
         "seqnum": 33346,

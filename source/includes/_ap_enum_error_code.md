@@ -19,7 +19,7 @@ GeneralError | 10  | 10XXXX | Errors applied to general scenario
 FormatError  | 15  | 15XXXX | Format related error
 AuthError    | 20  | 20XXXX | Auth related error
 OrderError   | 30  | 30XXXX | Order action and information related error
-MarginError  | 31  | 31XXXX | Margin account and trading related error
+MarginError  | 31  | 31XXXX | account and trading related error
 SystemError  | 50  | 50XXXX | System related error
 BehaviorError| 90  | 90XXXX | Behavior error
 
@@ -93,17 +93,6 @@ code   | reason                  | descripion
 300021 | TRADING_DISABLED        | Trading is disabled on account or asset
 300031 | NO_MARKET_PRICE         | No market price for market type order trading
 
-### 31XXXX - Margin Error
-
-Margin trading related errors.
-
-code   | reason                  | descripion
--------|-------------------------|----------
-310001 | INVALID_MARGIN_BALANCE  | No enough margin balance
-310002 | INVALID_MARGIN_ACCOUNT  | Not a valid account for margin trading
-310003 | MARGIN_TOO_RISKY        | Leverage is too high
-310004 | INVALID_MARGIN_ASSET    | This asset does not support margin trading
-310005 | INVALID_REFERENCE_PRICE | There is no valid reference price
 
 ### 50XXXX - System Error
 

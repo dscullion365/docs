@@ -3,7 +3,7 @@
 > Request 
 
 ```
-curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=ASD/USDT"
+curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=BTC/USDT"
 ```
 
 > Sample response 
@@ -13,7 +13,7 @@ curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=ASD/USDT"
     "code": 0,
     "data": {
         "m": "trades",
-        "symbol": "ASD/USDT",
+        "symbol": "BTC/USDT",
         "data": [
             {
                 "seqnum": 144115191800016553,

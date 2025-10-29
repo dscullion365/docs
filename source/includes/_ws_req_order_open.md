@@ -58,7 +58,7 @@ The request schema:
  `op`          | `String`            | `req`                      
  `action`      | `String`            | `open-order`  
  `id`          | `String`            | for result match purpose
- `account`     | `String`            | `cash`, `margin`         
+ `account`     | `String`            | `cash`       
  `args:symbols`| `Optional[String]`  | add the (optional) symbol filter, see below for details.
 
 The `symbols` key in the `args` map allows you to customize the symbol filter in a flexible way:
@@ -74,6 +74,6 @@ The response schema:
 --------------------| --------------------- | ----------------------------- 
  `m`                | `String`              | `open-order`
  `accountId`        | `String`              | account  
- `ac`               | `String`              | `cash`, `margin`
+ `ac`               | `String`              | `cash`
  `id`               | `String`              | echo id in request
  `data`             | `Order Json Array`    | A list of open order json objects        

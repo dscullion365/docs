@@ -13,9 +13,6 @@
         "cashAccount": [
             "dadFNEYEJIJ93CRxdafd3LTCIDIJPCFNIX"
         ],
-        "marginAccount": [
-            "mar2z3CMIEQx4UadasbtQ9JcxWJYgHmcb"
-        ],
         "userUID":            "U0866943712",
         "tradePermission":     True,
         "transferPermission":  True,
@@ -49,7 +46,6 @@ You can obtain your `accountGroup` from this API, which you will need to include
  `expireTime`         | `Long`         | the time when the API key will be expired (UTC timestamp in milliseconds). If -1, the api key will not expire
  `allowedIps`         | `List[String]` | list of IPs allowed for the api key
  `cashAccount`        | `List[String]` | 
- `marginAccount`      | `List[String]` | 
  `tradePermission`    | `Boolean`      | 
  `transferPermission` | `Boolean`      | 
  `viewPermission`     | `Boolean`      | 

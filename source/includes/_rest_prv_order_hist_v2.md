@@ -46,8 +46,8 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
 
  Name            | Type      | Required | Description
 ---------------- | --------- | -------- | -------------------------------------------------------------------------------------------
- `account`       | `String`  | Yes      | account type: `cash`/`margin`/`futures`, or actual accountId
- `symbol`        | `String`  | No       | symbol filter, e.g. `ASD/USDT`
+ `account`       | `String`  | Yes      | account type: `cash`  or actual accountId
+ `symbol`        | `String`  | No       | symbol filter, e.g. `BTC/USDT`
  `startTime`     | `Long`    | No       | start time in milliseconds.
  `endTime`       | `Long`    | No       | end time in milliseconds.
  `seqNum`        | `Long`    | No       | the seqNum to search from. All records in the response have seqNum no less than the input argument.

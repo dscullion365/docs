@@ -37,7 +37,7 @@ This API returns all current history orders for the account specified. If you ne
 
 `GET <account-group>/api/pro/v1/{account-category}/order/hist/current`
 
-Set `account-category` to`cash` for cash account and `margin` for margin account.
+Set `account-category` to`cash` for cash account
 
 #### Signature
 
@@ -52,7 +52,7 @@ You should sign the message in header as specified in [**Authenticate a RESTful 
  Name            | Type      | Required | Description                                                                                 
 ---------------- | --------- | -------- | ------------------------------------------------------------------------------------------- 
  `n`             | `Int`     | No       | maximum number of orders to be included in the response
- `symbol`        | `String`  | No       | symbol filter, e.g. `"ASD/USDT"`
+ `symbol`        | `String`  | No       | symbol filter, e.g. `"BTC/USDT"`
  `executedOnly`  | `Boolean` | No       | if `True`, include orders with non-zero filled quantities only.
 
 #### Response

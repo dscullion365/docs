@@ -28,7 +28,7 @@ Cancel all current open orders for the account specified, and optional symbol.
 
 `DELETE <account-group>/api/pro/v1/{account-category}/order/all`
 
-Set `account-category` to`cash` for cash account and `margin` for margin account. 
+Set `account-category` to`cash` for cash account
 
 #### Signature
 
@@ -52,7 +52,7 @@ Response include `code` and `data`, and status `Ack` (in field `data`) to indica
 
 Name        |  Type    | Description
 ------------| ---------| -------- 
-`ac`        | `String` | `CASH`, `MARGIN`
+`ac`        | `String` | `CASH`
 `accountId` | `String` | account Id
 `action`    | `String` | `cancel-all`,
 `info`      | `Json`   | See below for detail

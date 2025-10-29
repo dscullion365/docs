@@ -3,7 +3,7 @@
 > Requesting the current order book snapshot
 
 ```json
-{ "op": "req", "id": "abcdefg", "action": "depth-snapshot", "args": { "symbol": "ASD/USDT" } }
+{ "op": "req", "id": "abcdefg", "action": "depth-snapshot", "args": { "symbol": "BTC/USDT" } }
 ```
 
 > Depth snapshot message
@@ -11,7 +11,7 @@
 ```json
 {
     "m": "depth-snapshot",
-    "symbol": "ASD/USDT",
+    "symbol": "BTC/USDT",
     "data": {
         "seqnum": 3167819629,
         "ts": 1573142900389,
@@ -48,14 +48,14 @@ The `args` schema:
  `op`          | `String`            | `req`
  `action`      | `String`            | `depth-snapshot`
  `id`          | `String`            | echo back in case of error
- `args:symbol` | `String`            | Symbol, e.g. `ASD/USDT`
+ `args:symbol` | `String`            | Symbol, e.g. `BTC/USDT`
 
 The response schema:
 
  Name          | Data Type             | Description
 -------------- | --------------------- | -----------------------------
  `m`           | `String`              | `depth-snapshot`
- `symbol`      | `String`              | Symbol, e.g. `ASD/USDT`  
+ `symbol`      | `String`              | Symbol, e.g. `BTC/USDT`  
  `data:seqnum` | `Long`                |
  `data:ts`     | `Long`                | UTC Timestamp in milliseconds
  `data:asks`   | `[[String, String]]`  | List of (price, size) pair

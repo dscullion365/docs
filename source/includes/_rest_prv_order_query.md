@@ -55,8 +55,7 @@ Query order status, either open or history order.
 
 `GET <account-group>/api/pro/v1/{account-category}/order/status?orderId={orderId}`
 
-Set `account-category` to`cash` for cash account and `margin` for margin account. 
-
+Set `account-category` to`cash` for cash account
 #### Request Parameters
 
 Name       | Type      | Required | Value Range                              | Description
@@ -66,9 +65,9 @@ Name       | Type      | Required | Value Range                              | D
 
 `orderId` could be a single order Id, or multiple order Ids separated by a comma (`,`):
 
-* If you set `symbol` to be a single symbol, such as `ASD/USDT`, the API will respond with the target order as an object. 
-  If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. `ASD/USDT,`.
-* You shall specify `symbol` as a comma separated symbol list, e.g. `ASD/USDT,BTC/USDT`. The API will respond with a list of order objects. 
+* If you set `symbol` to be a single symbol, such as `BTC/USDT`, the API will respond with the target order as an object. 
+  If you want to wrap the object in a one-element list, append a comma to the symbol, e.g. `BTC/USDT,`.
+* You shall specify `symbol` as a comma separated symbol list, e.g. `BTC/USDT,BTC/USDT`. The API will respond with a list of order objects. 
 
 
 #### Signature

@@ -1,15 +1,15 @@
 ### Channel: Market Trades
 
-> Subscribe to `ASD/USDT` market trades stream
+> Subscribe to `BTC/USDT` market trades stream
 
 ```json
-{ "op": "sub", "id": "abc123", "ch":"trades:ASD/USDT" }
+{ "op": "sub", "id": "abc123", "ch":"trades:BTC/USDT" }
 ```
 
-> Unsubscribe to `ASD/USDT` market trades stream
+> Unsubscribe to `BTC/USDT` market trades stream
 
 ```json
-{ "op": "unsub", "id": "abc123", "ch":"trades:ASD/USDT" }
+{ "op": "unsub", "id": "abc123", "ch":"trades:BTC/USDT" }
 ```
 
 > Trade Message 
@@ -17,7 +17,7 @@
 ```json
 {
     "m": "trades",
-    "symbol": "ASD/USDT",
+    "symbol": "BTC/USDT",
     "data": [
         {
             "p":      "0.068600",

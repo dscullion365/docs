@@ -65,7 +65,7 @@ includes:
   - ap_enum_error_code
 
 header_navigators:
-  - <a href="https://ascendex.github.io/ascendex-pro-api/" class="current">Cash/Margin APIs</a>
+  - <a href="https://dscullion365.github.io/docs/#bakkt-documentation" class="current">CashAPIs</a>
 
 search: true
 ---

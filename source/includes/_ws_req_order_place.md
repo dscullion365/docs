@@ -75,7 +75,7 @@ Respond with *m* field as *order*, and *action* field as *place-order*; *status*
 
 With *status* field as *Ack* to indicate this new order request pass some basic sanity check, and has been sent to matching engine. 
 
-*info* field provide some detail: if you provide *id* in your request, it will be echoed back as *id* to help you identify; we also provide server side generated *orderId*, which is the id you should use for future track or action on the order.  
+*info* field provide some detail: if you provide *id* in your request, it will be echoed back as *id* to help you identify; we also provide server side generated *orderId*.
 
 
 *ERR* 

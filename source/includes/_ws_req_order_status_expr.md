@@ -25,7 +25,7 @@
         "sn"     :   20,                                 // sequence number
         "e"      :   "ExecutionReport",                  // event name, for orders, this field is always ExecutionReport
         "a"      :   "cshsWhHrfh4TO8KwJc17p051L1JklWRi", // accountId
-        "ac"     :   "CASH",                             // account category: CASH/MARGIN/FUTURES
+        "ac"     :   "CASH",                             // account category: CASH
         "t"      :   1596412468486,                      // last execution time
         "ct"     :   1596412468477,                      // create time
         "orderId":   "r173b199149dU6846912707bbtcuKQyG", // order Id
@@ -61,7 +61,7 @@ The request schema:
  `op`          | `String`  | `req`                      
  `action`      | `String`  | `order-status`  
  `id`          | `String`  | for result match purpose
- `account`     | `String`  | `cash`, `margin`         
+ `account`     | `String`  | `cash`        
  `args:orderId`| `String`  | orderIds separated by comma
 
 
@@ -84,7 +84,7 @@ Name      | Data Type | Description
 `sn`      | Long      | sequence number
 `e`       | `String`  | event name, for orders, this field is always ExecutionReport
 `a`       | `String`  | accountId
-`ac`      | `String`  | account category: CASH/MARGIN/FUTURES
+`ac`      | `String`  | account category: CASH
 `t`       | Long      | last execution time, UTC timestamp in milliseconds
 `ct`      | Long      | create time, UTC timestamp in milliseconds
 `orderId` | `String`  | order Id

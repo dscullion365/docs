@@ -68,7 +68,6 @@ curl -X GET https:// bakkt.exchange.test.com/api/pro/v2/risk-limit-info"
           "market_trades": 10000,
           "balance": 10000,
           "open_order": 10000,
-          "margin_risk": 10000,
           "futures_account_snapshot": 10000,
           "futures_open_orders": 10000
         },
@@ -83,7 +82,6 @@ curl -X GET https:// bakkt.exchange.test.com/api/pro/v2/risk-limit-info"
           "market_trades": 10000,
           "balance": 10000,
           "open_order": 10000,
-          "margin_risk": 10000,
           "futures_account_snapshot": 10000,
           "futures_open_orders": 10000
         }

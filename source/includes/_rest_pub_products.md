@@ -4,7 +4,6 @@
 
 ```
 curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
-curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 ```
 
 > Sample Response 
@@ -51,7 +50,7 @@ The response contains the following general fields:
 
  Name         | Type     | Description                                                                                 
 -------------- | -------- | --------------------- 
- `symbol`      | `String` | e.g. `"ASD/USDT"`
+ `symbol`      | `String` | e.g. `"BTC/USDT"`
  `baseAsset`   | `String` | e.g. `"ASD"`
  `quoteAsset`  | `String` | e.g. `"USDT"`
  `status`      | `String` | `"Normal"`

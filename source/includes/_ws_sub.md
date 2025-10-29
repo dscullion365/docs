@@ -10,7 +10,7 @@
 npm install -g wscat
 
 # Connect to websocket
-wscat -c wss://bakkt.exchange.test.com /0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:ASD/USDT"}'
+wscat -c wss://bakkt.exchange.test.com /0/api/pro/v1/stream -x '{"op":"sub", "ch": "depth:BTC/USDT"}'
 ```
 
 > You can also setup authorized session
@@ -50,7 +50,7 @@ The standard messages to subscribe to / unsubscribe from data channels is an JSO
 > Subscribe to *trade* stream for a list of symbols
 
 ```json
-{ "op": "sub", "id": "abcd1234", "ch": "trades:BTC/USDT,ETH/USDT,ASD/USDT" }
+{ "op": "sub", "id": "abcd1234", "ch": "trades:BTC/USDT,ETH/USDT,BTC/USDT" }
 ```
 
 > Unsubscribes from the *depth* stream for all symbols (method 1)
@@ -77,22 +77,22 @@ The standard messages to subscribe to / unsubscribe from data channels is an JSO
 { "op": "unsub", "id": "abcd1234", "ch": "bar:1" }
 ```
 
-> Unsubscribes from *bar* streams of all frequencies for `ASD/USDT`
+> Unsubscribes from *bar* streams of all frequencies for `BTC/USDT`
 
 ```json
-{ "op": "unsub", "id": "abcd1234", "ch": "bar:*:ASD/USDT" }
+{ "op": "unsub", "id": "abcd1234", "ch": "bar:*:BTC/USDT" }
 ```
 
 > Response for sub multiple symbols in one single message
 
 ```json
-{"m":"sub","id":"abc23g","ch":"summary:BTC/USDT,ASD/USDT","code":0}
+{"m":"sub","id":"abc23g","ch":"summary:BTC/USDT,BTC/USDT","code":0}
 ```
 
 > Response for unsub multiple symbols in one single message
 
 ```json
-{ "m": "unsub", "id": "abcd1234", "ch": "bar:*:ASD/USDT" }
+{ "m": "unsub", "id": "abcd1234", "ch": "bar:*:BTC/USDT" }
 ```
 
 #### Customize Channel content with `ch`
@@ -105,7 +105,7 @@ You can customize the channel content by setting `ch` according to the table bel
  public  | `bbo:<symbol>`               | Price and size at best bid and ask levels on the order book.
  public  | `trades:<symbol>`            | Market trade data 
  public  | `bar:<interval>:<symbol>`    | Bar data containing O/C/H/L prices and volume for specific time intervals
- public  | `ref-px:<symbol>`            | Reference prices used by margin risk Calculation. 
+ public  | `ref-px:<symbol>`            | Reference prices
  Private | `order:<account>`            | Order Update Stream: "cash", "margin", or actual accountId for `account.                              
 
  *Symbol* in *ref-px* is single asset symbol(e.g. `BTC`), not trading pair symbol (e.g. `BTC/USDT`), which is different from other channels.

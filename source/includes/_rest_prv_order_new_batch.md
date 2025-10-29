@@ -90,9 +90,7 @@ You may submit up to 10 orders at a time. Server will respond with error if you 
 
 #### HTTP Request
 
-`POST <account-group>/api/pro/v1/{account-category}/order/batch`
-
-Set `account-category` to`cash` for cash account and `margin` for margin account.
+`POST cash/api/pro/v1/{account-category}/order/batch`
 
 #### Signature
 
@@ -119,7 +117,7 @@ please refer to [placing new order](#place-order) for order item definition.
 
 Name        |  Type    | Description
 ------------| ---------| -------- 
-`ac`        | `String` | `CASH`, `MARGIN`
+`ac`        | `String` | `CASH`
 `accountId` | `String` | account Id
 `action`    | `String` | `cancel-all`
 `status`    | `String` |  `Ack`
@@ -144,7 +142,7 @@ Error schema
 Name        |  Type    | Description
 ------------| ---------| -------- 
 `code`      | `Long`   | 0
-`ac`        | `String` | `CASH`, `MARGIN`
+`ac`        | `String` | `CASH`
 `accountId` | `String` | account Id
 `action`    | `String` | `batch-cancel-order`
 `message`   | `String` | error message detail
