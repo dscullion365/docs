@@ -221,7 +221,7 @@
     </a>
     <header>
       <div class="flexbox">
-        <a href="https://ascendex.com">
+        <a href="https://Bakkt.com">
           <img src="images/logo.png" class="logo" alt="" />
         </a>
         <div class="navbox">
@@ -294,7 +294,7 @@
                           <a href="#vip-fee-schedule" class="toc-h3 toc-link" data-title="VIP Fee Schedule">VIP Fee Schedule</a>
                         </li>
                         <li>
-                          <a href="#fee-schedule-by-symbol" class="toc-h3 toc-link" data-title="Fee Schedule by Symbol">Fee Schedule by Symbol</a>
+                          <a href="#fee-schedule-by-symbolls" class="toc-h3 toc-link" data-title="Fee Schedule by Symbolls">Fee Schedule by Symbolls</a>
                         </li>
                         <li>
                           <a href="#risk-limit-info-deprecated" class="toc-h3 toc-link" data-title="Risk Limit Info(Deprecated)">Risk Limit Info(Deprecated)</a>
@@ -406,9 +406,6 @@
                   </li>
                   <li>
                     <a href="#websocket-request" class="toc-h2 toc-link" data-title="WebSocket Request">WebSocket Request</a>
-                  </li>
-                  <li>
-                    <a href="#code-sample" class="toc-h2 toc-link" data-title="Code Sample">Code Sample</a>
                   </li>
                   <li>
                     <a href="#keep-the-connection-alive-via-ping-pong" class="toc-h2 toc-link" data-title="Keep the Connection Alive via Ping/Pong">Keep the Connection Alive via Ping/Pong</a>
@@ -571,7 +568,7 @@ curl <span class="nt">-X</span> GET <span class="nt">-i</span> <span class="se">
   <span class="nt">-H</span> <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
-  https://ascendex.com/api/pro/v1/info
+  https://bakkt.exchange.test.com/api/pro/v1/info
 </code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># python 3.6+
 </span><span class="kn">import</span> <span class="nn">time</span><span class="p">,</span> <span class="n">hmac</span><span class="p">,</span> <span class="n">hashlib</span><span class="p">,</span> <span class="n">base64</span>
 
@@ -620,15 +617,13 @@ curl <span class="nt">-X</span> GET <span class="nt">-i</span> <span class="se">
 </code></pre></div>
 <p>To query APIs with private data, you must include a signature using base64 encoded HMAC sha256 algorithm. The prehash string is <code>&lt;timestamp&gt;+&lt;api-path&gt;</code>. 
 The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
-
-<p>See the code demos in <code>bash</code> on the right. For other programming languages, please refer to <a href="https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo">https://github.com/ascendex/ascendex-pro-api-demo/tree/main/signature_demo</a>.</p>
 <h2 id='market-data-public'>Market Data (Public)</h2>
 <p>You don&#39;t need to sign the request to access public market data. </p>
 <h3 id='list-all-assets'>List all Assets</h3>
 <blockquote>
 <p>List all Assets</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v2/assets"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v2/assets"
 </code></pre></div>
 <blockquote>
 <p>Sample Response </p>
@@ -752,8 +747,8 @@ The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <blockquote>
 <p>List all Products </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/cash/products"
-curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
+curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/margin/products"
 </code></pre></div>
 <blockquote>
 <p>Sample Response </p>
@@ -932,7 +927,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
 <blockquote>
 <p>Ticker for one trading pair</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://ascendex.com/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=ASD/USDT'</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">'https://bakkt.exchange.test.com</span><span class="w"> </span><span class="err">/api/pro/v</span><span class="mi">1</span><span class="err">/spot/ticker?symbol=ASD/USDT'</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -956,7 +951,7 @@ curl -X GET "https://ascendex.com/api/pro/v1/margin/products"
 <blockquote>
 <p>List of Tickers for one or multiple trading pairs</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://ascendex.com/api/pro/v1/spot/ticker?symbol=ASD/USDT,"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">curl</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="s2">"https://bakkt.exchange.test.com/api/pro/v1/spot/ticker?symbol=ASD/USDT,"</span><span class="w">
 </span><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -1062,13 +1057,11 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td>the price and size at the current best bid level</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_pub_ticker.py">query ticker info</a>.</p>
 <h3 id='bar-info'>Bar Info</h3>
 <blockquote>
 <p>Request </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/barhist/info"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/barhist/info"
 </code></pre></div>
 <blockquote>
 <p>Sample response</p>
@@ -1161,7 +1154,7 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <blockquote>
 <p>Request </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/barhist?symbol=ASD/USDT&amp;interval=1"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/barhist?symbol=ASD/USDT&amp;interval=1"
 </code></pre></div>
 <blockquote>
 <p>Sample response</p>
@@ -1318,13 +1311,11 @@ only 500 bars will be returned. </li>
 <td>volume in base asset</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer python code to [get bar history]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_pub_barhist.py}</p>
 <h3 id='order-book-depth'>Order Book (Depth)</h3>
 <blockquote>
 <p>Request for Order Book (Depth) Data</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/depth?symbol=ASD/USDT"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/depth?symbol=ASD/USDT"
 </code></pre></div>
 <blockquote>
 <p>Order Book (Depth) Data - Sample response </p>
@@ -1437,13 +1428,11 @@ only 500 bars will be returned. </li>
 <td>pair of price and size of bid levels</td>
 </tr>
 </tbody></table>
-<h4 id='demo-sample'>Demo Sample</h4>
-<p>Pleas refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_pub_depth.py">take depth snapshot</a></p>
 <h3 id='market-trades'>Market Trades</h3>
 <blockquote>
 <p>Request </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://ascendex.com/api/pro/v1/trades?symbol=ASD/USDT"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v1/trades?symbol=ASD/USDT"
 </code></pre></div>
 <blockquote>
 <p>Sample response </p>
@@ -1541,8 +1530,6 @@ only 500 bars will be returned. </li>
 <td>If true, the maker of the trade is the buyer.</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to [query trades]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_pub_trades.py}</p>
 <h2 id='account'>Account</h2><h3 id='account-info'>Account Info</h3>
 <blockquote>
 <p>Account Info - Sample response:</p>
@@ -1641,8 +1628,6 @@ only 500 bars will be returned. </li>
 <td>an unique id associated with user</td>
 </tr>
 </tbody></table>
-
-<p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_account_info.py">query private account info</a>.</p>
 <h3 id='vip-fee-schedule'>VIP Fee Schedule</h3>
 <blockquote>
 <p>Fee Schedule - Sample response for general info::</p>
@@ -1681,7 +1666,7 @@ only 500 bars will be returned. </li>
 <p><strong>prehash string</strong> </p>
 
 <p><code>&lt;timestamp&gt;+fee</code></p>
-<h3 id='fee-schedule-by-symbol'>Fee Schedule by Symbol</h3>
+<h3 id='fee-schedule-by-symbolls'>Fee Schedule by Symbolls</h3>
 <blockquote>
 <p>Fee Schedule - Sample response for each symbol::</p>
 </blockquote>
@@ -1741,15 +1726,13 @@ only 500 bars will be returned. </li>
 <p><strong>prehash string</strong> </p>
 
 <p><code>&lt;timestamp&gt;+fee</code></p>
-
-<p>See a demo at <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_fee.py">query fee</a>.</p>
 <h3 id='risk-limit-info-deprecated'>Risk Limit Info(Deprecated)</h3>
 <p>This API has been deprecated, please use <a href="#risk-limit-info-v2">risk limit info v2</a> instead.</p>
 
 <blockquote>
 <p>Risk Limit Info </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v1/risk-limit-info"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://bakkt.exchange.test.com /api/pro/v1/risk-limit-info"
 </code></pre></div>
 <blockquote>
 <p>Risk Limit Info - Sample response::</p>
@@ -1812,7 +1795,7 @@ only 500 bars will be returned. </li>
 <p>All the operations fall into same <code>op</code>/<code>req</code> group will share a threshold, meaning the sum of count of these messages should not violate the threshold.</p>
 
 <p>For <code>req op</code>, we have two fine granularity threshold <code>order req</code> and <code>snapshot req</code>, which will have their specialized threshold value for messages belonging to their types.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v2/risk-limit-info"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https:// bakkt.exchange.test.com/api/pro/v2/risk-limit-info"
 </code></pre></div>
 <blockquote>
 <p>Risk Limit Info - Sample response::</p>
@@ -1909,7 +1892,7 @@ only 500 bars will be returned. </li>
 <blockquote>
 <p>Latency Info </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://ascendex.com/api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET https://bakkt.exchange.test.com /api/pro/v1/exchange-info?requestTime="$(date +%s%N | cut -b1-13)"
 </code></pre></div>
 <blockquote>
 <p>Latency Info - Sample response::</p>
@@ -2028,8 +2011,6 @@ only 500 bars will be returned. </li>
 <td><code>&quot;234.56&quot;</code></td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_balance.py">query balance</a></p>
 <h3 id='margin-account-balance'>Margin Account Balance</h3>
 <blockquote>
 <p>Margin Account Balance - Sample response </p>
@@ -2148,8 +2129,6 @@ only 500 bars will be returned. </li>
 <p>You should sign the message in header as specified in <a href="#signing-a-Request"><strong>Authenticate a RESTful Request</strong></a> section.</p>
 <h4 id='prehash-string-3'>Prehash String</h4>
 <p><code>&lt;timestamp&gt;+margin/risk</code></p>
-<h4 id='code-sample-2'>Code Sample</h4>
-<p>Please refer to python code to[query margin risk]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_margin_risk.py}</p>
 <h3 id='balance-transfer'>Balance Transfer</h3>
 <blockquote>
 <p>Transfer from Cash To Margin - Sample request and response</p>
@@ -2218,8 +2197,6 @@ only 500 bars will be returned. </li>
 </tbody></table>
 <h4 id='response-content-3'>Response Content</h4>
 <p>Response <code>code</code> value 0 indicate successful transfer. </p>
-<h4 id='code-sample-3'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_transfer.py">transfer token among different accounts</a></p>
 <h3 id='balance-transfer-for-subaccount'>Balance Transfer for Subaccount</h3>
 <blockquote>
 <p>Request</p>
@@ -2318,8 +2295,6 @@ only 500 bars will be returned. </li>
 </tbody></table>
 <h4 id='response-content-4'>Response Content</h4>
 <p>Response <code>code</code> value 0 indicates successful transfer and <code>info</code> echos the request parameters. </p>
-<h4 id='code-sample-4'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer.py">transfer token among different sub users</a></p>
 <h3 id='balance-transfer-history-for-subaccount'>Balance Transfer history for Subaccount</h3>
 <blockquote>
 <p>Request</p>
@@ -2421,8 +2396,6 @@ only 500 bars will be returned. </li>
 </tbody></table>
 <h4 id='response-content-5'>Response Content</h4>
 <p>Response <code>code</code> value 0 indicates successful query and <code>data</code> shows query result. </p>
-<h4 id='code-sample-5'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/balance_prv_subuser_transfer_hist.py">transfer history among different sub users</a></p>
 <h2 id='balance-snapshot-and-update-detail'>Balance Snapshot And Update Detail</h2>
 <p>Here we provide rest API to get daily balance snapshot, and intraday balance and order fills update details. We recommend calling balance snapshot endpoint(<code>&lt;cash/margin&gt;/balance/snapshot</code>) to get balance at the beginning of the day, and get the sequence number <code>sn</code>; then start to query balance or order fills update from <code>&lt;cash/margin&gt;/balance/history</code> by setting parameter <code>sn</code> value to be <code>sn + 1</code>.</p>
 
@@ -2562,8 +2535,6 @@ only 500 bars will be returned. </li>
 <td><code>&quot;1234.56&quot;</code></td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query balance snapshot</a></p>
 <h3 id='order-and-balance-detail'>Order and Balance Detail</h3>
 <p>This API is for intraday balance change detail from balance event and order fillss.</p>
 <h4 id='http-request-2'>HTTP Request</h4>
@@ -2883,8 +2854,6 @@ only 500 bars will be returned. </li>
 <td><code>100</code></td>
 </tr>
 </tbody></table>
-<h4 id='code-sample-2'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_balance_and_order_fills.py">query order and balance detail</a></p>
 <h2 id='wallet'>Wallet</h2><h3 id='query-deposit-addresses'>Query Deposit Addresses</h3>
 <blockquote>
 <p>Query Deposit Addresses - Sample Response</p>
@@ -3001,10 +2970,8 @@ only 500 bars will be returned. </li>
 <td></td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_deposit_address.py">query deposit addresses</a></p>
 <h3 id='wallet-withdrawal'>Wallet Withdrawal</h3>
-<p>We do support API withdrawals. Please contact your dedicated sales manager or support@ascendex.com for further information.</p>
+<p>We do support API withdrawals. Please contact your dedicated sales contaact for further information</p>
 <h3 id='query-wallet-transaction-history'>Query Wallet Transaction History</h3>
 <blockquote>
 <p>Query Wallet Transaction History - Sample Response</p>
@@ -3175,8 +3142,6 @@ only 500 bars will be returned. </li>
 <td>the destination tag (or memo for some tokens) attached to the address. This field could be an empty string.</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_wallet_tx_hist.py">query wallet transactions</a></p>
 <h2 id='order'>Order</h2>
 <p>Trading and Order related APIs. API path usually depend on account-group and account-category: </p>
 
@@ -3203,8 +3168,6 @@ only 500 bars will be returned. </li>
 <li><p><code>id</code> value with length &lt; 9 will not be used in order Id generation, but we still echo it back in order ack message (empty string when no <code>id</code> value provided).</p></li>
 <li><p>If a valid <code>id</code> value is provided when placing order, order Id from server side is pre-determined. This could be helpful for order status check in case of accidently internet connection issue.</p></li>
 </ul>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/util.py">gen server order id</a></p>
 <h3 id='place-order'>Place Order</h3>
 <blockquote>
 <p>Place Order - Successful ACK Response (Status 200, code 0)</p>
@@ -3753,8 +3716,6 @@ only 500 bars will be returned. </li>
 <td></td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Refer to sample python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/tree/master/python/order_new.py">place order</a></p>
 <h3 id='cancel-order'>Cancel Order</h3>
 <blockquote>
 <p>Cancel Order - Successful ACK Response (Status 200, code 0)</p>
@@ -3867,8 +3828,6 @@ only 500 bars will be returned. </li>
 <td>Trying to cancel a completed (filled/canceled/rejected) or not existed order.</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Refer to sample python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel.py">cancel order</a></p>
 <h3 id='cancel-all-orders'>Cancel All Orders</h3>
 <blockquote>
 <p>Cancel All Orders - Successful ACK Response (Status 200, code 0)</p>
@@ -3986,8 +3945,6 @@ only 500 bars will be returned. </li>
 <td>server received timestamp</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Refer to sample python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel_all.py">cancel all order</a></p>
 <h4 id='caveat'>Caveat</h4>
 <p>The server will process the cancel all request with best effort. Orders sent but un-acked will not be canceled. You should rely on websocket order update messages or the RESTful api 
 to obtain the latest status of each order. </p>
@@ -4271,8 +4228,6 @@ to obtain the latest status of each order. </p>
 <td>symbol in order</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_new.py">place batch order</a></p>
 <h3 id='cancel-batch-orders'>Cancel Batch Orders</h3>
 <blockquote>
 <p>Cancel Batch Orders - Successful ACK Response (Status 200, code 0)</p>
@@ -4516,8 +4471,6 @@ Order detail for each order is in <code>info</code> field list.</p>
 <td>symbol in order</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_cancel.py">cancel batch order</a></p>
 <h3 id='query-order'>Query Order</h3>
 <blockquote>
 <p>Query Order - Successful Response (Status 200, code 0)</p>
@@ -4692,8 +4645,6 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td>execution instruction, <code>POST</code> for Post-Only orders, <code>Liquidation</code> for forced-liquidation orders, and <code>NULL_VAL</code> otherwise.</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_query.py">get order status</a></p>
 <h3 id='list-open-orders'>List Open Orders</h3>
 <blockquote>
 <p>Open Orders - Successful Response (Status 200, code 0)</p>
@@ -4860,8 +4811,6 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td><code>{&quot;code&quot;: xxx, &quot;message&quot;: &quot;missing requird parameter \&quot;account\&quot;} &quot;}</code>  @TODO</td>
 </tr>
 </tbody></table>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/order_query.py">get open orders</a></p>
 
 <p>Change from the previous version:</p>
 
@@ -4939,12 +4888,8 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 </tbody></table>
 <h4 id='response'>Response</h4>
 <p>Return a list of history orders in <em>&quot;data&quot;</em> field.</p>
-<h4 id='code-sample'>Code Sample</h4>
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_order_hist_curr.py">get recent hist orders</a></p>
 <h3 id='list-history-orders-deprecated'>List History Orders (Deprecated)</h3>
 <p>This API has been deprecated, please use <a href="#list-history-orders-v2">list order history v2</a> instead. </p>
-
-<p>If you still want to use the already deprecated api, please refer to <a href="https://github.com/ascendex/ascendex-pro-api/blob/master/misc/rest_prv_order_hist_deprecated.md">List History Orders (Deprecated)</a>.</p>
 <h3 id='list-history-orders-v2'>List History Orders (v2)</h3>
 <blockquote>
 <p>History Orders - Successful Response (Status 200, code 0)</p>
@@ -5136,10 +5081,6 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 <td>Fee asset, e.g, <code>USDT</code></td>
 </tr>
 </tbody></table>
-
-<p><strong><em>Code Sample</em></strong></p>
-
-<p>Please refer to python code to <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/query_prv_order_hist_v2.py">get hist orders</a></p>
 <h1 id='websocket'>WebSocket</h1><h3 id='general-message-request-handling-logic-from-client-side'>General Message Request/Handling Logic from Client Side</h3>
 <ul>
 <li>Client usually initiate request with <code>op</code> parameter (followed by other required parameters).</li>
@@ -5152,8 +5093,6 @@ If you want to wrap the object in a one-element list, append a comma to the symb
 
 <p>In order to authorize the session you must include <code>&lt;account-group&gt;</code> in the URL. Without <code>&lt;account-group&gt;</code>, you can 
 only subscribe to public data. </p>
-<h3 id='code-sample'>Code Sample</h3>
-<p>Please refer to python code for all kinds of [websocket operation]{https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/client.py} (e.g. authorization, sub/unsub, place/cancel order, and so on) </p>
 <h2 id='keep-the-connection-alive-via-ping-pong'>Keep the Connection Alive via Ping/Pong</h2>
 <p>In order to keep the websocket connection alive, you have two options, detailed below.</p>
 <h4 id='method-1-responding-to-server-ping-messages'>Method 1: Responding to Server ping messages</h4>
@@ -5266,7 +5205,7 @@ for 30 seconds if a client initiated <code>ping</code> message is received. </p>
 wscat <span class="nt">-H</span> <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
-  <span class="nt">-c</span> wss://ascendex.com/1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:ASD/USDT"}'</span>
+  <span class="nt">-c</span> wss://bakkt.exchange.test.com /1/api/pro/v1/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s1">'{"op":"sub", "id": "abc123", "ch": "order:cshQtyfq8XLAA9kcf19h8bXHbAwwoqDo:ASD/USDT"}'</span>
 </code></pre></div>
 <p>This is similar to the way you authenticate any RESTful request. You need to add the following header fields to the 
 connection request:</p>
@@ -5294,7 +5233,7 @@ connection request:</p>
 <span class="nv">MESSAGE</span><span class="o">=</span><span class="nv">$TIMESTAMP</span>+<span class="nv">$APIPATH</span>
 <span class="nv">SIGNATURE</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nt">-n</span> <span class="nv">$MESSAGE</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="nv">$SECRET</span> <span class="nt">-binary</span> | <span class="nb">base64</span><span class="sb">`</span>
 
-wscat <span class="nt">-c</span> wss://ascendex.com/1/api/v1/pro/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">auth</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">abc123</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">t</span><span class="se">\"</span><span class="s2">: </span><span class="nv">$TIMESTAMP</span><span class="s2">, "</span>key<span class="s2">": </span><span class="se">\"</span><span class="nv">$APIKEY</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sig</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="nv">$SIGNATURE</span><span class="se">\"</span><span class="s2">}"</span>
+wscat <span class="nt">-c</span> wss:// bakkt.exchange.test.com/1/api/v1/pro/stream <span class="nt">-w</span> 1 <span class="nt">-x</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">auth</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">id</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">abc123</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">t</span><span class="se">\"</span><span class="s2">: </span><span class="nv">$TIMESTAMP</span><span class="s2">, "</span>key<span class="s2">": </span><span class="se">\"</span><span class="nv">$APIKEY</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">sig</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="nv">$SIGNATURE</span><span class="se">\"</span><span class="s2">}"</span>
 </code></pre></div>
 <p>You can also authenticate a live websocket session by sending an <code>op:auth</code> message to the server. </p>
 
@@ -5337,12 +5276,6 @@ wscat <span class="nt">-c</span> wss://ascendex.com/1/api/v1/pro/stream <span cl
 <td>the signature is generated by signing <code>&quot;&lt;timestamp&gt;+stream&quot;</code></td>
 </tr>
 </tbody></table>
-
-<p>More comprehensive examples can be found at:</p>
-
-<ul>
-<li>Python for <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/websocket_auth.py">websocket auth</a></li>
-</ul>
 <h3 id='authentication-response'>Authentication Response</h3>
 <blockquote>
 <p>Auth success message</p>
@@ -5402,7 +5335,7 @@ wscat <span class="nt">-c</span> wss://ascendex.com/1/api/v1/pro/stream <span cl
 npm <span class="nb">install</span> <span class="nt">-g</span> wscat
 
 <span class="c"># Connect to websocket</span>
-wscat <span class="nt">-c</span> wss://ascendex.com/0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:ASD/USDT"}'</span>
+wscat <span class="nt">-c</span> wss://bakkt.exchange.test.com /0/api/pro/v1/stream <span class="nt">-x</span> <span class="s1">'{"op":"sub", "ch": "depth:ASD/USDT"}'</span>
 </code></pre></div>
 <blockquote>
 <p>You can also setup authorized session</p>
@@ -5631,8 +5564,6 @@ you can use to update the order book snapshot. In the message, <code>price</code
 <li>if <code>size</code> is positive and the <code>price</code> exists in the current order book, you should <strong>update</strong> the existing level to <code>[price, size]</code>. </li>
 <li>if <code>size</code> is zero, you should <strong>delete</strong> the level at <code>price</code>. </li>
 </ul>
-
-<p>See <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/websocket_orderbook_snapshot.py">Orderbook Snapshot</a> for code examples.</p>
 <h3 id='channel-market-trades'>Channel: Market Trades</h3>
 <blockquote>
 <p>Subscribe to <code>ASD/USDT</code> market trades stream</p>
@@ -6351,12 +6282,6 @@ you need to repeat above steps to maintain a new order book.</p>
 <p>Please note that the <code>depth-snapshot</code> API has higher latency. The response time is usually between 
 1000 - 2000 milliseconds. It is intended to help you initialize the orderbook, not to be used to obtain 
 the timely order book data. </p>
-
-<p>More comprehensive examples can be found at:</p>
-
-<ul>
-<li>Python: <a href="https://github.com/ascendex/ascendex-pro-api-demo/blob/master/python/websocket_orderbook_snapshot.py">websocket orderbook snapshot</a></li>
-</ul>
 <h3 id='ws-place-order'>WS: Place Order</h3>
 <blockquote>
 <p>Request to place new order</p>
@@ -6983,8 +6908,6 @@ immediately change status. For instance, when you place a Post-only order that c
 in the New Ack Mode, you will first receive an order message with <code>st=New</code>, then immediately receive another message with <code>st=Canceled</code>. However, 
 if your order successfully enters the orderbook without crossing with order on the opposite side, you will only receive one message with <code>st=New</code>. 
 This makes it hard for trading bots to decide when to take actions.</p>
-
-<p>To address this issue, we introduced the <strong>Ready Ack</strong> mode. Follow this <a href="https://github.com/ascendex/ascendex-pro-api/blob/master/misc/ws_order_channel_ready_mode.md">link</a> for more details.</p>
 <h1 id='appendex'>Appendex</h1><h2 id='enum-blockchains'>ENUM: BlockChains</h2>
 <ul>
 <li><code>ABBC Coin</code></li>
