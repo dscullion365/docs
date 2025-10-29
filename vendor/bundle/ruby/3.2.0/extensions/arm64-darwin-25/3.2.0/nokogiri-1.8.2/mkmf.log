@@ -1,0 +1,687 @@
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib     -lruby.3.2  -lpthread   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe    -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  -Wno-error=unused-command-line-argument-hard-error-in-future   -Werror -c conftest.c"
+error: unknown warning option '-Werror=unused-command-line-argument-hard-error-in-future'; did you mean '-Werror=unused-command-line-argument'? [-Werror,-Wunknown-warning-option]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for libxml-2.0 is not found
+package configuration for libxslt is not found
+package configuration for libexslt is not found
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -E -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -E -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+4: #if LIBXML_VERSION < 20621
+5: #error libxml2 is older than 2.6.21
+6: #endif
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -E -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/xmlversion.h>
+4: #if LIBXML_VERSION < 20903
+5: #error libxml2 is older than 2.9.3
+6: #endif
+/* end */
+
+have_func: checking for xmlParseDoc() in libxml/parser.h... -------------------- no
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib     -lruby.3.2  -lpthread   "
+Undefined symbols for architecture arm64:
+  "_xmlParseDoc", referenced from:
+      _t in conftest-978141.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxml/parser.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib     -lruby.3.2  -lpthread   "
+conftest.c:16:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C23, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+   16 | extern void xmlParseDoc();
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libxml/parser.h:844:3: note: conflicting prototype is here
+  844 |                 xmlParseDoc             (const xmlChar *cur);
+      |                 ^
+conftest.c:16:13: error: conflicting types for 'xmlParseDoc'
+   16 | extern void xmlParseDoc();
+      |             ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libxml/parser.h:844:3: note: previous declaration is here
+  844 |                 xmlParseDoc             (const xmlChar *cur);
+      |                 ^
+conftest.c:17:27: error: too few arguments to function call, single argument 'cur' was not specified
+   17 | int t(void) { xmlParseDoc(); return 0; }
+      |               ~~~~~~~~~~~ ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libxml/parser.h:844:3: note: 'xmlParseDoc' declared here
+  844 |                 xmlParseDoc             (const xmlChar *cur);
+      |                 ^                        ~~~~~~~~~~~~~~~~~~
+1 warning and 2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxml/parser.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void xmlParseDoc();
+17: int t(void) { xmlParseDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for xmlParseDoc() in -lxml2... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib     -lruby.3.2 -lxml2  -lpthread   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxml/parser.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for xsltParseStylesheetDoc() in libxslt/xslt.h... -------------------- no
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxml2  -lruby.3.2 -lxml2  -lpthread   "
+conftest.c:16:57: error: use of undeclared identifier 'xsltParseStylesheetDoc'
+   16 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxslt/xslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxml2  -lruby.3.2 -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lxml2'
+Undefined symbols for architecture arm64:
+  "_xsltParseStylesheetDoc", referenced from:
+      _t in conftest-7fa474.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxslt/xslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void xsltParseStylesheetDoc();
+17: int t(void) { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for xsltParseStylesheetDoc() in -lxslt... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxml2  -lruby.3.2 -lxslt -lxml2  -lpthread   "
+conftest.c:16:57: error: use of undeclared identifier 'xsltParseStylesheetDoc'
+   16 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxslt/xslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxml2  -lruby.3.2 -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lxml2'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libxslt/xslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void xsltParseStylesheetDoc();
+17: int t(void) { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for exsltFuncRegister() in libexslt/exslt.h... -------------------- no
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxslt -lxml2  -lruby.3.2 -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lxml2', '-lxslt'
+Undefined symbols for architecture arm64:
+  "_exsltFuncRegister", referenced from:
+      _t in conftest-97c089.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libexslt/exslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxslt -lxml2  -lruby.3.2 -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lxml2', '-lxslt'
+Undefined symbols for architecture arm64:
+  "_exsltFuncRegister", referenced from:
+      _t in conftest-2d0ab2.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libexslt/exslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: extern void exsltFuncRegister();
+17: int t(void) { exsltFuncRegister(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for exsltFuncRegister() in -lexslt... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <libexslt/exslt.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     int (* volatile tp)(void)=(int (*)(void))&t;
+11:     printf("%d", (*tp)());
+12:   }
+13: 
+14:   return !!argv[argc];
+15: }
+16: int t(void) { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlHasFeature()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlHasFeature'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlHasFeature();
+15: int t(void) { xmlHasFeature(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlFirstElementChild()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlFirstElementChild'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlFirstElementChild();
+15: int t(void) { xmlFirstElementChild(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlRelaxNGSetParserStructuredErrors();
+15: int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlRelaxNGSetParserStructuredErrors'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlRelaxNGSetParserStructuredErrors();
+15: int t(void) { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetValidStructuredErrors()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlRelaxNGSetValidStructuredErrors'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlRelaxNGSetValidStructuredErrors();
+15: int t(void) { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetValidStructuredErrors()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlSchemaSetValidStructuredErrors'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlSchemaSetValidStructuredErrors();
+15: int t(void) { xmlSchemaSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetParserStructuredErrors()... -------------------- yes
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+conftest.c:14:57: error: use of undeclared identifier 'xmlSchemaSetParserStructuredErrors'
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return !p; }
+      |                                                         ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/daniel.scullion/.rbenv/versions/3.2.2/lib "clang -o conftest -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/arm64-darwin25 -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/daniel.scullion/.rbenv/versions/3.2.2/include/ruby-3.2.0 -I. -I/Users/daniel.scullion/homebrew/opt/gmp/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -fno-common -pipe  conftest.c  -L. -L/Users/daniel.scullion/.rbenv/versions/3.2.2/lib -L. -fstack-protector-strong -L/Users/daniel.scullion/homebrew/opt/gmp/lib    -lexslt -lxslt -lxml2  -lruby.3.2 -lexslt -lxslt -lxml2  -lpthread   "
+ld: warning: ignoring duplicate libraries: '-lexslt', '-lxml2', '-lxslt'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void xmlSchemaSetParserStructuredErrors();
+15: int t(void) { xmlSchemaSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+

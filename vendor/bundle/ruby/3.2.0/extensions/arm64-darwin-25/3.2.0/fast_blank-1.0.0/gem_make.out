@@ -1,0 +1,19 @@
+current directory: /Users/daniel.scullion/repos/docs/vendor/bundle/ruby/3.2.0/gems/fast_blank-1.0.0/ext/fast_blank
+/Users/daniel.scullion/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/daniel.scullion/repos/docs/vendor/bundle/ruby/3.2.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= sitearchdir\=./.gem.20251029-97684-5iinrk sitelibdir\=./.gem.20251029-97684-5iinrk clean
+
+current directory: /Users/daniel.scullion/repos/docs/vendor/bundle/ruby/3.2.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= sitearchdir\=./.gem.20251029-97684-5iinrk sitelibdir\=./.gem.20251029-97684-5iinrk
+compiling fast_blank.c
+linking shared-object fast_blank.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/daniel.scullion/repos/docs/vendor/bundle/ruby/3.2.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= sitearchdir\=./.gem.20251029-97684-5iinrk sitelibdir\=./.gem.20251029-97684-5iinrk install
+/Users/daniel.scullion/homebrew/bin/ginstall -c -m 0755 fast_blank.bundle ./.gem.20251029-97684-5iinrk
+
+current directory: /Users/daniel.scullion/repos/docs/vendor/bundle/ruby/3.2.0/gems/fast_blank-1.0.0/ext/fast_blank
+make DESTDIR\= sitearchdir\=./.gem.20251029-97684-5iinrk sitelibdir\=./.gem.20251029-97684-5iinrk clean
