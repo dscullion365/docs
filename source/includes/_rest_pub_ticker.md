@@ -1,4 +1,5 @@
 ### Ticker
+
 > Ticker for one trading pair
 
 ```json

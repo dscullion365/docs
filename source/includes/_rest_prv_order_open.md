@@ -84,3 +84,9 @@ Error Response Messages
 HTTP Status Code | Error Code | Reason           | Example
 ---------------- | ---------- | ---------------- | ----------------------------------------------------------------------
 400              | xxx        | Parameter Error  | `{"code": xxx, "message": "missing requird parameter \"account\"} "}`  @TODO
+
+Change from the previous version:
+
+* `execId`, `asdCommission`, `notional` are no longer included in the response. 
+* `errorCode` is no longer included in the open order response. It is still included in the historical order query response.
+
