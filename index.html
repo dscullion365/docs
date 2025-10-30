@@ -255,27 +255,22 @@
                         <li>
                           <a href="#sign-a-request" class="toc-h3 toc-link" data-title="Sign a Request">Sign a Request</a>
                         </li>
+                        <li>
+                          <a href="#list-all-assets" class="toc-h3 toc-link" data-title="List all Assets">List all Assets</a>
+                        </li>
+                        <li>
+                          <a href="#list-all-products" class="toc-h3 toc-link" data-title="List all Products">List all Products</a>
+                        </li>
+                        <li>
+                          <a href="#ticker" class="toc-h3 toc-link" data-title="Ticker">Ticker</a>
+                        </li>
+                        <li>
+                          <a href="#order-book-depth" class="toc-h3 toc-link" data-title="Order Book (Depth)">Order Book (Depth)</a>
+                        </li>
+                        <li>
+                          <a href="#market-trades" class="toc-h3 toc-link" data-title="Market Trades">Market Trades</a>
+                        </li>
                     </ul>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#bash" class="toc-h1 toc-link" data-title="bash">bash</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#list-all-assets" class="toc-h2 toc-link" data-title="List all Assets">List all Assets</a>
-                  </li>
-                  <li>
-                    <a href="#list-all-products" class="toc-h2 toc-link" data-title="List all Products">List all Products</a>
-                  </li>
-                  <li>
-                    <a href="#ticker" class="toc-h2 toc-link" data-title="Ticker">Ticker</a>
-                  </li>
-                  <li>
-                    <a href="#order-book-depth" class="toc-h2 toc-link" data-title="Order Book (Depth)">Order Book (Depth)</a>
-                  </li>
-                  <li>
-                    <a href="#market-trades" class="toc-h2 toc-link" data-title="Market Trades">Market Trades</a>
                   </li>
                   <li>
                     <a href="#account" class="toc-h2 toc-link" data-title="Account">Account</a>
@@ -505,27 +500,25 @@
 be rejected. </p>
 <h3 id='sign-a-request'>Sign a Request</h3>
 <blockquote>
-<p>Signing a RESTful Request
-```shell</p>
-<h1 id='bash'>bash</h1>
-<p>APIPATH=info
-APIKEY=CEcrjGyipqt0OflgdQQSRGdrDXdDUY2x
-SECRET=hV8FgjyJtpvVeAcMAgzgAFQCN36wmbWuN7o3WPcYcYhFd8qvE43gzFGVsFcCqMNk
-TIMESTAMP=<code>date +%s%N | cut -c -13</code> # 1608133910000
-MESSAGE=$TIMESTAMP+$APIPATH
-SIGNATURE=<code>echo -n $MESSAGE | openssl dgst -sha256 -hmac $SECRET -binary | base64</code>
-echo $SIGNATURE  # /pwaAgWZQ1Xd/J4yZ4ReHSPQxd3ORP/YR8TvAttqqYM=</p>
+<p>Signing a RESTful Request</p>
 </blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># bash </span>
+<span class="nv">APIPATH</span><span class="o">=</span>info
+<span class="nv">APIKEY</span><span class="o">=</span>CEcrjGyipqt0OflgdQQSRGdrDXdDUY2x
+<span class="nv">SECRET</span><span class="o">=</span>hV8FgjyJtpvVeAcMAgzgAFQCN36wmbWuN7o3WPcYcYhFd8qvE43gzFGVsFcCqMNk
+<span class="nv">TIMESTAMP</span><span class="o">=</span><span class="sb">`</span><span class="nb">date</span> +%s%N | <span class="nb">cut</span> <span class="nt">-c</span> <span class="nt">-13</span><span class="sb">`</span> <span class="c"># 1608133910000</span>
+<span class="nv">MESSAGE</span><span class="o">=</span><span class="nv">$TIMESTAMP</span>+<span class="nv">$APIPATH</span>
+<span class="nv">SIGNATURE</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nt">-n</span> <span class="nv">$MESSAGE</span> | openssl dgst <span class="nt">-sha256</span> <span class="nt">-hmac</span> <span class="nv">$SECRET</span> <span class="nt">-binary</span> | <span class="nb">base64</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$SIGNATURE</span>  <span class="c"># /pwaAgWZQ1Xd/J4yZ4ReHSPQxd3ORP/YR8TvAttqqYM=</span>
 
-<p>curl -X GET -i \
-  -H &quot;Accept: application/json&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;x-auth-key: $APIKEY&quot; \
-  -H &quot;x-auth-signature: $SIGNATURE&quot; \
-  -H &quot;x-auth-timestamp: $TIMESTAMP&quot; \
+curl <span class="nt">-X</span> GET <span class="nt">-i</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-auth-key: </span><span class="nv">$APIKEY</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-auth-signature: </span><span class="nv">$SIGNATURE</span><span class="s2">"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-auth-timestamp: </span><span class="nv">$TIMESTAMP</span><span class="s2">"</span> <span class="se">\</span>
   https://bakkt.exchange.test.com/api/pro/v1/info
-```</p>
-<div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># python 3.6+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="c1"># python 3.6+
 </span><span class="kn">import</span> <span class="nn">time</span><span class="p">,</span> <span class="n">hmac</span><span class="p">,</span> <span class="n">hashlib</span><span class="p">,</span> <span class="n">base64</span>
 
 <span class="n">api_path</span>  <span class="o">=</span> <span class="s">"info"</span>
@@ -575,11 +568,11 @@ echo $SIGNATURE  # /pwaAgWZQ1Xd/J4yZ4ReHSPQxd3ORP/YR8TvAttqqYM=</p>
 The <code>timestamp</code> is the UTC timestamp in milliseconds.  </p>
 <h3 id='list-all-assets'>List all Assets</h3>
 <blockquote>
-<p>List all Assets
-<code>
-curl -X GET &quot;https://bakkt.exchange.test.com /api/pro/v2/assets&quot;
-</code></p>
-
+<p>List all Assets</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com /api/pro/v2/assets"
+</code></pre></div>
+<blockquote>
 <p>Sample Response </p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -614,8 +607,9 @@ curl -X GET &quot;https://bakkt.exchange.test.com /api/pro/v2/assets&quot;
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h4 id='http-request'>HTTP Request</h4>
-<p><code>GET /api/pro/v2/assets</code>
-You can obtain a list of all assets listed on the exchange through this API.</p>
+<p><code>GET /api/pro/v2/assets</code></p>
+
+<p>You can obtain a list of all assets listed on the exchange through this API.</p>
 <h4 id='response-content'>Response Content</h4>
 <table><thead>
 <tr>
@@ -698,11 +692,12 @@ You can obtain a list of all assets listed on the exchange through this API.</p>
 </tbody></table>
 <h3 id='list-all-products'>List all Products</h3>
 <blockquote>
-<p>List all Products 
-<code>
-curl -X GET &quot;https://bakkt.exchange.test.com/api/pro/v1/cash/products&quot;
-</code>
-Sample Response </p>
+<p>List all Products </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
+</code></pre></div>
+<blockquote>
+<p>Sample Response </p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
