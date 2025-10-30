@@ -51,7 +51,7 @@ The response contains the following general fields:
  Name         | Type     | Description                                                                                 
 -------------- | -------- | --------------------- 
  `symbol`      | `String` | e.g. `"BTC/USDT"`
- `baseAsset`   | `String` | e.g. `"ASD"`
+ `baseAsset`   | `String` | e.g. `"BTC"`
  `quoteAsset`  | `String` | e.g. `"USDT"`
  `status`      | `String` | `"Normal"`
 
