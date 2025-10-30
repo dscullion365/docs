@@ -1,7 +1,5 @@
 ### List all Assets
-
 > List all Assets
-
 ```
 curl -X GET "https://bakkt.exchange.test.com /api/pro/v2/assets"
 ```
@@ -41,11 +39,8 @@ curl -X GET "https://bakkt.exchange.test.com /api/pro/v2/assets"
     ]
 }
 ```
-
 #### HTTP Request
-
 `GET /api/pro/v2/assets`
-
 You can obtain a list of all assets listed on the exchange through this API.
 
 #### Response Content
