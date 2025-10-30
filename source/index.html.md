@@ -40,7 +40,6 @@ includes:
   - rest_prv_order_query
   - rest_prv_order_open
   - rest_prv_order_hist_curr
-  - rest_prv_order_hist_deprecated
   - rest_prv_order_hist_v2
   - ws_general
   - ws_keep_alive
