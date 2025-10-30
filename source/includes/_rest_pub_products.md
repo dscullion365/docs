@@ -1,11 +1,8 @@
 ### List all Products 
-
 > List all Products 
-
 ```
 curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
 ```
-
 > Sample Response 
 
 ```json
@@ -37,9 +34,7 @@ curl -X GET "https://bakkt.exchange.test.com/api/pro/v1/cash/products"
     ]
 }
 ```
-
 #### HTTP Request
-
 `GET /api/pro/v1/cash/products`
 
 #### Response Content
@@ -51,7 +46,7 @@ The response contains the following general fields:
  Name         | Type     | Description                                                                                 
 -------------- | -------- | --------------------- 
  `symbol`      | `String` | e.g. `"BTC/USDT"`
- `baseAsset`   | `String` | e.g. `"ASD"`
+ `baseAsset`   | `String` | e.g. `"BTC"`
  `quoteAsset`  | `String` | e.g. `"USDT"`
  `status`      | `String` | `"Normal"`
 
